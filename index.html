@@ -1,584 +1,677 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FRENVOX | パソコン業務をワンクリック化｜高松市・さぬき市・東かがわ市のリハビリ・介護事業所向けAI活用支援</title>
-    <meta name="description" content="FRENVOXは香川県で、理学療法士が運営するAI活用支援の会社です。議事録・サービス担当者会議記録・送迎管理など、既存のAIツールを組み合わせて現場のパソコン業務をワンクリック化します。高松市・さぬき市・東かがわ市のデイサービス・デイケア・訪問リハ事業所向け、ファーストユーザー特別プラン（初期3ヶ月 70,000円＋継続月額 20,000円）1施設限定募集中。">
-    <meta property="og:title" content="パソコン業務をワンクリック化｜FRENVOX">
-    <meta property="og:description" content="高松市・さぬき市・東かがわ市のデイ・デイケア・訪問リハ事業所さま、先着1施設。ファーストユーザー特別プランで業務自動化を導入（通常プラン比 30%オフ）。">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        /* Monitor banner (top) */
-        .monitor-bar { background:#c8a24e; color:#111; padding:10px 20px; text-align:center; font-size:14px; font-weight:500; position:relative; z-index:101; }
-        .monitor-bar strong { font-weight:700; }
-        .monitor-bar a { color:#111; text-decoration:underline; margin-left:8px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FRENVOX｜現場の手作業を、AIで終わらせる。— 桑島海斗</title>
+<meta name="description" content="FRENVOX（フレンボックス）は、理学療法士・桑島海斗が運営するAI活用支援。議事録・送迎・記録・シフトなど、あらゆる現場のパソコン業務を既存のAIで自動化し『ボタンひとつで終わる』状態に整えます。介護・リハビリ現場を起点に、業界を問わず展開中。香川県高松市。">
+<meta property="og:title" content="FRENVOX｜現場の手作業を、AIで終わらせる。">
+<meta property="og:description" content="理学療法士・桑島海斗によるAI活用支援。現場のパソコン業務をワンクリック化。介護から始め、業界を問わず展開中。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://frenvox.jp/">
+<meta name="theme-color" content="#07080d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ===== Reset & base ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07080d; --bg2:#0c0e16;
+  --text:#f3f4f8; --muted:#9aa0b4; --faint:#6b7185;
+  --gold:#d8b461; --gold-soft:#e9cd8a;
+  --cyan:#6ea8ff; --violet:#9b7bff;
+  --glass:rgba(255,255,255,0.045);
+  --glass-border:rgba(255,255,255,0.10);
+  --maxw:1180px;
+  --r:18px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:"Noto Sans JP",system-ui,sans-serif;
+  font-weight:400; line-height:1.8; letter-spacing:.01em;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:"Space Grotesk","Noto Sans JP",sans-serif;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--gold);color:#111}
 
-        /* Monitor section */
-        .monitor { background:linear-gradient(135deg, #c8a24e 0%, #b08d3f 100%); color:#111; padding:80px 0; }
-        .monitor .container { max-width:900px; }
-        .monitor-tag { display:inline-block; background:#111; color:#c8a24e; padding:6px 16px; border-radius:4px; font-size:13px; letter-spacing:0.1em; font-weight:700; margin-bottom:20px; }
-        .monitor-title { font-size:clamp(28px,5vw,44px); font-weight:900; line-height:1.3; margin:0 0 24px; }
-        .monitor-lead { font-size:17px; line-height:1.8; margin:0 0 36px; }
-        .monitor-box { background:#fff; border-radius:8px; padding:32px; margin-bottom:32px; box-shadow:0 8px 32px rgba(0,0,0,0.15); }
-        .monitor-box h3 { font-size:18px; font-weight:700; margin:0 0 20px; padding-bottom:12px; border-bottom:2px solid #c8a24e; }
-        .monitor-list { list-style:none; padding:0; margin:0; }
-        .monitor-list li { display:grid; grid-template-columns:120px 1fr; gap:16px; padding:12px 0; border-bottom:1px solid #eee; font-size:15px; }
-        .monitor-list li:last-child { border-bottom:none; }
-        .monitor-list li strong { color:#8a6d2f; font-weight:700; }
-        .monitor-price { display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; margin:24px 0; padding:20px; background:#fff8e8; border-radius:6px; }
-        .monitor-price .old { text-decoration:line-through; color:#999; font-size:18px; }
-        .monitor-price .new { font-size:32px; font-weight:900; color:#111; }
-        .monitor-price .note { font-size:13px; color:#555; }
-        .monitor-actions { display:flex; gap:16px; flex-wrap:wrap; margin-top:32px; }
-        .btn-primary { background:#111; color:#c8a24e; padding:18px 32px; border-radius:4px; font-weight:700; text-decoration:none; display:inline-block; transition:transform 0.2s; font-size:16px; }
-        .btn-primary:hover { transform:translateY(-2px); }
-        .btn-phone { background:#fff; color:#111; padding:18px 32px; border-radius:4px; font-weight:700; text-decoration:none; display:inline-block; border:2px solid #111; font-size:16px; }
-        .btn-phone small { display:block; font-size:11px; font-weight:400; margin-top:2px; }
-        .remaining { display:inline-block; background:#d94444; color:#fff; padding:4px 12px; border-radius:100px; font-size:12px; font-weight:700; margin-left:12px; vertical-align:middle; }
+/* ===== Background field ===== */
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+.bg-aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--bg)}
+.bg-aurora::before,.bg-aurora::after{
+  content:"";position:absolute;border-radius:50%;filter:blur(120px);opacity:.5;
+  animation:drift 22s ease-in-out infinite alternate;
+}
+.bg-aurora::before{width:60vw;height:60vw;left:-10vw;top:-10vw;background:radial-gradient(circle,rgba(110,168,255,.30),transparent 70%)}
+.bg-aurora::after{width:55vw;height:55vw;right:-12vw;bottom:-15vw;background:radial-gradient(circle,rgba(216,180,97,.28),transparent 70%);animation-delay:-8s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(6vw,4vh) scale(1.15)}}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
 
-        /* Examples grid */
-        .examples { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; margin-top:32px; }
-        .example-card { background:#1a1a1a; padding:28px; border-radius:6px; border:1px solid #2a2a2a; }
-        .example-card h3 { color:#c8a24e; font-size:17px; margin:0 0 12px; font-weight:700; }
-        .example-card p { color:#ddd; font-size:14px; line-height:1.7; margin:0; }
+/* ===== Layout ===== */
+.wrap{position:relative;z-index:2}
+.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{position:relative;padding:120px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:"Space Grotesk",sans-serif;
+  font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:22px}
+.eyebrow::before{content:"";width:28px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.h2{font-size:clamp(28px,4.4vw,46px);font-weight:700;line-height:1.25;margin-bottom:20px}
+.lead{color:var(--muted);font-size:clamp(15px,1.6vw,17px);max-width:640px;line-height:2}
 
-        /* Case Study */
-        .case { background:#f6f3ed; padding:80px 0; }
-        .case .container { max-width:980px; }
-        .case .tag { color:#8a6d2f; }
-        .case .section-title { color:#111; }
-        .case .section-lead { color:#555; }
-        .case-profile { background:#fff; border-radius:8px; padding:28px 32px; margin:32px 0 48px; box-shadow:0 4px 20px rgba(0,0,0,0.06); border:1px solid #e8e3d5; }
-        .case-profile h3 { font-size:17px; font-weight:900; margin:0 0 20px; color:#111; letter-spacing:0.05em; padding-bottom:12px; border-bottom:2px solid #c8a24e; }
-        .case-profile-list { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px 32px; }
-        .case-profile-list li { font-size:15px; line-height:1.7; color:#222; }
-        .case-profile-list li strong { display:block; color:#111; font-weight:900; font-size:13px; letter-spacing:0.08em; margin-bottom:6px; }
-        .case-sub { font-size:15px; font-weight:700; margin:48px 0 20px; color:#111; letter-spacing:0.05em; border-left:3px solid #c8a24e; padding-left:12px; }
-        .case-features { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; }
-        .case-feature { background:#fff; padding:24px; border-radius:6px; border:1px solid #e8e3d5; }
-        .case-feature h4 { color:#111; font-size:15px; margin:0 0 10px; font-weight:700; }
-        .case-feature p { color:#555; font-size:13px; line-height:1.7; margin:0; }
-        .case-numbers { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:20px; }
-        .case-number { background:#fff; padding:24px; border-radius:6px; border:1px solid #e8e3d5; text-align:center; }
-        .case-number .label { font-size:13px; color:#555; margin-bottom:12px; }
-        .case-number .compare { display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; }
-        .case-number .before { color:#999; text-decoration:line-through; font-size:18px; font-weight:700; }
-        .case-number .after { color:#c8a24e; font-size:28px; font-weight:900; }
-        .case-number .arrow { color:#ccc; font-size:18px; }
-        .case-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; }
-        .case-image { background:#fff; border:1px solid #e8e3d5; border-radius:6px; overflow:hidden; }
-        .case-image img { width:100%; height:auto; display:block; cursor:zoom-in; transition:opacity 0.2s; }
-        .case-image img:hover { opacity:0.85; }
-        .case-image-caption { padding:12px 16px; font-size:13px; color:#555; background:#fafaf5; border-top:1px solid #e8e3d5; }
+/* ===== Nav ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.4s}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+.nav.scrolled{background:rgba(7,8,13,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--glass-border)}
+.nav.scrolled .nav-inner{padding:12px 24px}
+.nav-logo{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:21px;letter-spacing:.04em}
+.nav-logo span{color:var(--gold)}
+.nav-menu{list-style:none;display:flex;gap:28px;align-items:center}
+.nav-link{font-size:13.5px;color:var(--muted);font-weight:500;transition:.25s;position:relative}
+.nav-link:hover,.nav-link.active{color:var(--text)}
+.nav-cta{padding:10px 20px;border-radius:100px;background:var(--gold);color:#111!important;font-weight:700;font-size:13px;transition:.25s}
+.nav-cta:hover{box-shadow:0 8px 24px rgba(216,180,97,.35);transform:translateY(-1px)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.nav-toggle span{width:24px;height:2px;background:var(--text);transition:.3s}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-        /* Lightbox */
-        .lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; padding:20px; cursor:zoom-out; }
-        .lightbox.active { display:flex; }
-        .lightbox-content { max-width:95%; max-height:90%; display:flex; flex-direction:column; align-items:center; gap:16px; }
-        .lightbox-content img { max-width:100%; max-height:80vh; width:auto; height:auto; border-radius:4px; box-shadow:0 20px 60px rgba(0,0,0,0.5); }
-        .lightbox-caption { color:#eee; font-size:14px; text-align:center; max-width:800px; line-height:1.7; padding:0 20px; }
-        .lightbox-close { position:absolute; top:20px; right:20px; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.1); border:none; color:#fff; font-size:24px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s; }
-        .lightbox-close:hover { background:rgba(255,255,255,0.25); }
-        .case-image-placeholder { aspect-ratio:16/10; background:#eee6d3; display:flex; align-items:center; justify-content:center; color:#8a6d2f; font-size:13px; font-weight:500; border-radius:6px 6px 0 0; }
-        .case-security { background:#111; color:#ddd; padding:28px 32px; border-radius:8px; margin-top:48px; }
-        .case-security h4 { color:#c8a24e; font-size:15px; margin:0 0 12px; font-weight:700; }
-        .case-security p { font-size:14px; line-height:1.8; margin:0; }
+/* ===== Hero ===== */
+.hero{min-height:100svh;display:flex;align-items:center;padding-top:90px;padding-bottom:60px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border-radius:100px;
+  background:var(--glass);border:1px solid var(--glass-border);font-size:12.5px;color:var(--muted);margin-bottom:26px}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 12px #4ade80}
+.hero h1{font-size:clamp(40px,7.2vw,82px);font-weight:700;line-height:1.05;letter-spacing:-.02em}
+.hero h1 .grad{background:linear-gradient(110deg,var(--gold-soft),var(--cyan) 60%,var(--violet));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{margin:28px 0 36px;font-size:clamp(15px,1.8vw,18px);color:var(--muted);max-width:540px;line-height:2}
+.hero-sub strong{color:var(--text);font-weight:500}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:100px;font-weight:700;font-size:15px;transition:.3s;cursor:pointer;border:1px solid transparent}
+.btn-fill{background:var(--gold);color:#111}
+.btn-fill:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(216,180,97,.32)}
+.btn-ghost{background:var(--glass);border-color:var(--glass-border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft)}
+.hero-meta{display:flex;gap:32px;margin-top:46px;flex-wrap:wrap}
+.hero-meta .m{}
+.hero-meta .num{font-family:"Space Grotesk",sans-serif;font-size:30px;font-weight:700;color:var(--text);line-height:1}
+.hero-meta .num small{font-size:15px;color:var(--gold)}
+.hero-meta .cap{font-size:12px;color:var(--faint);margin-top:7px;letter-spacing:.05em}
+/* hero portrait card */
+.hero-portrait{position:relative;perspective:1000px}
+.portrait-card{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--glass-border);
+  background:var(--glass);transform-style:preserve-3d;transition:transform .2s ease-out;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.portrait-card img{width:100%;aspect-ratio:4/4.4;object-fit:cover;filter:grayscale(.15) contrast(1.05)}
+.portrait-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,8,13,.85));pointer-events:none}
+.portrait-name{position:absolute;left:22px;bottom:20px;z-index:2}
+.portrait-name .jp{font-size:22px;font-weight:700}
+.portrait-name .en{font-size:12px;letter-spacing:.22em;color:var(--gold);font-family:"Space Grotesk",sans-serif;margin-top:2px}
+.portrait-glow{position:absolute;inset:-2px;border-radius:26px;background:linear-gradient(130deg,var(--gold),var(--cyan),var(--violet));
+  filter:blur(22px);opacity:.35;z-index:-1}
+.scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);font-size:11px;letter-spacing:.25em;color:var(--faint);writing-mode:vertical-rl;display:flex;align-items:center;gap:12px}
+.scroll-hint::after{content:"";width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:sd 1.8s ease-in-out infinite}
+@keyframes sd{0%,100%{opacity:.2;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
 
-        @media (max-width:600px) {
-            .monitor-list li { grid-template-columns:1fr; gap:4px; }
-            .monitor-list li strong { font-size:13px; }
-        }
-    </style>
+/* ===== Marquee ===== */
+.marquee{padding:26px 0;border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);
+  background:rgba(255,255,255,.015);overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;gap:48px;animation:scrollx 32s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font-family:"Space Grotesk",sans-serif;font-size:15px;color:var(--faint);letter-spacing:.05em;display:inline-flex;align-items:center;gap:48px}
+.marquee span::after{content:"✦";color:var(--gold);opacity:.6}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+
+/* ===== Section heading center ===== */
+.head-center{text-align:center;max-width:720px;margin:0 auto 64px}
+.head-center .lead{margin:0 auto}
+.head-center .eyebrow{justify-content:center}
+
+/* ===== About ===== */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.about-photo{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--glass-border)}
+.about-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.about-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(110,168,255,.12),rgba(216,180,97,.12));mix-blend-mode:overlay}
+.about-photo .ring{position:absolute;inset:0;border:1px solid rgba(216,180,97,.4);border-radius:var(--r);margin:14px;pointer-events:none}
+.about p{color:var(--muted);margin-bottom:18px;line-height:2.05}
+.about p strong{color:var(--text);font-weight:500}
+.about .name-line{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.about .name-line .jp{font-size:30px;font-weight:700;color:var(--text)}
+.about .name-line .en{font-size:13px;letter-spacing:.18em;color:var(--gold);font-family:"Space Grotesk",sans-serif}
+.about .role{font-size:14px;color:var(--gold-soft);margin-bottom:26px;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chip{padding:8px 16px;border-radius:100px;background:var(--glass);border:1px solid var(--glass-border);font-size:12.5px;color:var(--muted)}
+
+/* ===== Services / tilt cards ===== */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{position:relative;padding:32px;border-radius:var(--r);background:var(--glass);border:1px solid var(--glass-border);
+  transform-style:preserve-3d;transition:transform .18s ease-out,border-color .3s;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(216,180,97,.14),transparent 60%);opacity:0;transition:opacity .3s}
+.card:hover{border-color:rgba(216,180,97,.4)}
+.card:hover::before{opacity:1}
+.card .ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(216,180,97,.22),rgba(110,168,255,.18));border:1px solid var(--glass-border);
+  font-size:22px;margin-bottom:20px}
+.card h3{font-size:18px;font-weight:700;margin-bottom:12px}
+.card p{font-size:13.5px;color:var(--muted);line-height:1.9}
+.card .no{position:absolute;top:24px;right:28px;font-family:"Space Grotesk",sans-serif;font-size:13px;color:var(--faint);letter-spacing:.1em}
+
+/* ===== Work / case ===== */
+.case-wrap{border-radius:26px;border:1px solid var(--glass-border);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));overflow:hidden}
+.case-top{padding:44px clamp(24px,4vw,52px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;border-bottom:1px solid var(--glass-border)}
+.case-no{font-family:"Space Grotesk",sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin-bottom:14px}
+.case-top h3{font-size:clamp(22px,3vw,32px);font-weight:700;line-height:1.35}
+.case-tag{padding:8px 16px;border-radius:100px;border:1px solid var(--glass-border);font-size:12px;color:var(--muted);white-space:nowrap}
+.case-body{padding:clamp(28px,4vw,52px)}
+.case-profile{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:44px}
+.case-profile .pi .l{font-size:11px;letter-spacing:.1em;color:var(--faint);margin-bottom:8px}
+.case-profile .pi .v{font-size:14px;color:var(--text);font-weight:500;line-height:1.6}
+.case-sub{font-size:13px;letter-spacing:.06em;color:var(--gold-soft);font-weight:700;margin:0 0 22px;padding-left:14px;border-left:2px solid var(--gold)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:48px}
+.stat{padding:28px;border-radius:var(--r);background:rgba(255,255,255,.025);border:1px solid var(--glass-border);text-align:center}
+.stat .l{font-size:12.5px;color:var(--muted);margin-bottom:16px}
+.stat .row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.stat .before{color:var(--faint);text-decoration:line-through;font-size:18px;font-weight:600}
+.stat .arr{color:var(--gold);opacity:.7}
+.stat .after{font-family:"Space Grotesk",sans-serif;font-size:32px;font-weight:700;
+  background:linear-gradient(120deg,var(--gold-soft),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:48px}
+.feat .fi{padding:24px;border-radius:14px;background:rgba(255,255,255,.02);border:1px solid var(--glass-border)}
+.feat .fi h4{font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text)}
+.feat .fi h4 em{color:var(--gold);font-style:normal;margin-right:8px}
+.feat .fi p{font-size:13px;color:var(--muted);line-height:1.9}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:40px}
+.gimg{border-radius:14px;overflow:hidden;border:1px solid var(--glass-border);background:#000}
+.gimg img{width:100%;aspect-ratio:16/10;object-fit:cover;cursor:zoom-in;transition:.4s}
+.gimg:hover img{transform:scale(1.04);opacity:.92}
+.gimg .cap{padding:13px 16px;font-size:12px;color:var(--muted);background:rgba(255,255,255,.02);border-top:1px solid var(--glass-border)}
+.case-note{padding:24px 28px;border-radius:14px;background:rgba(110,168,255,.06);border:1px solid rgba(110,168,255,.18);font-size:13px;color:var(--muted);line-height:1.9}
+.case-note strong{color:var(--cyan)}
+.next-slot{margin-top:24px;text-align:center;padding:40px;border-radius:var(--r);border:1px dashed var(--glass-border);color:var(--faint);font-size:14px}
+.next-slot b{color:var(--gold-soft)}
+
+/* ===== YouTube ===== */
+.yt-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.yt-card{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--glass-border);background:var(--glass);transition:.35s}
+.yt-card:hover{border-color:rgba(216,180,97,.4);transform:translateY(-4px)}
+.yt-thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
+.yt-thumb img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.yt-card:hover .yt-thumb img{transform:scale(1.05)}
+.yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.yt-play span{width:62px;height:62px;border-radius:50%;background:rgba(216,180,97,.92);display:flex;align-items:center;justify-content:center;color:#111;box-shadow:0 8px 30px rgba(0,0,0,.5);transition:.3s}
+.yt-card:hover .yt-play span{transform:scale(1.1)}
+.yt-meta{padding:20px 22px}
+.yt-meta .k{font-size:11px;letter-spacing:.16em;color:var(--gold);margin-bottom:8px;font-family:"Space Grotesk",sans-serif}
+.yt-meta h3{font-size:16px;font-weight:700;line-height:1.5}
+.yt-channel{text-align:center;margin-top:40px}
+
+/* ===== Contact ===== */
+.contact-card{border-radius:26px;border:1px solid var(--glass-border);background:linear-gradient(160deg,rgba(216,180,97,.07),rgba(110,168,255,.05));padding:clamp(32px,5vw,60px);text-align:center;position:relative;overflow:hidden}
+.contact-card::before{content:"";position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(216,180,97,.18),transparent 70%);top:-180px;left:50%;transform:translateX(-50%);filter:blur(40px)}
+.contact-card .inner{position:relative;z-index:2}
+.contact-card h2{font-size:clamp(26px,4vw,40px);font-weight:700;margin-bottom:18px;line-height:1.3}
+.contact-card p{color:var(--muted);margin-bottom:32px;font-size:15px}
+.contact-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+.contact-small{font-size:12.5px;color:var(--faint);margin-top:24px}
+.contact-small a{color:var(--gold-soft);text-decoration:underline}
+/* form */
+.form-toggle{margin-top:48px;text-align:center}
+.form-toggle summary{cursor:pointer;color:var(--muted);font-size:14px;list-style:none;display:inline-flex;align-items:center;gap:8px}
+.form-toggle summary::-webkit-details-marker{display:none}
+.form-toggle summary::after{content:"▾";color:var(--gold);transition:.3s}
+.form-toggle[open] summary::after{transform:rotate(180deg)}
+.form{max-width:680px;margin:32px auto 0;text-align:left}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:8px}
+.fg label span{color:var(--gold)}
+.fg input,.fg select,.fg textarea{width:100%;padding:13px 15px;border-radius:10px;background:rgba(255,255,255,.03);
+  border:1px solid var(--glass-border);color:var(--text);font-size:14px;font-family:inherit;transition:.25s}
+.fg input:focus,.fg select,.fg textarea:focus{outline:none;border-color:var(--gold)}
+.fg select{appearance:none}
+.fg textarea{resize:vertical}
+.form .btn{width:100%;justify-content:center;margin-top:8px}
+.form-note{font-size:11.5px;color:var(--faint);text-align:center;margin-top:14px;line-height:1.8}
+.form-note a{color:var(--gold-soft);text-decoration:underline}
+
+/* ===== Footer ===== */
+.footer{border-top:1px solid var(--glass-border);padding:60px 0 40px;background:rgba(7,8,13,.6)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;margin-bottom:40px}
+.footer-logo{font-family:"Space Grotesk",sans-serif;font-size:22px;font-weight:700;margin-bottom:10px}
+.footer-logo span{color:var(--gold)}
+.footer p{font-size:13px;color:var(--faint);line-height:1.9}
+.footer h5{font-size:11px;letter-spacing:.14em;color:var(--muted);margin-bottom:16px;text-transform:uppercase;font-family:"Space Grotesk",sans-serif}
+.footer-links a{display:block;font-size:13px;color:var(--faint);margin-bottom:10px;transition:.2s}
+.footer-links a:hover{color:var(--gold-soft)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:28px;border-top:1px solid var(--glass-border)}
+.footer-bottom p{font-size:12px;color:var(--faint)}
+
+/* ===== Reveal animation ===== */
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.fade-in.visible{opacity:1;transform:none}
+.fade-in.d1{transition-delay:.08s}.fade-in.d2{transition-delay:.16s}.fade-in.d3{transition-delay:.24s}.fade-in.d4{transition-delay:.32s}
+
+/* ===== Lightbox ===== */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(4,5,8,.94);z-index:9999;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lightbox.active{display:flex}
+.lightbox img{max-width:94%;max-height:86vh;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lightbox .cap{position:absolute;bottom:30px;left:0;right:0;text-align:center;color:#cfd2dc;font-size:13px;padding:0 24px}
+.lightbox .x{position:absolute;top:22px;right:24px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.08);border:none;color:#fff;font-size:24px;cursor:pointer}
+
+/* ===== Responsive ===== */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-portrait{max-width:380px}
+  .about-grid{grid-template-columns:1fr;gap:36px}
+  .about-photo{max-width:360px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .case-profile{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:680px){
+  section{padding:84px 0}
+  .nav-menu{position:fixed;inset:0 0 0 auto;width:78%;max-width:320px;flex-direction:column;justify-content:center;gap:28px;
+    background:rgba(10,11,18,.96);backdrop-filter:blur(20px);transform:translateX(100%);transition:.4s;border-left:1px solid var(--glass-border)}
+  .nav-menu.open{transform:translateX(0)}
+  .nav-toggle{display:flex;z-index:60}
+  .cards{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .feat,.gallery,.yt-grid,.case-profile{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .hero-meta{gap:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important}
+  .fade-in{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
 
-    <div class="monitor-bar">
-        <strong>【先着1施設・残り1枠】</strong>ファーストユーザー特別プラン募集中（通常プラン比 30%オフ）
-        <a href="#monitor">詳細を見る →</a>
+<div class="bg-aurora"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="grain"></div>
+
+<div class="wrap">
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">FREN<span>VOX</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#about" class="nav-link">代表</a></li>
+      <li><a href="#services" class="nav-link">できること</a></li>
+      <li><a href="#work" class="nav-link">実績</a></li>
+      <li><a href="#youtube" class="nav-link">発信</a></li>
+      <li><a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="nav-cta">無料相談</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="hero-badge"><span class="dot"></span>香川県・現役理学療法士が運営するAI活用支援</span>
+        <h1>現場の手作業を、<br><span class="grad">AIで終わらせる。</span></h1>
+        <p class="hero-sub">FRENVOX（フレンボックス）は、理学療法士 <strong>桑島海斗</strong> が運営するAI活用支援。<br>議事録・送迎・記録・シフト——既存のAIを現場に合わせて組み合わせ、<strong>「ボタンひとつで終わる」</strong>状態まで整えます。介護・リハビリの現場を起点に、<strong>業界を問わず</strong>広げています。</p>
+        <div class="hero-actions">
+          <a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn btn-fill">30分の無料相談を予約 →</a>
+          <a href="#work" class="btn btn-ghost">実際の仕事を見る</a>
+        </div>
+        <div class="hero-meta">
+          <div class="m"><div class="num" data-count="90">90</div><div class="cap">送迎表 90分→<strong style="color:var(--gold)">5分</strong></div></div>
+          <div class="m"><div class="num">1<small>件目</small></div><div class="cap">最初の現場、稼働中</div></div>
+          <div class="m"><div class="num">∞</div><div class="cap">対応業界は問わない</div></div>
+        </div>
+      </div>
+      <div class="hero-portrait fade-in">
+        <div class="portrait-glow"></div>
+        <div class="portrait-card" id="tiltCard">
+          <img src="images/youtube-thumb-1.jpg" alt="FRENVOX 代表 桑島海斗">
+          <div class="portrait-name">
+            <div class="jp">桑島 海斗</div>
+            <div class="en">KAITO KUWAJIMA / FOUNDER</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>議事録の自動作成</span><span>サービス担当者会議録</span><span>送迎表の自動生成</span><span>運転シフト作成</span><span>訪問記録・日報</span><span>ケア計画書ドラフト</span><span>HP制作・SEO</span><span>データ整理・集計</span>
+    <span>議事録の自動作成</span><span>サービス担当者会議録</span><span>送迎表の自動生成</span><span>運転シフト作成</span><span>訪問記録・日報</span><span>ケア計画書ドラフト</span><span>HP制作・SEO</span><span>データ整理・集計</span>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid about">
+      <div class="about-photo fade-in">
+        <img src="images/profile.png" alt="桑島 海斗">
+        <span class="ring"></span>
+      </div>
+      <div class="about-body fade-in d1">
+        <span class="eyebrow">About / 代表</span>
+        <div class="name-line"><span class="jp">桑島 海斗</span><span class="en">KAITO KUWAJIMA</span></div>
+        <p class="role">FRENVOX 代表 ／ 理学療法士</p>
+        <p>理学療法士としてリハビリ現場に立つなかで、いちばん辛かったのは<strong>「パソコン業務」</strong>でした。患者さんと向き合った時間のあとに、書類とカルテと会議録が待っている。疲弊していくスタッフを見て、「AIで解決したい」とFRENVOXを立ち上げました。</p>
+        <p>私はAIをゼロから開発するエンジニアではありません。世の中にある優れたAIツールを、現場の業務に合わせて<strong>組み合わせ・実装し、「ボタンひとつで終わる」状態まで整える</strong>——その設計が私の仕事です。</p>
+        <p>始まりは介護・リハビリの現場。でもこの仕組みは、<strong>業種を問いません</strong>。手作業が残るあらゆる現場へ、ひとつずつ広げていきます。</p>
+        <div class="chips">
+          <span class="chip">理学療法士</span>
+          <span class="chip">AI活用・自動化の実装</span>
+          <span class="chip">香川県高松市在住</span>
+          <span class="chip">対面対応可</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="container">
+    <div class="head-center fade-in">
+      <span class="eyebrow">What I do</span>
+      <h2 class="h2">こんな手作業を、ワンクリックに。</h2>
+      <p class="lead">ゼロから開発はしません。既存のAIを現場に合わせて組み合わせ、「押すだけ・置くだけ・録るだけ」で終わる状態に整えます。</p>
+    </div>
+    <div class="cards">
+      <div class="card fade-in"><span class="no">01</span><div class="ico">📝</div><h3>議事録・会議録</h3><p>音声を録るだけで、議題別に整理された議事録を自動生成。サービス担当者会議も職種別に要約し、そのまま書類へ。</p></div>
+      <div class="card fade-in d1"><span class="no">02</span><div class="ico">🚐</div><h3>送迎・シフト</h3><p>住所・時間・乗車条件から送迎表を自動生成。休み希望を反映した運転シフトも自動で。変更はワンクリックで再計算。</p></div>
+      <div class="card fade-in d2"><span class="no">03</span><div class="ico">🗂️</div><h3>記録・日報・計画書</h3><p>訪問後の音声メモやメモ書きをAIが整形。過去記録からケア計画書の下書きまで即生成し、持ち帰り残業をなくします。</p></div>
+      <div class="card fade-in"><span class="no">04</span><div class="ico">🌐</div><h3>HP制作・集客</h3><p>Google検索に表示される施設HPを制作。問い合わせ・集患まで見据えた設計で、まさにこのサイトもその一例です。</p></div>
+      <div class="card fade-in d1"><span class="no">05</span><div class="ico">📊</div><h3>データ整理・集計</h3><p>バラバラの台帳・Excel・紙の情報を統合し、集計や転記の手作業を自動化。月次のまとめ作業から解放されます。</p></div>
+      <div class="card fade-in d2"><span class="no">06</span><div class="ico">✦</div><h3>あなたの現場の「あれ」</h3><p>「これは自動化できる？」——30分の無料相談で1時間ヒアリング。できる／できないをその場でお伝えします。業界は問いません。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORK / CASE ===== -->
+<section id="work">
+  <div class="container">
+    <div class="head-center fade-in">
+      <span class="eyebrow">Work / 実績</span>
+      <h2 class="h2">最初の現場は、東かがわ市のデイケア。</h2>
+      <p class="lead">代表・桑島が実際に所属するデイケアで、紙ベースの送迎・シフト・車両管理をすべてアプリ化した、FRENVOXの1件目です。</p>
     </div>
 
-    <nav class="nav" id="nav">
-        <div class="nav-inner">
-            <a href="#" class="nav-logo">FRENVOX</a>
-            <button class="nav-toggle" id="navToggle" aria-label="メニュー">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#monitor" class="nav-link">特別プラン</a></li>
-                <li><a href="#case" class="nav-link">導入実績</a></li>
-                <li><a href="#examples" class="nav-link">事例</a></li>
-                <li><a href="#about" class="nav-link">代表</a></li>
-                <li><a href="#flow" class="nav-link">流れ</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
-                <li><a href="#contact" class="nav-link">相談する</a></li>
-            </ul>
+    <div class="case-wrap fade-in">
+      <div class="case-top">
+        <div>
+          <div class="case-no">CASE 001 — 介護・リハビリ</div>
+          <h3>送迎業務を「5分」に短縮しました</h3>
         </div>
-    </nav>
-
-    <!-- Hero -->
-    <section class="hero" id="hero">
-        <div class="hero-inner">
-            <p class="hero-tag">香川県高松市・さぬき市・東かがわ市のリハビリ／介護事業所さま向け</p>
-            <h1 class="hero-title">パソコン業務を、<br>ボタンひとつで。</h1>
-            <p class="hero-lead">FRENVOXは、理学療法士が運営する<strong>AI活用支援</strong>の会社です。<br>議事録・会議録・送迎管理——既存のAIツールを組み合わせて、<br>現場の「手間」を<strong>ワンクリックで終わる</strong>仕組みに変えます。</p>
-            <div class="hero-actions">
-                <a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn btn-fill">30分の無料相談を予約する</a>
-                <a href="tel:08043432366" class="btn">電話で相談する</a>
-            </div>
+        <span class="case-tag">香川県東かがわ市・病院併設デイケア</span>
+      </div>
+      <div class="case-body">
+        <div class="case-profile">
+          <div class="pi"><div class="l">施設種別</div><div class="v">病院併設デイケア<br>（施設名非公開）</div></div>
+          <div class="pi"><div class="l">利用者数</div><div class="v">約120名</div></div>
+          <div class="pi"><div class="l">スタッフ数</div><div class="v">21名（PT5/看護3/介護・運転13）</div></div>
+          <div class="pi"><div class="l">導入ツール</div><div class="v">Google Workspace＋GAS独自アプリ</div></div>
         </div>
-    </section>
 
-    <!-- First User 特別プラン（最重要セクション） -->
-    <section class="monitor" id="monitor">
-        <div class="container">
-            <span class="monitor-tag">FIRST USER PLAN 2026</span>
-            <h2 class="monitor-title">ファーストユーザー特別プラン<br>先着1施設だけ募集します<span class="remaining">残り1枠</span></h2>
-            <p class="monitor-lead">FRENVOXの最初のお客様となってくださる事業所さまを、高松市・さぬき市・東かがわ市から1施設だけ募集します。<br><strong>初期3ヶ月 70,000円（通常100,000円）＋ 継続は月額 20,000円（通常30,000円）</strong>。<br>実名での事例化にご協力いただくことで、<strong>通常プラン比 30%オフ</strong>の特別価格でご提供します。</p>
-
-            <div class="monitor-box">
-                <h3>募集要項</h3>
-                <ul class="monitor-list">
-                    <li><strong>対象</strong><span>香川県<strong>高松市・さぬき市・東かがわ市</strong>の<br>デイサービス・デイケア・通所リハ・訪問リハ事業所</span></li>
-                    <li><strong>募集施設数</strong><span>1施設（先着順）</span></li>
-                    <li><strong>開始時期</strong><span>2026年5月〜（3ヶ月の導入期間を経て、月額運営へ移行）</span></li>
-                    <li><strong>対応範囲</strong><span>月1回1時間のヒアリングセッション／全業務を棚卸し、自動化可能な業務を特定／自動化の「やり方」を動画で提供、または実際のツール（マクロ・スクリプト・AI連携）をお渡し／スタッフ向け操作レクチャー込み</span></li>
-                    <li><strong>ご契約条件</strong><span>①月1回1時間のヒアリング<br>②3ヶ月後、<strong>実名での事例掲載のご許可</strong>（施設名・代表者名を公開）</span></li>
-                    <li><strong>ご負担</strong><span>クラウド利用料・通信費はFRENVOX側で負担。契約期間内の作業は追加費用なし。</span></li>
-                </ul>
-                <div class="monitor-price">
-                    <div style="width:100%;">
-                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start;">
-                            <div>
-                                <div style="font-size:12px; color:#8a6d2f; font-weight:700; letter-spacing:0.05em; margin-bottom:6px;">初期導入（3ヶ月一括）</div>
-                                <div><span class="old" style="font-size:14px;">通常 100,000円</span></div>
-                                <div><span class="new" style="font-size:28px;">70,000円</span><span style="font-size:13px; color:#555;"> （税別）</span></div>
-                            </div>
-                            <div>
-                                <div style="font-size:12px; color:#8a6d2f; font-weight:700; letter-spacing:0.05em; margin-bottom:6px;">4ヶ月目以降の月額運営費</div>
-                                <div><span class="old" style="font-size:14px;">通常 30,000円/月</span></div>
-                                <div><span class="new" style="font-size:28px;">20,000円</span><span style="font-size:13px; color:#555;"> /月（税別）</span></div>
-                            </div>
-                        </div>
-                        <p style="margin:16px 0 0; font-size:13px; color:#555; line-height:1.7;">※ 継続は任意。3ヶ月の導入期間終了後、いつでも解約可能です。<br>※ ファーストユーザー特別価格は、ご契約継続中ずっと適用されます。</p>
-                    </div>
-                </div>
-            </div>
-
-            <p class="monitor-lead" style="font-size:15px;"><strong>なぜこの価格なのか？</strong><br>FRENVOXはまだ立ち上がったばかりの会社です。最初の実名事例を作ることが、今後の事業にとって何より価値があるからです。「匿名での事例協力」では次につながらないため、このプランは<strong>実名公開に同意いただける施設さまに限定</strong>しています。通常価格との差額は、事例化へのご協力に対するFRENVOXからの対価です。</p>
-
-            <div class="monitor-actions">
-                <a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn-primary">まず30分の無料相談を予約する</a>
-                <a href="tel:08043432366" class="btn-phone">電話で相談する<small>080-4343-2366（6:30-7:30 / 12:30-13:30 / 18:00-18:30）</small></a>
-            </div>
+        <p class="case-sub">導入による効果</p>
+        <div class="stats">
+          <div class="stat"><div class="l">送迎表の作成時間</div><div class="row"><span class="before">90分</span><span class="arr">→</span><span class="after">5分</span></div></div>
+          <div class="stat"><div class="l">確認作業の時間</div><div class="row"><span class="before">120分</span><span class="arr">→</span><span class="after">2-3分</span></div></div>
+          <div class="stat"><div class="l">印刷・配布</div><div class="row"><span class="after" style="font-size:24px">ワンクリック</span></div></div>
         </div>
-    </section>
 
-    <!-- Case Study（実績紹介）-->
-    <section class="case" id="case">
-        <div class="container">
-            <p class="tag tag-center">Case Study</p>
-            <h2 class="section-title section-title-center">東かがわ市のデイケアで、<br>送迎業務を「5分」に短縮しました</h2>
-            <p class="section-lead">代表・桑島が実際に所属するデイケアで、紙ベースの送迎管理・シフト作成・車両管理を<br>すべて Google Workspace + GASアプリ に置き換えた事例です。</p>
-
-            <div class="case-profile">
-                <h3>施設プロフィール</h3>
-                <ul class="case-profile-list">
-                    <li><strong>施設種別</strong>香川県東かがわ市の病院併設デイケア（施設名非公開）</li>
-                    <li><strong>利用者数</strong>約120名</li>
-                    <li><strong>スタッフ数</strong>21名（理学療法士5 / 看護師3 / 介護・運転手13）</li>
-                    <li><strong>導入ツール</strong>Google Workspace（スプレッドシート）＋ Google Apps Script 独自アプリ</li>
-                </ul>
-            </div>
-
-            <p class="case-sub">何を自動化したか</p>
-            <div class="case-features">
-                <div class="case-feature fade-in">
-                    <h4>① 送迎表の自動生成</h4>
-                    <p>AIに最適ルートを計算させ、全利用者分の送迎表を瞬時に作成。印刷・配布もワンクリックで完了します。</p>
-                </div>
-                <div class="case-feature fade-in">
-                    <h4>② 運転シフトの自動作成</h4>
-                    <p>スタッフの休み希望・早出対応などの条件を反映したシフトを自動生成。毎月のパズル作業から解放されます。</p>
-                </div>
-                <div class="case-feature fade-in">
-                    <h4>③ 車両条件の自動分岐</h4>
-                    <p>「この利用者はA車両のみ乗車可」など、利用者ごとの細かな乗車条件を全入力。AIが自動で適切な配車を判定します。</p>
-                </div>
-                <div class="case-feature fade-in">
-                    <h4>④ 車両管理表の自動記録</h4>
-                    <p>法令で義務付けられた乗降時間・走行距離の記録をワンクリック入力。監査時はスプレッドシートを提示するだけで対応可能です。</p>
-                </div>
-            </div>
-
-            <p class="case-sub">導入による効果</p>
-            <div class="case-numbers">
-                <div class="case-number fade-in">
-                    <div class="label">送迎表の作成時間</div>
-                    <div class="compare">
-                        <span class="before">90分</span>
-                        <span class="arrow">→</span>
-                        <span class="after">5分</span>
-                    </div>
-                </div>
-                <div class="case-number fade-in">
-                    <div class="label">確認作業の時間</div>
-                    <div class="compare">
-                        <span class="before">120分</span>
-                        <span class="arrow">→</span>
-                        <span class="after">2〜3分</span>
-                    </div>
-                </div>
-                <div class="case-number fade-in">
-                    <div class="label">印刷・配布</div>
-                    <div class="compare">
-                        <span class="after" style="font-size:22px;">ワンクリック化</span>
-                    </div>
-                </div>
-            </div>
-
-            <p class="case-sub">実際の画面</p>
-            <div class="case-gallery">
-                <div class="case-image fade-in">
-                    <img src="images/case-app-home.png" alt="アプリのホーム画面" loading="lazy">
-                    <div class="case-image-caption">① アプリのホーム画面。送迎・シフト・管理機能にワンクリックでアクセスできる。</div>
-                </div>
-                <div class="case-image fade-in">
-                    <img src="images/case-shuei-table.png" alt="送迎表の画面" loading="lazy">
-                    <div class="case-image-caption">② 送迎表の自動生成結果。ルート・時間・担当が自動で割り当てられる。</div>
-                </div>
-                <div class="case-image fade-in">
-                    <img src="images/case-vehicle-map.png" alt="車両位置の図解" loading="lazy">
-                    <div class="case-image-caption">③ 各車両の位置・担当利用者が一目でわかる図解。ドライバーへの共有もワンクリック。</div>
-                </div>
-                <div class="case-image fade-in">
-                    <img src="images/case-shift-auto.png" alt="シフト自動作成画面" loading="lazy">
-                    <div class="case-image-caption">④ スタッフの休み希望を反映したシフトの自動作成画面。毎月のパズルから解放される。</div>
-                </div>
-            </div>
-
-            <div class="case-security">
-                <h4>セキュリティについて</h4>
-                <p>本システムはすべて Google Workspace 上で構築されています。Google のような大手クラウド事業者は、個人情報保護法における「クラウドサービス例外」の考え方に該当し、適切な契約のもと医療・介護分野でも広く利用されています。通信はすべて暗号化（SSL/TLS）、利用者ごとのアクセス権限設定により、利用者情報を安全に管理しています。</p>
-            </div>
+        <p class="case-sub">何を自動化したか</p>
+        <div class="feat">
+          <div class="fi"><h4><em>①</em>送迎表の自動生成</h4><p>AIに最適ルートを計算させ、全利用者分の送迎表を瞬時に作成。印刷・配布までワンクリック。</p></div>
+          <div class="fi"><h4><em>②</em>運転シフトの自動作成</h4><p>休み希望・早出対応などの条件を反映したシフトを自動生成。毎月のパズル作業から解放。</p></div>
+          <div class="fi"><h4><em>③</em>車両条件の自動分岐</h4><p>「この方はA車両のみ乗車可」など細かな乗車条件を全入力。AIが適切な配車を自動判定。</p></div>
+          <div class="fi"><h4><em>④</em>車両管理表の自動記録</h4><p>法令で義務付けられた乗降時間・走行距離の記録もワンクリック。監査時は画面を見せるだけ。</p></div>
         </div>
-    </section>
 
-    <!-- Examples（具体的なワンクリック化例） -->
-    <section class="section section-dark" id="examples">
-        <div class="container">
-            <p class="tag tag-center">Examples</p>
-            <h2 class="section-title section-title-center">こんな業務を、ワンクリックで。</h2>
-            <p class="section-lead">FRENVOXはゼロからツールを開発する会社ではありません。<br>既存のAIツールを現場に合わせて組み合わせ、「ボタンひとつで終わる」状態まで整えるのが私たちの仕事です。</p>
-
-            <div class="examples">
-                <div class="example-card fade-in">
-                    <h3>議事録の作成</h3>
-                    <p>会議の音声を録音するだけで、AIが議題別に整理された議事録を自動生成。誰が何を発言したかまで整形します。</p>
-                </div>
-                <div class="example-card fade-in">
-                    <h3>サービス担当者会議の記録</h3>
-                    <p>多職種連携の会議内容を自動で記録・要約。ケアマネ・看護師・リハ職の発言を職種別に整理して、そのまま書類に展開できます。</p>
-                </div>
-                <div class="example-card fade-in">
-                    <h3>送迎の管理</h3>
-                    <p>利用者の住所・時間帯・乗車ルートを一括管理。変更があればワンクリックで再計算し、ドライバー向けの表も自動更新されます。</p>
-                </div>
-                <div class="example-card fade-in">
-                    <h3>訪問記録・日報</h3>
-                    <p>訪問後の音声メモや手書きメモをAIが整形。移動時間を記録時間に変え、持ち帰り残業をなくします。</p>
-                </div>
-                <div class="example-card fade-in">
-                    <h3>ケア計画書のドラフト</h3>
-                    <p>過去の記録を学習して、ケア計画書の下書きを即時生成。ゼロから書く時間をなくし、仕上げに集中できます。</p>
-                </div>
-                <div class="example-card fade-in">
-                    <h3>その他、ご相談ください</h3>
-                    <p>「これは自動化できる？」というご相談は、無料相談で1時間ヒアリング。できる／できないをその場でお伝えします。</p>
-                </div>
-            </div>
+        <p class="case-sub">実際の画面</p>
+        <div class="gallery">
+          <div class="gimg"><img src="images/case-app-home.png" alt="アプリのホーム画面" loading="lazy"><div class="cap">① アプリのホーム画面。各機能にワンクリックでアクセス。</div></div>
+          <div class="gimg"><img src="images/case-shuei-table.png" alt="送迎表の画面" loading="lazy"><div class="cap">② 送迎表の自動生成結果。ルート・時間・担当を自動割当。</div></div>
+          <div class="gimg"><img src="images/case-vehicle-map.png" alt="車両位置の図解" loading="lazy"><div class="cap">③ 各車両の位置・担当利用者が一目でわかる図解。</div></div>
+          <div class="gimg"><img src="images/case-shift-auto.png" alt="シフト自動作成画面" loading="lazy"><div class="cap">④ 休み希望を反映したシフトの自動作成画面。</div></div>
         </div>
-    </section>
 
-    <!-- About -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="about">
-                <div class="about-photo fade-in">
-                    <img src="images/profile.png" alt="桑島 海斗" width="400" height="400" loading="lazy">
-                </div>
-                <div class="about-body fade-in">
-                    <p class="tag">About / 代表</p>
-                    <h2 class="about-name">桑島 海斗</h2>
-                    <p class="about-name-en">Kaito Kuwajima</p>
-                    <p class="about-role">FRENVOX 代表 ／ 理学療法士</p>
-                    <div class="about-text">
-                        <p>理学療法士としてリハビリ現場で働いてきた中で、いちばん辛かったのは「パソコン業務」でした。患者と向き合った時間のあとに、書類とカルテと会議録が待っている。スタッフが疲弊していく姿を見て、AIで解決したいと思い、この会社を立ち上げました。</p>
-                        <p>私はAIをゼロから開発するエンジニアではありません。世の中に既にある優れたAIツールを、現場の業務に合わせて組み合わせ、「ボタンひとつで終わる」状態まで整える——その設計と実装が私の仕事です。「ワンクリック化」をキーワードに、現場の手間を根本から削ります。</p>
-                    </div>
-                    <div class="about-credentials">
-                        <span>理学療法士</span>
-                        <span>AI活用支援</span>
-                        <span>高松市在住・対面対応可</span>
-                    </div>
-                    <p class="about-sig">FRENVOX 代表 / 香川県高松市</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Flow -->
-    <section class="section section-dark" id="flow">
-        <div class="container">
-            <p class="tag tag-center">Flow</p>
-            <h2 class="section-title section-title-center">モニター導入の流れ</h2>
-            <p class="section-lead">まずは30分の無料相談から。日程はWebから直接ご予約いただけます。</p>
-            <div class="flow-list">
-                <div class="flow-step fade-in">
-                    <span class="flow-num">01</span>
-                    <div class="flow-body">
-                        <h3>30分の無料相談を予約</h3>
-                        <p>予約フォームから直接日程を選んでください（自動で確認メールが届きます）。Zoom または お電話で、現場の課題を30分でヒアリングします。</p>
-                    </div>
-                </div>
-                <div class="flow-step fade-in">
-                    <span class="flow-num">02</span>
-                    <div class="flow-body">
-                        <h3>現場訪問（必要に応じて）</h3>
-                        <p>高松市・さぬき市・東かがわ市内、こちらから直接お伺いします。現在の業務フロー、使っているiPad・PCを確認し、自動化できる業務を特定します。</p>
-                    </div>
-                </div>
-                <div class="flow-step fade-in">
-                    <span class="flow-num">03</span>
-                    <div class="flow-body">
-                        <h3>ご契約・セッション開始</h3>
-                        <p>条件にご同意いただいた上で、ファーストユーザー特別プラン（初期3ヶ月 70,000円）でご契約。月1回1時間のセッションをセットします。</p>
-                    </div>
-                </div>
-                <div class="flow-step fade-in">
-                    <span class="flow-num">04</span>
-                    <div class="flow-body">
-                        <h3>3ヶ月間の自動化提供</h3>
-                        <p>セッションで業務を棚卸し→自動化の「やり方」を動画でお渡し、または実際のツール（マクロ・AI連携スクリプトなど）を構築してお渡しします。</p>
-                    </div>
-                </div>
-                <div class="flow-step fade-in">
-                    <span class="flow-num">05</span>
-                    <div class="flow-body">
-                        <h3>継続 or 終了（自由選択）</h3>
-                        <p>3ヶ月の導入期間終了後、継続をご希望であれば月額運営費（ファーストユーザー特別価格 月額 20,000円）でそのまま運用を継続できます。終了もいつでも自由です。実名での事例掲載にご協力いただき感謝いたします。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" id="faq">
-        <div class="container">
-            <p class="tag tag-center">FAQ</p>
-            <h2 class="section-title section-title-center">よくあるご質問</h2>
-            <div class="faq-list">
-                <details class="faq-item fade-in">
-                    <summary>料金の内訳を教えてください</summary>
-                    <p>
-                    <strong>初期3ヶ月（導入期間）：70,000円（税別・一括）</strong><br>
-                    月1回1時間のヒアリングセッション×3回、業務の棚卸し、自動化ツールの構築・提供、スタッフ向け操作レクチャーまで一括してご提供します。<br><br>
-                    <strong>4ヶ月目以降（継続希望時のみ）：月額 20,000円（税別）</strong><br>
-                    運営・保守、月1回30分のサポート、小改修・ご相談対応を含みます。継続は任意で、いつでも解約可能です。<br><br>
-                    ※ クラウド利用料・通信費はFRENVOX側で負担します。契約期間内の作業は追加費用なしです。
-                    </p>
-                </details>
-                <details class="faq-item fade-in">
-                    <summary>なぜ通常プランより安いのですか？</summary>
-                    <p>FRENVOXは立ち上がったばかりの会社で、最初の実名事例を作ることが何よりの資産になると考えているからです。通常プラン（初期100,000円／月額30,000円）との差額は、実名での事例掲載にご協力いただくことへのFRENVOXからの対価です。「匿名での事例協力」では次につながらないため、このプランは実名公開に同意いただける施設さまに限定しています。<br>なお、ファーストユーザー特別価格（初期70,000円／月額20,000円）は<strong>ご契約継続中ずっと適用</strong>されます。</p>
-                </details>
-                <details class="faq-item fade-in">
-                    <summary>利用者データの管理先はどこですか？セキュリティは大丈夫ですか？</summary>
-                    <p>FRENVOXでは、データ管理にGoogle Cloud（Googleが提供するクラウドサービス）を中心に利用します。Googleのような大手クラウド事業者は、個人情報保護法における「クラウドサービス例外」の考え方に該当し、適切な契約のもと医療・介護分野でも広く活用されています。通信はすべて暗号化（SSL/TLS）、アクセス権限の設定・操作ログ記録により、安全性に配慮した運用を行います。施設さまのご要望に応じて、国内サーバーへの移管など個別対応も可能です。</p>
-                </details>
-                <details class="faq-item fade-in">
-                    <summary>3ヶ月後、継続しない場合のデータはどうなりますか？</summary>
-                    <p>ご希望に応じて、全データをCSV/PDFでエクスポートしてお渡しします。FRENVOX側に保存されているデータも、ご希望があれば完全削除いたします。</p>
-                </details>
-                <details class="faq-item fade-in">
-                    <summary>ITに詳しくないスタッフでも使えますか？</summary>
-                    <p>はい。FRENVOXがお渡しするものは、多くの場合「ボタンを押すだけ」「ファイルを置くだけ」「録音して送るだけ」というシンプルな形に整えます。セッションごとに操作レクチャーも行うので、ITに不慣れな方でもご利用いただけます。</p>
-                </details>
-                <details class="faq-item fade-in">
-                    <summary>事例として「施設名」を出すのは抵抗があります</summary>
-                    <p>恐縮ですが、ファーストユーザー特別プランは<strong>実名での事例掲載に同意いただける施設さまに限定</strong>させていただいております。匿名での掲載は受け付けておりません。実名公開が難しい場合は、通常プラン（初期100,000円／月額30,000円）をご検討ください。こちらは施設名の掲載義務はございません。</p>
-                </details>
-                <details class="faq-item fade-in">
-                    <summary>個人の訪問リハ事業でも応募できますか？</summary>
-                    <p>はい、歓迎です。規模は問いません。ご利用者10名規模から大きな法人施設まで、高松市・さぬき市・東かがわ市の事業所さまであればすべて対象です。</p>
-                </details>
-                <details class="faq-item fade-in">
-                    <summary>もし1施設が埋まったあとは？</summary>
-                    <p>2つの選択肢がございます。<br>① キャンセル待ち：次の特別プラン枠が空き次第ご連絡します。<br>② 通常プラン（初期100,000円／月額30,000円）でのご契約：お待ちいただかず、すぐに業務改善を始められます。特別プランと同様のセッション・ツール提供を行います。<br>お急ぎの場合は②、少しお待ちいただける場合は①をおすすめします。</p>
-                </details>
-                <details class="faq-item fade-in">
-                    <summary>FRENVOXさんはAIを開発している会社なのですか？</summary>
-                    <p>いいえ。FRENVOXは、世の中にある優れたAIツールを「現場で使える形」に組み合わせる会社です。ChatGPT・Claude・Geminiなど、既存のAIを現場業務に合わせて連携・自動化し、「ボタンひとつで終わる」状態に整えるのが私たちの仕事です。理学療法士としての現場感覚と、AI活用の実装知識の両方で、現場に合う仕組みを設計します。</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="cta-banner">
-        <div class="container">
-            <h2>先着1施設・残り1枠。<br>まずは30分、お話ししませんか？</h2>
-            <p>日程はWebから直接ご予約いただけます。自動で確認メールが届きます。<br>お急ぎの方はお電話（080-4343-2366）でも大丈夫です。</p>
-            <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:24px;">
-                <a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn btn-fill">30分の無料相談を予約する</a>
-                <a href="tel:08043432366" class="btn">電話する 080-4343-2366</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section" id="contact">
-        <div class="container container-narrow">
-            <p class="tag tag-center">Contact</p>
-            <h2 class="section-title section-title-center">相談する／応募する</h2>
-            <p class="section-lead">いちばん早いのは <strong>Webでの予約</strong> です。<br>「まずは文字で相談内容を伝えたい」場合は、下記フォームからもどうぞ。</p>
-
-            <div style="background:#f6f3ed; border-radius:8px; padding:32px; margin-bottom:32px; text-align:center;">
-                <p style="font-size:14px; color:#555; margin:0 0 12px; letter-spacing:0.05em;">RECOMMENDED</p>
-                <h3 style="font-size:22px; font-weight:700; margin:0 0 12px;">30分の無料相談を予約する</h3>
-                <p style="font-size:14px; color:#555; margin:0 0 20px;">Webから日程を直接選ぶと、自動で確認メールが届きます。<br>時間枠：6:30-7:00 ／ 12:30-13:30 ／ 18:00-18:30</p>
-                <a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn btn-full" style="max-width:400px; margin:0 auto;">予約フォームを開く</a>
-            </div>
-
-            <p class="section-lead" style="margin-top:48px;">文字で詳しくお送りいただきたい場合は、こちらからどうぞ。<br>送信ボタンでメールアプリが開きます。</p>
-            <form class="form" id="contactForm" onsubmit="return sendApplication(event)">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">お名前 <span>*</span></label>
-                        <input type="text" id="name" name="name" required placeholder="山田 太郎">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">メールアドレス <span>*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="example@email.com">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="company">施設名・法人名 <span>*</span></label>
-                        <input type="text" id="company" name="company" required placeholder="〇〇デイサービス / 〇〇病院">
-                    </div>
-                    <div class="form-group">
-                        <label for="type">施設種別 <span>*</span></label>
-                        <select id="type" name="type" required style="width:100%; padding:14px 16px; border:1px solid #ddd; border-radius:4px; font-size:15px; background:#fff;">
-                            <option value="">選択してください</option>
-                            <option>デイサービス</option>
-                            <option>デイケア（通所リハ）</option>
-                            <option>訪問リハビリ</option>
-                            <option>訪問看護</option>
-                            <option>その他</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="tel">電話番号</label>
-                    <input type="tel" id="tel" name="tel" placeholder="080-0000-0000">
-                </div>
-                <div class="form-group">
-                    <label for="message">ご相談内容・現場の課題 <span>*</span></label>
-                    <textarea id="message" name="message" rows="6" required placeholder="例）訪問記録に毎日2時間かかっている。議事録作成の時間を減らしたい。など"></textarea>
-                </div>
-                <button type="submit" class="btn btn-full">メールで送る（メールアプリが開きます）</button>
-                <p style="font-size:12px; color:#888; text-align:center; margin-top:16px;">送信ボタンを押すとメールアプリが起動し、入力内容が自動で本文に入ります。<br>そのまま送信するだけで完了です。メールアプリが起動しない場合は直接 <a href="mailto:kaito@frenvox.jp">kaito@frenvox.jp</a> 宛にご連絡ください。</p>
-            </form>
-            <script>
-                function sendApplication(e) {
-                    e.preventDefault();
-                    const f = e.target;
-                    const body = [
-                        '【FRENVOX お問い合わせ／ファーストユーザー応募】',
-                        '',
-                        'お名前：' + f.name.value,
-                        'メール：' + f.email.value,
-                        '施設名・法人名：' + f.company.value,
-                        '施設種別：' + f.type.value,
-                        '電話番号：' + (f.tel.value || '（未記入）'),
-                        '',
-                        '【ご相談内容・現場の課題】',
-                        f.message.value,
-                        '',
-                        '---',
-                        'このメールはFRENVOXサイトのフォームから自動生成されました。'
-                    ].join('\n');
-                    const subject = '【FRENVOX】' + f.company.value + '／' + f.name.value;
-                    location.href = 'mailto:kaito@frenvox.jp?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-                    return false;
-                }
-            </script>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div>
-                    <p class="footer-logo">FRENVOX</p>
-                    <p class="footer-sub">パソコン業務をワンクリック化</p>
-                    <p class="footer-sub" style="margin-top:8px; font-size:12px;">香川県高松市<br>080-4343-2366<br>kaito@frenvox.jp</p>
-                </div>
-                <nav class="footer-nav">
-                    <a href="#monitor">特別プラン</a>
-                    <a href="#case">導入実績</a>
-                    <a href="#examples">事例</a>
-                    <a href="#about">代表</a>
-                    <a href="#flow">流れ</a>
-                    <a href="#faq">FAQ</a>
-                    <a href="#contact">相談する</a>
-                </nav>
-                <div class="footer-legal">
-                    <a href="legal.html">特定商取引法に基づく表記</a>
-                    <a href="privacy.html">プライバシーポリシー</a>
-                    <a href="terms.html">利用規約</a>
-                </div>
-            </div>
-            <p class="footer-copy">&copy; 2026 FRENVOX</p>
-        </div>
-    </footer>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="拡大画像">
-        <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">×</button>
-        <div class="lightbox-content">
-            <img id="lightboxImg" src="" alt="">
-            <p class="lightbox-caption" id="lightboxCaption"></p>
-        </div>
+        <div class="case-note"><strong>セキュリティについて。</strong> 本システムはすべて Google Workspace 上で構築。大手クラウド事業者は個人情報保護法の「クラウドサービス例外」に該当し、医療・介護分野でも広く利用されています。通信は暗号化（SSL/TLS）、利用者ごとのアクセス権限設定で安全に管理しています。</div>
+      </div>
     </div>
-    <script>
-        (function(){
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightboxImg');
-            const lightboxCaption = document.getElementById('lightboxCaption');
-            const closeBtn = document.getElementById('lightboxClose');
-            document.querySelectorAll('.case-image img').forEach(img => {
-                img.addEventListener('click', () => {
-                    lightboxImg.src = img.src;
-                    lightboxImg.alt = img.alt;
-                    const captionEl = img.parentElement.querySelector('.case-image-caption');
-                    lightboxCaption.textContent = captionEl ? captionEl.textContent : '';
-                    lightbox.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-            const close = () => { lightbox.classList.remove('active'); document.body.style.overflow = ''; };
-            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
-            closeBtn.addEventListener('click', close);
-            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox.classList.contains('active')) close(); });
-        })();
-    </script>
-    <script src="js/main.js"></script>
+
+    <div class="next-slot fade-in">CASE 002 — <b>次の現場を募集中。</b>　あなたの業界が、2件目になるかもしれません。</div>
+  </div>
+</section>
+
+<!-- ===== YOUTUBE ===== -->
+<section id="youtube">
+  <div class="container">
+    <div class="head-center fade-in">
+      <span class="eyebrow">YouTube / 発信</span>
+      <h2 class="h2">実際の仕事と、考えていること。</h2>
+      <p class="lead">どんな業務を、どう自動化しているのか。現場のリアルと、AI活用の考え方を発信しています。</p>
+    </div>
+    <!-- TODO: href を実際のYouTube動画URLに差し替え（現状はチャンネルトップ想定のプレースホルダ） -->
+    <div class="yt-grid">
+      <a class="yt-card fade-in" href="https://www.youtube.com/@frenvox" target="_blank" rel="noopener noreferrer">
+        <div class="yt-thumb"><img src="images/youtube-thumb-2.jpg" alt="動画サムネイル"><div class="yt-play"><span>▶</span></div></div>
+        <div class="yt-meta"><div class="k">VIDEO</div><h3>AIで、現場の手作業はどこまで消せるのか</h3></div>
+      </a>
+      <a class="yt-card fade-in d1" href="https://www.youtube.com/@frenvox" target="_blank" rel="noopener noreferrer">
+        <div class="yt-thumb"><img src="images/youtube-thumb-1.jpg" alt="動画サムネイル"><div class="yt-play"><span>▶</span></div></div>
+        <div class="yt-meta"><div class="k">VIDEO</div><h3>理学療法士が、AI活用支援を始めた理由</h3></div>
+      </a>
+    </div>
+    <div class="yt-channel fade-in">
+      <a href="https://www.youtube.com/@frenvox" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">YouTubeチャンネルを見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-card fade-in">
+      <div class="inner">
+        <span class="eyebrow" style="justify-content:center">Contact</span>
+        <h2>まずは30分、<br>現場の話を聞かせてください。</h2>
+        <p>売り込みではありません。「これは自動化できる？」をその場でお答えする無料相談です。<br>日程はWebから直接ご予約いただけます（自動で確認メールが届きます）。</p>
+        <div class="contact-actions">
+          <a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn btn-fill">30分の無料相談を予約する →</a>
+          <a href="tel:08043432366" class="btn btn-ghost">電話する 080-4343-2366</a>
+        </div>
+        <p class="contact-small">受付時間：6:30-7:30 ／ 12:30-13:30 ／ 18:00-18:30　・　<a href="mailto:kaito@frenvox.jp">kaito@frenvox.jp</a></p>
+
+        <details class="form-toggle">
+          <summary>文字で相談内容を送りたい方はこちら</summary>
+          <form class="form" id="contactForm" onsubmit="return sendApplication(event)">
+            <div class="form-row">
+              <div class="fg"><label for="name">お名前 <span>*</span></label><input type="text" id="name" name="name" required placeholder="山田 太郎"></div>
+              <div class="fg"><label for="email">メールアドレス <span>*</span></label><input type="email" id="email" name="email" required placeholder="example@email.com"></div>
+            </div>
+            <div class="form-row">
+              <div class="fg"><label for="company">施設名・会社名 <span>*</span></label><input type="text" id="company" name="company" required placeholder="〇〇デイサービス / 〇〇株式会社"></div>
+              <div class="fg"><label for="type">業種 <span>*</span></label>
+                <select id="type" name="type" required>
+                  <option value="">選択してください</option>
+                  <option>デイサービス</option><option>デイケア（通所リハ）</option><option>訪問リハ・訪問看護</option>
+                  <option>その他の医療・介護</option><option>医療・介護以外</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg"><label for="tel">電話番号</label><input type="tel" id="tel" name="tel" placeholder="080-0000-0000"></div>
+            <div class="fg"><label for="message">ご相談内容・現場の課題 <span>*</span></label><textarea id="message" name="message" rows="5" required placeholder="例）訪問記録に毎日2時間かかっている。議事録作成の時間を減らしたい。など"></textarea></div>
+            <button type="submit" class="btn btn-fill">メールで送る（メールアプリが開きます）</button>
+            <p class="form-note">送信ボタンでメールアプリが起動し、入力内容が本文に入ります。起動しない場合は <a href="mailto:kaito@frenvox.jp">kaito@frenvox.jp</a> へ直接どうぞ。</p>
+          </form>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-logo">FREN<span>VOX</span></p>
+        <p>現場の手作業を、AIで終わらせる。<br>理学療法士・桑島海斗によるAI活用支援。<br>香川県高松市 ／ 080-4343-2366 ／ kaito@frenvox.jp</p>
+      </div>
+      <div>
+        <h5>Menu</h5>
+        <div class="footer-links">
+          <a href="#about">代表</a><a href="#services">できること</a><a href="#work">実績</a><a href="#youtube">発信</a><a href="#contact">相談する</a>
+        </div>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <div class="footer-links">
+          <a href="legal.html">特定商取引法に基づく表記</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 FRENVOX</p>
+      <p>Kaito Kuwajima — Kagawa, Japan</p>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /wrap -->
+
+<!-- ===== Lightbox ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="x" id="lbClose" aria-label="閉じる">×</button>
+  <img id="lbImg" src="" alt="">
+  <p class="cap" id="lbCap"></p>
+</div>
+
+<!-- contact form mailto -->
+<script>
+function sendApplication(e){
+  e.preventDefault();const f=e.target;
+  const body=['【FRENVOX お問い合わせ】','','お名前：'+f.name.value,'メール：'+f.email.value,'施設名・会社名：'+f.company.value,'業種：'+f.type.value,'電話番号：'+(f.tel.value||'（未記入）'),'','【ご相談内容・現場の課題】',f.message.value,'','---','このメールはFRENVOXサイトのフォームから自動生成されました。'].join('\n');
+  location.href='mailto:kaito@frenvox.jp?subject='+encodeURIComponent('【FRENVOX】'+f.company.value+'／'+f.name.value)+'&body='+encodeURIComponent(body);
+  return false;
+}
+</script>
+
+<!-- interactions: nav, reveal, tilt, lightbox, counters -->
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  const navToggle=document.getElementById('navToggle'),navMenu=document.getElementById('navMenu');
+  navToggle.addEventListener('click',()=>{navToggle.classList.toggle('active');navMenu.classList.toggle('open')});
+  document.querySelectorAll('.nav-link').forEach(l=>l.addEventListener('click',()=>{navToggle.classList.remove('active');navMenu.classList.remove('open')}));
+
+  // scrollspy
+  const secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',()=>{const y=window.scrollY+140;
+    secs.forEach(s=>{const link=document.querySelector('.nav-link[href="#'+s.id+'"]');
+      if(link)link.classList.toggle('active',y>=s.offsetTop&&y<s.offsetTop+s.offsetHeight)})},{passive:true});
+
+  // reveal
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+  // smooth anchor
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+    const id=a.getAttribute('href');if(id.length<2)return;const t=document.querySelector(id);
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}}));
+
+  // 3D tilt — portrait + cards
+  const tiltEls=[document.getElementById('tiltCard'),...document.querySelectorAll('.card')].filter(Boolean);
+  const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!reduce){
+    tiltEls.forEach(el=>{
+      el.addEventListener('pointermove',ev=>{
+        const r=el.getBoundingClientRect();const px=(ev.clientX-r.left)/r.width,py=(ev.clientY-r.top)/r.height;
+        const max=el.classList.contains('card')?6:9;
+        el.style.transform=`rotateY(${(px-.5)*max}deg) rotateX(${(.5-py)*max}deg) translateZ(0)`;
+        el.style.setProperty('--mx',px*100+'%');el.style.setProperty('--my',py*100+'%');
+      });
+      el.addEventListener('pointerleave',()=>{el.style.transform=''});
+    });
+  }
+
+  // lightbox
+  const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
+  document.querySelectorAll('.gimg img').forEach(img=>img.addEventListener('click',()=>{
+    lbImg.src=img.src;lbImg.alt=img.alt;const c=img.parentElement.querySelector('.cap');lbCap.textContent=c?c.textContent:'';
+    lb.classList.add('active');document.body.style.overflow='hidden';}));
+  const close=()=>{lb.classList.remove('active');document.body.style.overflow=''};
+  lb.addEventListener('click',e=>{if(e.target===lb)close()});
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lb.classList.contains('active'))close()});
+
+  // count-up (hero "90")
+  const counters=document.querySelectorAll('[data-count]');
+  const cObs=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;
+    const el=e.target,target=+el.dataset.count;let v=0;const step=Math.max(1,Math.round(target/40));
+    const t=setInterval(()=>{v+=step;if(v>=target){v=target;clearInterval(t)}el.textContent=v},22);
+    cObs.unobserve(el)}),{threshold:.6});
+  counters.forEach(c=>cObs.observe(c));
+});
+</script>
+
+<!-- WebGL 3D background (graceful: falls back to CSS aurora if it fails) -->
+<script type="module">
+const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+const canvas=document.getElementById('bg-canvas');
+if(!reduce){
+  try{
+    const THREE=await import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js');
+    const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+    const scene=new THREE.Scene();
+    const cam=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,.1,100);cam.position.z=8;
+
+    // particle field
+    const N=1400,pos=new Float32Array(N*3);
+    for(let i=0;i<N;i++){pos[i*3]=(Math.random()-.5)*26;pos[i*3+1]=(Math.random()-.5)*16;pos[i*3+2]=(Math.random()-.5)*16}
+    const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+    const pm=new THREE.PointsMaterial({color:0x9fb4e8,size:.035,transparent:true,opacity:.7});
+    const points=new THREE.Points(pg,pm);scene.add(points);
+
+    // wireframe icosahedron (the "3D object")
+    const geo=new THREE.IcosahedronGeometry(2.4,1);
+    const mat=new THREE.MeshBasicMaterial({color:0xd8b461,wireframe:true,transparent:true,opacity:.55});
+    const ico=new THREE.Mesh(geo,mat);ico.position.set(3.2,.4,0);scene.add(ico);
+    const ico2=new THREE.Mesh(new THREE.IcosahedronGeometry(1.1,0),new THREE.MeshBasicMaterial({color:0x6ea8ff,wireframe:true,transparent:true,opacity:.4}));
+    ico2.position.set(-4,-1.5,1);scene.add(ico2);
+
+    let mx=0,my=0;
+    addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5)},{passive:true});
+    const resize=()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)};
+    addEventListener('resize',resize);resize();
+
+    let t=0;
+    (function loop(){t+=.0045;
+      ico.rotation.x=t;ico.rotation.y=t*1.3;
+      ico2.rotation.x=-t*1.1;ico2.rotation.y=t*.8;
+      points.rotation.y=t*.18;
+      cam.position.x+=(mx*1.6-cam.position.x)*.04;
+      cam.position.y+=(-my*1.2-cam.position.y)*.04;
+      cam.lookAt(0,0,0);
+      renderer.render(scene,cam);requestAnimationFrame(loop);
+    })();
+  }catch(err){/* CSS aurora remains as fallback */}
+}
+</script>
 </body>
 </html>
