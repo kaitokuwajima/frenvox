@@ -162,6 +162,22 @@ section{position:relative;padding:120px 0}
 .card p{font-size:13.5px;color:var(--muted);line-height:1.9}
 .card .no{position:absolute;top:24px;right:28px;font-family:"Space Grotesk",sans-serif;font-size:13px;color:var(--faint);letter-spacing:.1em}
 
+/* ===== Voice section ===== */
+.voice-list{display:flex;flex-direction:column;gap:20px;max-width:1000px;margin:0 auto}
+.voice-row{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:stretch}
+.voice-say,.voice-done{position:relative;padding:30px;border-radius:var(--r);border:1px solid var(--glass-border)}
+.voice-say{background:linear-gradient(135deg,rgba(216,180,97,.16),rgba(216,180,97,.03))}
+.voice-done{background:var(--glass)}
+.vlabel{display:inline-block;font-family:"Space Grotesk",sans-serif;font-size:11px;letter-spacing:.16em;margin-bottom:14px;text-transform:uppercase}
+.voice-say .vlabel{color:var(--gold)}
+.voice-done .vlabel{color:var(--cyan)}
+.voice-say p{font-size:clamp(18px,2.3vw,25px);font-weight:700;color:var(--text);line-height:1.5}
+.voice-say p::before{content:"🎙 ";font-size:.85em}
+.voice-done p{font-size:14.5px;color:var(--muted);line-height:1.95}
+.voice-done p b{color:var(--text);font-weight:700}
+.voice-arrow{display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:28px}
+@media(max-width:680px){.voice-row{grid-template-columns:1fr;gap:10px}.voice-arrow{transform:rotate(90deg)}.voice-say,.voice-done{padding:22px}}
+
 /* ===== Work / case ===== */
 .case-wrap{border-radius:26px;border:1px solid var(--glass-border);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));overflow:hidden}
 .case-top{padding:44px clamp(24px,4vw,52px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;border-bottom:1px solid var(--glass-border)}
@@ -318,10 +334,10 @@ section{position:relative;padding:120px 0}
     <a href="#" class="nav-logo">FREN<span>VOX</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
     <ul class="nav-menu" id="navMenu">
-      <li><a href="#about" class="nav-link">代表</a></li>
-      <li><a href="#services" class="nav-link">できること</a></li>
+      <li><a href="#voice" class="nav-link">サービス</a></li>
       <li><a href="#work" class="nav-link">実績</a></li>
-      <li><a href="#youtube" class="nav-link">発信</a></li>
+      <li><a href="#trust" class="nav-link">安心</a></li>
+      <li><a href="#about" class="nav-link">代表</a></li>
       <li><a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="nav-cta">無料相談</a></li>
     </ul>
   </div>
@@ -332,9 +348,9 @@ section{position:relative;padding:120px 0}
   <div class="container">
     <div class="hero-grid">
       <div class="hero-copy">
-        <span class="hero-badge"><span class="dot"></span>香川県・現役理学療法士が運営するAI活用支援</span>
-        <h1>現場の手作業を、<br><span class="grad">AIで終わらせる。</span></h1>
-        <p class="hero-sub">FRENVOX（フレンボックス）は、理学療法士 <strong>桑島海斗</strong> が運営するAI活用支援。<br>議事録・送迎・記録・シフト——既存のAIを現場に合わせて組み合わせ、<strong>「ボタンひとつで終わる」</strong>状態まで整えます。介護・リハビリの現場を起点に、<strong>業界を問わず</strong>広げています。</p>
+        <span class="hero-badge"><span class="dot"></span>デイケアで働く現役・理学療法士が作ったAI Webアプリ</span>
+        <h1>話すだけで、<br><span class="grad">仕事が終わる。</span></h1>
+        <p class="hero-sub">AIアシスタントに、やりたいことを<strong>声で伝えるだけ</strong>。<br>送迎表の組み直しも、シフトの休み希望も、<strong>喋るだけで完成</strong>します。<br>デイケアの現場に立つ理学療法士・<strong>桑島海斗</strong>が作った、現場のためのAI Webアプリです。</p>
         <div class="hero-actions">
           <a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn btn-fill">30分の無料相談を予約 →</a>
           <a href="#work" class="btn btn-ghost">実際の仕事を見る</a>
@@ -368,6 +384,29 @@ section{position:relative;padding:120px 0}
   </div>
 </div>
 
+<!-- ===== VOICE ===== -->
+<section id="voice">
+  <div class="container">
+    <div class="head-center fade-in">
+      <span class="eyebrow">Voice → Done</span>
+      <h2 class="h2">操作も入力も、覚えなくていい。<br>ただ、<span style="color:var(--gold-soft)">声で言うだけ。</span></h2>
+      <p class="lead">マウスもキーボードも要りません。AIアシスタントに話しかけるだけで、面倒な作業がそのまま終わります。</p>
+    </div>
+    <div class="voice-list">
+      <div class="voice-row fade-in">
+        <div class="voice-say"><span class="vlabel">あなたが言う</span><p>「田中さん、今日は10時に変更」</p></div>
+        <div class="voice-arrow">→</div>
+        <div class="voice-done"><span class="vlabel">AIがやる</span><p>送迎表を自動で組み直し。<b>時間が変わった人だけ</b>伝えれば、ルートも担当も全部まとめて再計算されます。</p></div>
+      </div>
+      <div class="voice-row fade-in d1">
+        <div class="voice-say"><span class="vlabel">あなたが言う</span><p>「佐藤、15日 休み」</p></div>
+        <div class="voice-arrow">→</div>
+        <div class="voice-done"><span class="vlabel">AIがやる</span><p>休み希望をシフトに反映。<b>名前と日付を言うだけ</b>で、毎月のシフトのパズルが進みます。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== ABOUT ===== -->
 <section id="about">
   <div class="container">
@@ -399,8 +438,8 @@ section{position:relative;padding:120px 0}
   <div class="container">
     <div class="head-center fade-in">
       <span class="eyebrow">What I do</span>
-      <h2 class="h2">こんな手作業を、ワンクリックに。</h2>
-      <p class="lead">ゼロから開発はしません。既存のAIを現場に合わせて組み合わせ、「押すだけ・置くだけ・録るだけ」で終わる状態に整えます。</p>
+      <h2 class="h2">送迎やシフトだけ、じゃない。</h2>
+      <p class="lead">現場に残るあらゆる手作業を、「喋るだけ・押すだけ」で終わる状態に整えます。ゼロから開発はしません。既存のAIを現場に合わせて組み合わせるのが仕事です。</p>
     </div>
     <div class="cards">
       <div class="card fade-in"><span class="no">01</span><div class="ico">📝</div><h3>議事録・会議録</h3><p>音声を録るだけで、議題別に整理された議事録を自動生成。サービス担当者会議も職種別に要約し、そのまま書類へ。</p></div>
@@ -472,6 +511,22 @@ section{position:relative;padding:120px 0}
     </div>
 
     <div class="next-slot fade-in">CASE 002 — <b>次の現場を募集中。</b>　あなたの業界が、2件目になるかもしれません。</div>
+  </div>
+</section>
+
+<!-- ===== TRUST / SECURITY ===== -->
+<section id="trust">
+  <div class="container">
+    <div class="head-center fade-in">
+      <span class="eyebrow">Security / 安心</span>
+      <h2 class="h2">医療・介護の情報も、<br>安心して任せられます。</h2>
+      <p class="lead">「クラウドは不安」——そのハードルこそ、いちばん先に取り除きます。</p>
+    </div>
+    <div class="cards">
+      <div class="card fade-in"><span class="no">01</span><div class="ico">☁️</div><h3>Google Cloud上で動く</h3><p>すべて Google のクラウド基盤で稼働します。通信は暗号化（SSL/TLS）、利用者ごとのアクセス権限・操作ログで安全に管理。世界最高水準のセキュリティをそのまま使えます。</p></div>
+      <div class="card fade-in d1"><span class="no">02</span><div class="ico">🛡️</div><h3>Workspace登録で医療情報もOK</h3><p>Google Workspace を適切に契約・登録していれば、医療・介護の情報を扱う体制が整います。大手クラウドだからこそ、現場の機微な情報も安心してお預けいただけます。</p></div>
+      <div class="card fade-in d2"><span class="no">03</span><div class="ico">🤝</div><h3>Workspace導入まで支援</h3><p>「何から始めればいい？」という段階からお任せください。Workspaceの契約・初期設定から、現場が実際に使える状態になるまで、まるごと伴走します。</p></div>
+    </div>
   </div>
 </section>
 
@@ -548,7 +603,7 @@ section{position:relative;padding:120px 0}
       <div>
         <h5>Menu</h5>
         <div class="footer-links">
-          <a href="#about">代表</a><a href="#services">できること</a><a href="#work">実績</a><a href="#youtube">発信</a><a href="#contact">相談する</a>
+          <a href="#voice">サービス</a><a href="#work">実績</a><a href="#trust">安心</a><a href="#about">代表</a><a href="#youtube">発信</a><a href="#contact">相談する</a>
         </div>
       </div>
       <div>
