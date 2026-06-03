@@ -193,6 +193,23 @@ section{position:relative;padding:120px 0}
 .newsvc .step p{font-size:12.5px;margin:0;color:var(--muted);line-height:1.8}
 @media(max-width:680px){.newsvc .flow{grid-template-columns:1fr}}
 
+/* ===== Service tabs ===== */
+.svc-tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:40px}
+.svc-tab{display:flex;flex-direction:column;align-items:center;gap:3px;padding:13px 24px;border-radius:16px;background:var(--glass);border:1px solid var(--glass-border);color:var(--muted);font-weight:700;font-size:15px;cursor:pointer;transition:.25s;line-height:1.3}
+.svc-tab .t{font-size:10.5px;font-weight:600;letter-spacing:.08em;opacity:.7}
+.svc-tab:hover{color:var(--text);border-color:rgba(216,180,97,.5)}
+.svc-tab.active{background:linear-gradient(135deg,var(--gold),var(--gold-soft));color:#111;border-color:var(--gold);box-shadow:0 8px 24px rgba(216,180,97,.25)}
+.svc-tab.active .t{opacity:.85}
+.svc-panel{display:none}
+.svc-panel.active{display:block;animation:svcfade .5s cubic-bezier(.2,.7,.2,1)}
+@keyframes svcfade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.svc-head{text-align:center;max-width:680px;margin:0 auto 36px}
+.svc-head h3{font-size:clamp(22px,3.2vw,32px);font-weight:700;line-height:1.4;margin-bottom:14px}
+.svc-head h3 .g{background:linear-gradient(110deg,var(--gold-soft),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.svc-head p{color:var(--muted);font-size:15px;line-height:1.95}
+.svc-cta{text-align:center;margin-top:32px}
+@media(max-width:680px){.svc-tab{flex:1;min-width:0;padding:12px 10px;font-size:13px}}
+
 /* ===== Work / case ===== */
 .case-wrap{border-radius:26px;border:1px solid var(--glass-border);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));overflow:hidden}
 .case-top{padding:44px clamp(24px,4vw,52px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;border-bottom:1px solid var(--glass-border)}
@@ -244,12 +261,12 @@ section{position:relative;padding:120px 0}
 .yt-channel{text-align:center;margin-top:40px}
 /* vision band (image) */
 .vision-band{position:relative;height:clamp(220px,32vw,380px);overflow:hidden;border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border)}
-.vision-band img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:saturate(1.05) contrast(1.05);transform:scale(1.05)}
-.vision-band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,8,13,.92) 0%,rgba(7,8,13,.55) 45%,rgba(7,8,13,.2) 100%)}
+.vision-band img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:brightness(.42) saturate(1.05);transform:scale(1.05)}
+.vision-band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,8,13,.96) 0%,rgba(7,8,13,.85) 45%,rgba(7,8,13,.6) 100%)}
 .vision-text{position:absolute;inset:0;display:flex;align-items:center}
 .vision-text .inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;width:100%}
-.vision-text p{font-family:"Space Grotesk","Noto Sans JP",sans-serif;font-size:clamp(20px,3.4vw,38px);font-weight:700;line-height:1.4;max-width:560px}
-.vision-text .accent{background:linear-gradient(110deg,var(--gold-soft),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.vision-text p{font-family:"Space Grotesk","Noto Sans JP",sans-serif;font-size:clamp(22px,3.6vw,40px);font-weight:900;line-height:1.4;max-width:600px;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.vision-text .accent{color:var(--gold-soft);-webkit-text-fill-color:initial}
 
 /* ===== Contact ===== */
 .contact-card{border-radius:26px;border:1px solid var(--glass-border);background:linear-gradient(160deg,rgba(216,180,97,.07),rgba(110,168,255,.05));padding:clamp(32px,5vw,60px);text-align:center;position:relative;overflow:hidden}
@@ -349,10 +366,9 @@ section{position:relative;padding:120px 0}
     <a href="#" class="nav-logo">FREN<span>VOX</span></a>
     <button class="nav-toggle" id="navToggle" aria-label="メニュー"><span></span><span></span><span></span></button>
     <ul class="nav-menu" id="navMenu">
-      <li><a href="#voice" class="nav-link">サービス</a></li>
+      <li><a href="#services" class="nav-link">サービス</a></li>
       <li><a href="#work" class="nav-link">実績</a></li>
-      <li><a href="#trust" class="nav-link">安心</a></li>
-      <li><a href="#about" class="nav-link">代表</a></li>
+      <li><a href="#youtube" class="nav-link">発信</a></li>
       <li><a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="nav-cta">無料相談</a></li>
     </ul>
   </div>
@@ -452,28 +468,60 @@ section{position:relative;padding:120px 0}
 <section id="services">
   <div class="container">
     <div class="head-center fade-in">
-      <span class="eyebrow">What I do</span>
-      <h2 class="h2">送迎やシフトだけ、じゃない。</h2>
-      <p class="lead">現場に残るあらゆる手作業を、「喋るだけ・押すだけ」で終わる状態に整えます。ゼロから開発はしません。既存のAIを現場に合わせて組み合わせるのが仕事です。</p>
-    </div>
-    <div class="cards">
-      <div class="card fade-in"><span class="no">01</span><div class="ico">📝</div><h3>議事録・会議録</h3><p>音声を録るだけで、議題別に整理された議事録を自動生成。サービス担当者会議も職種別に要約し、そのまま書類へ。</p></div>
-      <div class="card fade-in d1"><span class="no">02</span><div class="ico">🚐</div><h3>送迎・シフト</h3><p>住所・時間・乗車条件から送迎表を自動生成。休み希望を反映した運転シフトも自動で。変更はワンクリックで再計算。</p></div>
-      <div class="card fade-in d2"><span class="no">03</span><div class="ico">🗂️</div><h3>記録・日報・計画書</h3><p>訪問後の音声メモやメモ書きをAIが整形。過去記録からケア計画書の下書きまで即生成し、持ち帰り残業をなくします。</p></div>
-      <div class="card fade-in"><span class="no">04</span><div class="ico">🌐</div><h3>HP制作・集客</h3><p>Google検索に表示される施設HPを制作。問い合わせ・集患まで見据えた設計で、まさにこのサイトもその一例です。</p></div>
-      <div class="card fade-in d1"><span class="no">05</span><div class="ico">📊</div><h3>データ整理・集計</h3><p>バラバラの台帳・Excel・紙の情報を統合し、集計や転記の手作業を自動化。月次のまとめ作業から解放されます。</p></div>
-      <div class="card fade-in d2"><span class="no">06</span><div class="ico">✦</div><h3>あなたの現場の「あれ」</h3><p>「これは自動化できる？」——30分の無料相談で1時間ヒアリング。できる／できないをその場でお伝えします。業界は問いません。</p></div>
+      <span class="eyebrow">Services</span>
+      <h2 class="h2">FRENVOXのサービス</h2>
+      <p class="lead">3つの領域で、現場の手作業をAIで終わらせます。気になるものを選んでください。</p>
     </div>
 
-    <div class="newsvc fade-in">
-      <div class="tagrow"><span class="pill">NEW</span><span class="pill soft">企業向け・健康経営</span><span class="pill soft">順次提供予定</span></div>
-      <h3>社員の姿勢を、<span class="g">AIが評価して、運動を処方する。</span></h3>
-      <p>現役理学療法士の臨床判断をAI化し、デスクワーカーの姿勢・動作をスマホカメラで評価 → 一人ひとりに最適な運動を提案 → 「組織の仕組み」として実施まで定着させる、企業向けの健康経営サービスを開発しています。「全員に同じ体操」ではなく、評価にもとづく“個別の運動提案”が他にない強みです。</p>
-      <div class="flow">
-        <div class="step"><div class="n">STEP 01</div><h4>評価</h4><p>スマホカメラで姿勢・スクワット・肩首の可動域をチェック。</p></div>
-        <div class="step"><div class="n">STEP 02</div><h4>提案</h4><p>PT監修ロジックで、その人に必要な運動だけを提案。</p></div>
-        <div class="step"><div class="n">STEP 03</div><h4>定着</h4><p>実施状況を可視化し、組織の仕組みとして続く形に。</p></div>
+    <!-- タブ -->
+    <div class="svc-tabs fade-in" id="svcTabs">
+      <button type="button" class="svc-tab active" data-svc="auto"><span class="t">介護・福祉の現場</span>業務の自動化</button>
+      <button type="button" class="svc-tab" data-svc="posture"><span class="t">企業・健康経営 ／ NEW</span>姿勢AI × 運動提案</button>
+      <button type="button" class="svc-tab" data-svc="web"><span class="t">事業者全般</span>ホームページ制作</button>
+    </div>
+
+    <!-- Panel 1: 業務自動化 -->
+    <div class="svc-panel active" data-panel="auto">
+      <div class="svc-head">
+        <h3>声で喋るだけで、<span class="g">書類仕事が終わる。</span></h3>
+        <p>議事録・送迎・シフト・記録——既存のAIを現場に合わせて組み合わせ、「喋るだけ・押すだけ」で終わる状態に整えます。</p>
       </div>
+      <div class="cards">
+        <div class="card"><span class="no">01</span><div class="ico">📝</div><h3>議事録・会議録</h3><p>音声を録るだけで、議題別に整理された議事録を自動生成。サービス担当者会議も職種別に要約し、そのまま書類へ。</p></div>
+        <div class="card"><span class="no">02</span><div class="ico">🚐</div><h3>送迎・シフト</h3><p>住所・時間・乗車条件から送迎表を自動生成。休み希望を反映した運転シフトも自動で。変更はワンクリックで再計算。</p></div>
+        <div class="card"><span class="no">03</span><div class="ico">🗂️</div><h3>記録・日報・計画書</h3><p>訪問後の音声メモやメモ書きをAIが整形。過去記録からケア計画書の下書きまで即生成し、持ち帰り残業をなくします。</p></div>
+        <div class="card"><span class="no">04</span><div class="ico">📊</div><h3>データ整理・集計</h3><p>バラバラの台帳・Excel・紙の情報を統合し、集計や転記の手作業を自動化。月次のまとめから解放されます。</p></div>
+      </div>
+      <div class="svc-cta"><a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn btn-fill">「これも自動化できる？」を無料相談 →</a></div>
+    </div>
+
+    <!-- Panel 2: 姿勢AI -->
+    <div class="svc-panel" data-panel="posture">
+      <div class="newsvc">
+        <div class="tagrow"><span class="pill">NEW</span><span class="pill soft">企業向け・健康経営</span><span class="pill soft">順次提供予定</span></div>
+        <h3>社員の姿勢を、<span class="g">AIが評価して、運動を提案する。</span></h3>
+        <p>現役理学療法士の臨床判断をAI化し、デスクワーカーの姿勢・動作をスマホカメラで評価 → 一人ひとりに最適な運動を提案 → 「組織の仕組み」として実施まで定着させる、企業向けの健康経営サービスを開発しています。<strong style="color:var(--text)">「全員に同じ体操」ではなく、評価にもとづく“個別の運動提案”</strong>が他にない強みです。</p>
+        <div class="flow">
+          <div class="step"><div class="n">STEP 01</div><h4>評価</h4><p>スマホカメラで姿勢・スクワット・肩首の可動域をチェック。映像は端末内で処理。</p></div>
+          <div class="step"><div class="n">STEP 02</div><h4>提案</h4><p>PT監修ロジックで、その人に必要な運動だけを提案。なぜ必要かも提示。</p></div>
+          <div class="step"><div class="n">STEP 03</div><h4>定着</h4><p>実施状況を可視化し、個人の意志に頼らず組織の仕組みとして続く形に。</p></div>
+        </div>
+      </div>
+      <div class="svc-cta"><a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">導入を相談する →</a></div>
+    </div>
+
+    <!-- Panel 3: HP制作 -->
+    <div class="svc-panel" data-panel="web">
+      <div class="svc-head">
+        <h3>検索される、<span class="g">問い合わせが来るHPを。</span></h3>
+        <p>Google検索の表示・集客まで見据えた設計でホームページを制作します。まさに、このサイトもその一例です。</p>
+      </div>
+      <div class="cards">
+        <div class="card"><span class="no">01</span><div class="ico">🌐</div><h3>検索に強いHP制作</h3><p>スマホ最適化・表示速度・SEOまで考えた設計。「地域名＋サービス」で見つけてもらえる形に。</p></div>
+        <div class="card"><span class="no">02</span><div class="ico">📅</div><h3>予約・問い合わせ導線</h3><p>予約フォームやカレンダー予約、メール導線まで設置。見て終わりではなく、行動につながるHPに。</p></div>
+        <div class="card"><span class="no">03</span><div class="ico">⚙️</div><h3>AIと連携した運用</h3><p>更新・お知らせ・原稿づくりもAIで省力化。作って終わりにせず、回り続ける仕組みにします。</p></div>
+      </div>
+      <div class="svc-cta"><a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn btn-fill">HP制作を相談する →</a></div>
     </div>
   </div>
 </section>
@@ -629,7 +677,7 @@ section{position:relative;padding:120px 0}
       <div>
         <h5>Menu</h5>
         <div class="footer-links">
-          <a href="#voice">サービス</a><a href="#work">実績</a><a href="#trust">安心</a><a href="#about">代表</a><a href="#youtube">発信</a><a href="#contact">相談する</a>
+          <a href="#services">サービス</a><a href="#work">実績</a><a href="#trust">安心</a><a href="#about">代表</a><a href="#youtube">発信</a><a href="#contact">相談する</a>
         </div>
       </div>
       <div>
@@ -677,6 +725,16 @@ document.addEventListener('DOMContentLoaded',()=>{
   const navToggle=document.getElementById('navToggle'),navMenu=document.getElementById('navMenu');
   navToggle.addEventListener('click',()=>{navToggle.classList.toggle('active');navMenu.classList.toggle('open')});
   document.querySelectorAll('.nav-link').forEach(l=>l.addEventListener('click',()=>{navToggle.classList.remove('active');navMenu.classList.remove('open')}));
+
+  // service tabs（選んだサービスだけ表示）
+  const svcTabs=document.getElementById('svcTabs');
+  if(svcTabs){
+    svcTabs.querySelectorAll('.svc-tab').forEach(btn=>btn.addEventListener('click',()=>{
+      const k=btn.getAttribute('data-svc');
+      svcTabs.querySelectorAll('.svc-tab').forEach(b=>b.classList.toggle('active',b===btn));
+      document.querySelectorAll('.svc-panel').forEach(p=>p.classList.toggle('active',p.getAttribute('data-panel')===k));
+    }));
+  }
 
   // scrollspy
   const secs=document.querySelectorAll('section[id]');
