@@ -178,6 +178,21 @@ section{position:relative;padding:120px 0}
 .voice-arrow{display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:28px}
 @media(max-width:680px){.voice-row{grid-template-columns:1fr;gap:10px}.voice-arrow{transform:rotate(90deg)}.voice-say,.voice-done{padding:22px}}
 
+/* ===== New service feature ===== */
+.newsvc{margin-top:24px;border-radius:26px;border:1px solid var(--glass-border);background:linear-gradient(135deg,rgba(110,168,255,.10),rgba(155,123,255,.06));padding:clamp(28px,4vw,48px);position:relative;overflow:hidden}
+.newsvc .tagrow{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.newsvc .pill{font-family:"Space Grotesk",sans-serif;font-size:11px;letter-spacing:.14em;padding:6px 14px;border-radius:100px;background:var(--cyan);color:#06121f;font-weight:700}
+.newsvc .pill.soft{background:var(--glass);color:var(--muted);border:1px solid var(--glass-border)}
+.newsvc h3{font-size:clamp(21px,3vw,30px);font-weight:700;line-height:1.45;margin-bottom:16px}
+.newsvc h3 .g{background:linear-gradient(110deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.newsvc>p{color:var(--muted);font-size:14.5px;line-height:1.95;max-width:700px;margin-bottom:26px}
+.newsvc .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.newsvc .step{padding:18px 20px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--glass-border)}
+.newsvc .step .n{font-family:"Space Grotesk",sans-serif;font-size:12px;color:var(--cyan);margin-bottom:8px}
+.newsvc .step h4{font-size:14px;margin-bottom:6px;font-weight:700}
+.newsvc .step p{font-size:12.5px;margin:0;color:var(--muted);line-height:1.8}
+@media(max-width:680px){.newsvc .flow{grid-template-columns:1fr}}
+
 /* ===== Work / case ===== */
 .case-wrap{border-radius:26px;border:1px solid var(--glass-border);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));overflow:hidden}
 .case-top{padding:44px clamp(24px,4vw,52px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;border-bottom:1px solid var(--glass-border)}
@@ -448,6 +463,17 @@ section{position:relative;padding:120px 0}
       <div class="card fade-in"><span class="no">04</span><div class="ico">🌐</div><h3>HP制作・集客</h3><p>Google検索に表示される施設HPを制作。問い合わせ・集患まで見据えた設計で、まさにこのサイトもその一例です。</p></div>
       <div class="card fade-in d1"><span class="no">05</span><div class="ico">📊</div><h3>データ整理・集計</h3><p>バラバラの台帳・Excel・紙の情報を統合し、集計や転記の手作業を自動化。月次のまとめ作業から解放されます。</p></div>
       <div class="card fade-in d2"><span class="no">06</span><div class="ico">✦</div><h3>あなたの現場の「あれ」</h3><p>「これは自動化できる？」——30分の無料相談で1時間ヒアリング。できる／できないをその場でお伝えします。業界は問いません。</p></div>
+    </div>
+
+    <div class="newsvc fade-in">
+      <div class="tagrow"><span class="pill">NEW</span><span class="pill soft">企業向け・健康経営</span><span class="pill soft">順次提供予定</span></div>
+      <h3>社員の姿勢を、<span class="g">AIが評価して、運動を処方する。</span></h3>
+      <p>現役理学療法士の臨床判断をAI化し、デスクワーカーの姿勢・動作をスマホカメラで評価 → 一人ひとりに最適な運動を提案 → 「組織の仕組み」として実施まで定着させる、企業向けの健康経営サービスを開発しています。「全員に同じ体操」ではなく、評価にもとづく“個別の運動提案”が他にない強みです。</p>
+      <div class="flow">
+        <div class="step"><div class="n">STEP 01</div><h4>評価</h4><p>スマホカメラで姿勢・スクワット・肩首の可動域をチェック。</p></div>
+        <div class="step"><div class="n">STEP 02</div><h4>提案</h4><p>PT監修ロジックで、その人に必要な運動だけを提案。</p></div>
+        <div class="step"><div class="n">STEP 03</div><h4>定着</h4><p>実施状況を可視化し、組織の仕組みとして続く形に。</p></div>
+      </div>
     </div>
   </div>
 </section>
