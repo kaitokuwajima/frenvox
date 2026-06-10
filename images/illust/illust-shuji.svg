@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- 習字教室：架空のイラスト（俯瞰の静物） -->
+  <rect width="800" height="600" fill="#e9dcc3"/>
+  <!-- felt mat -->
+  <rect x="90" y="60" width="620" height="480" rx="14" fill="#3e5c50"/>
+  <!-- washi paper -->
+  <g transform="rotate(-2 400 300)">
+    <rect x="250" y="100" width="300" height="400" fill="#fffdf5" stroke="#e8e2d0" stroke-width="3"/>
+    <text x="400" y="290" font-family="'Hiragino Mincho ProN',serif" font-size="170" fill="#2b2b2b" text-anchor="middle" font-weight="700">夏</text>
+    <text x="400" y="430" font-family="'Hiragino Mincho ProN',serif" font-size="64" fill="#2b2b2b" text-anchor="middle">祭り</text>
+    <!-- hanko -->
+    <rect x="480" y="450" width="36" height="36" rx="5" fill="#c0392b"/>
+  </g>
+  <!-- brush -->
+  <g transform="rotate(24 640 300)">
+    <rect x="628" y="120" width="22" height="240" rx="11" fill="#a06a3c"/>
+    <path d="M628 360 q11 10 22 0 l-4 48 q-7 16 -14 0z" fill="#2b2b2b"/>
+  </g>
+  <!-- ink stone -->
+  <ellipse cx="170" cy="430" rx="62" ry="40" fill="#2f2f33"/>
+  <ellipse cx="170" cy="424" rx="48" ry="28" fill="#1b1b1e"/>
+  <!-- paperweight -->
+  <rect x="270" y="78" width="250" height="16" rx="8" fill="#8d99ae" transform="rotate(-2 395 86)"/>
+  <text x="400" y="575" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="24" fill="#8d7a55" text-anchor="middle">イラストはイメージです</text>
+</svg>

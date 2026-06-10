@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- おやつ作り（お団子とお茶）：架空のイラスト -->
+  <rect width="800" height="600" fill="#fbeee0"/>
+  <rect y="380" width="800" height="220" fill="#d9b48f"/>
+  <rect y="380" width="800" height="14" fill="#c9a37e"/>
+  <!-- plate with dango -->
+  <ellipse cx="320" cy="470" rx="190" ry="46" fill="#ffffff"/>
+  <ellipse cx="320" cy="462" rx="190" ry="44" fill="#f3f6f7"/>
+  <!-- skewer 1 -->
+  <g transform="rotate(-8 320 430)">
+    <rect x="210" y="426" width="230" height="8" rx="4" fill="#caa472"/>
+    <circle cx="260" cy="430" r="34" fill="#f7a8b8"/>
+    <circle cx="325" cy="430" r="34" fill="#fffdf2"/>
+    <circle cx="390" cy="430" r="34" fill="#9ecf9e"/>
+    <circle cx="250" cy="420" r="9" fill="#ffffff" opacity="0.6"/>
+    <circle cx="315" cy="420" r="9" fill="#ffffff" opacity="0.8"/>
+    <circle cx="380" cy="420" r="9" fill="#ffffff" opacity="0.6"/>
+  </g>
+  <!-- teacup -->
+  <g>
+    <ellipse cx="610" cy="500" rx="86" ry="22" fill="#bf8f63"/>
+    <path d="M535 420 q0 80 75 80 q75 0 75 -80 z" fill="#5e8f74"/>
+    <ellipse cx="610" cy="420" rx="75" ry="20" fill="#8fbf9f"/>
+    <ellipse cx="610" cy="422" rx="62" ry="15" fill="#cfe8b8"/>
+    <!-- steam -->
+    <path d="M585 360 q-12 -24 6 -44" stroke="#cdb89a" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M630 354 q-12 -24 6 -44" stroke="#cdb89a" stroke-width="9" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- bunting -->
+  <path d="M0 40 q200 70 400 40 q200 -30 400 10" stroke="#e8c9a0" stroke-width="6" fill="none"/>
+  <g fill="#f4b6c2"><path d="M120 66 l22 44 -44 2z"/></g>
+  <g fill="#a8d8c8"><path d="M300 72 l22 44 -44 2z"/></g>
+  <g fill="#f7d794"><path d="M480 56 l22 44 -44 2z"/></g>
+  <g fill="#b3c7e6"><path d="M650 60 l22 44 -44 2z"/></g>
+  <text x="400" y="575" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="24" fill="#a5743f" text-anchor="middle">イラストはイメージです</text>
+</svg>

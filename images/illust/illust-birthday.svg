@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- お誕生会：架空のイラスト -->
+  <rect width="800" height="600" fill="#fff3f0"/>
+  <rect y="430" width="800" height="170" fill="#f7ddd6"/>
+  <!-- garland -->
+  <path d="M0 60 q200 80 400 50 q200 -30 400 20" stroke="#e8b3a6" stroke-width="6" fill="none"/>
+  <g><path d="M110 92 l24 48 -48 2z" fill="#f4b6c2"/><path d="M280 96 l24 48 -48 2z" fill="#a8d8c8"/><path d="M450 76 l24 48 -48 2z" fill="#f7d794"/><path d="M620 78 l24 48 -48 2z" fill="#b3c7e6"/></g>
+  <!-- balloons -->
+  <g>
+    <ellipse cx="120" cy="260" rx="44" ry="54" fill="#f49ab0"/><path d="M120 314 q-6 30 8 56" stroke="#d8a0ae" stroke-width="4" fill="none"/>
+    <ellipse cx="690" cy="240" rx="44" ry="54" fill="#9ec7ef"/><path d="M690 294 q6 30 -8 56" stroke="#a0bcd8" stroke-width="4" fill="none"/>
+  </g>
+  <!-- cake -->
+  <g>
+    <ellipse cx="400" cy="500" rx="200" ry="40" fill="#ffffff"/>
+    <ellipse cx="400" cy="494" rx="200" ry="38" fill="#f3f6f7"/>
+    <rect x="250" y="380" width="300" height="110" rx="16" fill="#fce8d5"/>
+    <path d="M250 396 q25 26 50 0 q25 26 50 0 q25 26 50 0 q25 26 50 0 q25 26 50 0 q25 26 50 0 l0 -26 l-300 0z" fill="#fff8f0"/>
+    <ellipse cx="400" cy="382" rx="150" ry="26" fill="#fff8f0"/>
+    <!-- strawberries -->
+    <g fill="#e2554d">
+      <ellipse cx="330" cy="376" rx="16" ry="13"/><ellipse cx="400" cy="372" rx="16" ry="13"/><ellipse cx="470" cy="376" rx="16" ry="13"/>
+    </g>
+    <!-- candles -->
+    <g>
+      <rect x="362" y="312" width="14" height="58" rx="7" fill="#f2c14e"/>
+      <rect x="424" y="312" width="14" height="58" rx="7" fill="#9ecf9e"/>
+      <ellipse cx="369" cy="300" rx="9" ry="14" fill="#f78c4b"/><ellipse cx="369" cy="304" rx="4.5" ry="8" fill="#fdd27c"/>
+      <ellipse cx="431" cy="300" rx="9" ry="14" fill="#f78c4b"/><ellipse cx="431" cy="304" rx="4.5" ry="8" fill="#fdd27c"/>
+    </g>
+  </g>
+  <!-- confetti -->
+  <g opacity="0.85">
+    <rect x="200" y="170" width="14" height="8" rx="3" fill="#f2c14e" transform="rotate(24 207 174)"/>
+    <rect x="560" y="150" width="14" height="8" rx="3" fill="#9ecf9e" transform="rotate(-18 567 154)"/>
+    <rect x="320" y="120" width="14" height="8" rx="3" fill="#9ec7ef" transform="rotate(40 327 124)"/>
+    <rect x="480" y="190" width="14" height="8" rx="3" fill="#f49ab0" transform="rotate(-30 487 194)"/>
+  </g>
+  <text x="400" y="575" font-family="'Hiragino Maru Gothic ProN',sans-serif" font-size="24" fill="#cf8d7e" text-anchor="middle">イラストはイメージです</text>
+</svg>
