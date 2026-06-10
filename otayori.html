@@ -62,6 +62,10 @@ a{color:inherit;text-decoration:none}
 .paper{position:relative;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08);transform:rotate(-1.2deg)}
 .paper img{display:block;width:100%;height:auto}
 .paper .cap{position:absolute;left:10px;bottom:10px;font-size:11px;color:#6b7185;background:rgba(255,255,255,.85);padding:3px 8px;border-radius:8px}
+/* phone frame for the timeline shot */
+.phone{width:min(290px,82%);margin:0 auto;border-radius:38px;border:10px solid #181a24;overflow:hidden;background:#181a24;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.08)}
+.phone img{display:block;width:100%;height:auto;border-radius:28px}
+.phone-cap{text-align:center;font-size:12px;color:var(--faint);margin-top:12px}
 
 /* sections */
 section{padding:54px 0}
@@ -83,6 +87,7 @@ section{padding:54px 0}
 
 /* showcase */
 .show{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:center}
+.show-tl{grid-template-columns:.8fr 1.2fr}
 .show ul{list-style:none;margin-top:10px}
 .show li{padding:9px 0;border-bottom:1px dashed var(--glass-border);color:var(--muted);font-size:15px}
 .show li b{color:var(--text)}
@@ -195,6 +200,28 @@ footer a{color:var(--muted)}
       <div class="card"><div class="ico">🔒</div><h3>要配慮個人情報を厳格分離</h3><p>顔写真・医療介護情報を、<b style="color:var(--text)">ご家族ごとにデータベース層＋コード層で二重に分離</b>。他のご家族には見えません。</p></div>
       <div class="card"><div class="ico">🗓️</div><h3>月別にいつでも振り返り</h3><p>過去のおたよりや投稿を月ごとに一覧。管理側でもまとめて確認できます。</p></div>
       <div class="card"><div class="ico">☁️</div><h3>Google Cloud で安全に</h3><p>Google のインフラ上で運用。データは日本国内（東京）リージョンで処理します。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE SHOWCASE -->
+<section>
+  <div class="container show show-tl">
+    <div>
+      <figure class="phone" style="margin:0 auto">
+        <img src="images/otayori-timeline.png" alt="ご家族のスマホに届く連絡タイムラインの実際の画面" loading="lazy">
+      </figure>
+      <p class="phone-cap">実際のアプリ画面（データは架空・写真部分はイメージイラスト）</p>
+    </div>
+    <div>
+      <span class="eyebrow">Timeline</span>
+      <h2 class="h2" style="margin-top:8px">ご家族のスマホに、<span class="g">“今日の様子”がそのまま。</span></h2>
+      <ul>
+        <li><b>写真を撮って投稿するだけ</b>：その日の活動やリハビリの様子が、その日のうちに届きます</li>
+        <li><b>見るのはご家族だけ</b>：招待コードで紐づいたご家族だけが閲覧（返信・既読なしの一方向）</li>
+        <li><b>今日・昨日と自動で整理</b>：月別の振り返りもかんたん</li>
+        <li><b>アプリのインストール不要</b>：スマホのブラウザでそのまま見られます</li>
+      </ul>
     </div>
   </div>
 </section>
