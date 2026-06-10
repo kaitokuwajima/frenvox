@@ -316,7 +316,7 @@ body.loaded .hero-fade.f4{transition-delay:.8s}
 .chip{padding:8px 17px;border-radius:999px;border:1px solid var(--line-2);font-size:12px;font-weight:500;color:var(--ink-2);background:rgba(253,252,250,.55)}
 
 /* ============================================================ SERVICES */
-.svc-tabs{display:grid;grid-template-columns:repeat(3,1fr);max-width:780px;margin:0 auto clamp(40px,6vw,64px);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;background:var(--white)}
+.svc-tabs{display:grid;grid-template-columns:repeat(4,1fr);max-width:980px;margin:0 auto clamp(40px,6vw,64px);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;background:var(--white)}
 .svc-tab{
   display:flex;flex-direction:column;gap:3px;align-items:center;justify-content:center;
   padding:18px 12px;background:transparent;border:0;color:var(--muted);
@@ -653,10 +653,10 @@ body.loaded .hero-fade.f4{transition-delay:.8s}
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span class="set">
-      <span><b>議事録の自動作成</b><i>✦</i></span><span><b>送迎表の自動生成</b><i>✦</i></span><span><b>運転シフト作成</b><i>✦</i></span><span><b>訪問記録・日報</b><i>✦</i></span><span><b>サービス担当者会議録</b><i>✦</i></span><span><b>ケア計画書ドラフト</b><i>✦</i></span><span><b>HP制作・SEO</b><i>✦</i></span><span><b>データ整理・集計</b><i>✦</i></span>
+      <span><b>議事録の自動作成</b><i>✦</i></span><span><b>送迎表の自動生成</b><i>✦</i></span><span><b>運転シフト作成</b><i>✦</i></span><span><b>訪問記録・日報</b><i>✦</i></span><span><b>サービス担当者会議録</b><i>✦</i></span><span><b>ケア計画書ドラフト</b><i>✦</i></span><span><b>歩行・動作解析レポート</b><i>✦</i></span><span><b>HP制作・SEO</b><i>✦</i></span><span><b>データ整理・集計</b><i>✦</i></span>
     </span>
     <span class="set">
-      <span><b>議事録の自動作成</b><i>✦</i></span><span><b>送迎表の自動生成</b><i>✦</i></span><span><b>運転シフト作成</b><i>✦</i></span><span><b>訪問記録・日報</b><i>✦</i></span><span><b>サービス担当者会議録</b><i>✦</i></span><span><b>ケア計画書ドラフト</b><i>✦</i></span><span><b>HP制作・SEO</b><i>✦</i></span><span><b>データ整理・集計</b><i>✦</i></span>
+      <span><b>議事録の自動作成</b><i>✦</i></span><span><b>送迎表の自動生成</b><i>✦</i></span><span><b>運転シフト作成</b><i>✦</i></span><span><b>訪問記録・日報</b><i>✦</i></span><span><b>サービス担当者会議録</b><i>✦</i></span><span><b>ケア計画書ドラフト</b><i>✦</i></span><span><b>歩行・動作解析レポート</b><i>✦</i></span><span><b>HP制作・SEO</b><i>✦</i></span><span><b>データ整理・集計</b><i>✦</i></span>
     </span>
   </div>
 </div>
@@ -750,11 +750,12 @@ body.loaded .hero-fade.f4{transition-delay:.8s}
     <div class="head center rv">
       <div class="eyebrow center"><span class="idx">(03)</span> Services</div>
       <h2 class="h2">FRENVOXのサービス</h2>
-      <p class="lead">3つの領域で、現場の手作業をAIで終わらせます。気になるものを選んでください。</p>
+      <p class="lead">4つの領域で、現場の手作業をAIで終わらせます。気になるものを選んでください。</p>
     </div>
 
     <div class="svc-tabs rv" id="svcTabs" role="tablist">
       <button type="button" class="svc-tab active" data-svc="auto"><span class="t">介護・福祉の現場</span>業務の自動化</button>
+      <button type="button" class="svc-tab" data-svc="motion"><span class="t">リハビリ・整形分野 ／ NEW</span>動作解析レポート</button>
       <button type="button" class="svc-tab" data-svc="posture"><span class="t">企業・健康経営 ／ NEW</span>姿勢AI × 運動提案</button>
       <button type="button" class="svc-tab" data-svc="web"><span class="t">事業者全般</span>ホームページ制作</button>
     </div>
@@ -800,7 +801,26 @@ body.loaded .hero-fade.f4{transition-delay:.8s}
       <div class="svc-cta rv"><a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn btn-ink">「これも自動化できる？」を無料相談 <span class="ar">→</span></a></div>
     </div>
 
-    <!-- Panel 2: 姿勢AI -->
+    <!-- Panel 2: 動作解析レポート -->
+    <div class="svc-panel" data-panel="motion">
+      <div class="posture">
+        <div>
+          <div class="tags"><span class="pill blue">NEW</span><span class="pill line">整形外科・自費リハ・通所リハ向け</span><span class="pill line">解析代行</span></div>
+          <h3>歩行・動作を、<span class="blue">スマホ撮影だけで<br>数値化する。</span></h3>
+          <p>スタンフォード大学発のマーカーレス動作解析「OpenCap」を活用。スマホ2台で撮影した歩行などの動作から関節角度を計測し、<strong>可動域・左右差を自動算出 → 理学療法士の運動提案つきA4レポート</strong>として納品します。数百万円の3D動作解析装置を導入しなくても、「なんとなく良くなった」を<strong>数字とグラフで示せる</strong>ようになります。</p>
+          <div class="psteps">
+            <div class="pstep"><span class="n">STEP 01</span><h4>撮影</h4><p>スマホ2台で歩行・立ち座りなどを撮影。マーカー貼付や専用機材は不要。</p></div>
+            <div class="pstep"><span class="n">STEP 02</span><h4>解析</h4><p>関節角度の時系列から可動域と左右差を自動算出。波形グラフで左右を重ねて比較。</p></div>
+            <div class="pstep"><span class="n">STEP 03</span><h4>レポート</h4><p>PTが運動提案と所見を添えたA4レポートを納品。利用者・患者さんへの説明にそのまま使えます。</p></div>
+          </div>
+          <p style="margin-top:18px;font-size:11.5px;color:var(--faint);line-height:1.9">※本サービスは動作の客観的な記録・可視化と運動の参考情報の提供であり、医学的な診断を行うものではありません。データはブラウザ内で処理され、サーバーには送信されません。</p>
+        </div>
+        <div class="posture-img"><img src="images/rom-report-app.png" alt="動作解析レポートアプリの画面。可動域・左右差・関節角度グラフ・運動提案を1枚のレポートに自動生成" loading="lazy"><span class="tag">ROM Report</span></div>
+      </div>
+      <div class="svc-cta"><a href="https://frenvox-rom-report.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-line">デモを体験する <span class="ar">→</span></a> <a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn btn-ink">導入を相談する <span class="ar">→</span></a></div>
+    </div>
+
+    <!-- Panel 3: 姿勢AI -->
     <div class="svc-panel" data-panel="posture">
       <div class="posture">
         <div>
@@ -818,7 +838,7 @@ body.loaded .hero-fade.f4{transition-delay:.8s}
       <div class="svc-cta"><a href="https://calendar.app.google/Eob65MtYPt1kLgKo8" target="_blank" rel="noopener noreferrer" class="btn btn-line">導入を相談する <span class="ar">→</span></a></div>
     </div>
 
-    <!-- Panel 3: HP制作 -->
+    <!-- Panel 4: HP制作 -->
     <div class="svc-panel" data-panel="web">
       <div class="svc-head">
         <h3>検索される、<span class="blue">問い合わせが来るHPを。</span></h3>
