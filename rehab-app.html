@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<!-- 注意: サービス名は未定のため全文「FRENVOX 通所リハ業務アプリ」と仮表記。サービス名確定後に一括置換すること。 -->
+<!-- 注意: サービス名は未定のため全文「FRENVOX 通所リハ・デイサービス業務改善アプリ」と仮表記。サービス名確定後に一括置換すること。 -->
+<!-- 方針: 計画書・食事FAXは製品から除外。要配慮個人情報（病歴・健康情報）は一切扱わない設計。含む機能=送迎管理／シフト管理／議事録AI／AIアシスタントのみ。 -->
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>通所リハ業務アプリ｜FRENVOX（送迎×計画書AI×議事録AI）</title>
-<meta name="description" content="現役理学療法士が自施設で毎日使っている、送迎シミュレーション×リハ計画書AI×議事録AIの一体型業務アプリ。通所リハ・デイサービス向け。貴施設専用環境、データは貴施設のGoogle Drive内。初期費用0円・2ヶ月無料トライアル。">
-<meta property="og:title" content="通所リハ業務アプリ｜FRENVOX">
-<meta property="og:description" content="送迎調整・計画書・議事録を、現場PTが作ったアプリで。貴施設専用環境・データは貴施設のGoogle Drive内・初期0円・2ヶ月無料。">
+<title>通所リハ・デイサービス業務改善アプリ｜FRENVOX（送迎・シフト・議事録AI）</title>
+<meta name="description" content="現役理学療法士が自施設で毎日使っている、送迎管理×シフト管理×議事録AI×AIアシスタントの業務改善アプリ。通所リハ（デイケア）・デイサービス向け。機微な医療情報・要配慮個人情報は一切お預かりしません。貴施設専用環境、データは貴施設のGoogle Drive内。初期費用0円・2ヶ月無料トライアル。">
+<meta property="og:title" content="通所リハ・デイサービス業務改善アプリ｜FRENVOX">
+<meta property="og:description" content="送迎・シフト・議事録を、現場PTが作ったアプリで。機微な医療情報は一切お預かりしません。だから安全で、安く、AIも使えます。初期0円・2ヶ月無料。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://frenvox.jp/rehab-app.html">
 <meta name="theme-color" content="#07080d">
@@ -145,12 +146,12 @@ footer a{color:var(--muted)}
     <div class="hero-grid">
       <div>
         <div class="tagrow">
-          <span class="pill hot">通所リハ・デイサービス向け</span>
+          <span class="pill hot">通所リハ（デイケア）・デイサービス向け</span>
           <span class="pill">現役理学療法士が開発</span>
           <span class="pill">自施設で毎日実運用中</span>
         </div>
-        <h1>送迎調整・計画書・議事録を、<span class="g">現場PTが作ったアプリで。</span></h1>
-        <p class="sub">現役の理学療法士が、自分の施設のために作り、<b style="color:var(--text)">いまも毎日使っている</b>業務アプリ。送迎シミュレーション×リハ計画書AI×議事録AIが、ひとつになっています。請求ソフトはそのまま、併用でお使いいただけます。</p>
+        <h1>送迎・シフト・議事録を、<span class="g">現場PTが作ったアプリで。</span></h1>
+        <p class="sub">現役の理学療法士が、自分の施設のために作り、<b style="color:var(--text)">いまも毎日使っている</b>業務改善アプリ。送迎管理×シフト管理×議事録AI×AIアシスタントが、ひとつになっています。<b style="color:var(--text)">機微な医療情報・要配慮個人情報は一切お預かりしません。</b>記録・請求・計画書を扱う基幹ソフトはそのまま、併用でお使いいただけます。</p>
         <div class="cta-row">
           <a href="index.html#contact" class="btn btn-fill">メールで相談する →</a>
           <a href="#price" class="btn btn-ghost">料金を見る</a>
@@ -169,14 +170,14 @@ footer a{color:var(--muted)}
   <div class="container two">
     <div class="col">
       <span class="eyebrow">こんな悩み、ありませんか</span>
-      <h3 style="margin-top:10px">送迎・書類・会議。<br>専門職の時間が「間接業務」に消えていく。</h3>
-      <p>毎朝の配車調整と当日キャンセルの反映、リハビリ計画書の作成、会議のたびの議事録……。人を増やせない以上、一人あたりの業務時間を削るしかありません。開発者自身が現場で抱えていた負担から生まれたアプリです。</p>
+      <h3 style="margin-top:10px">送迎・シフト・会議。<br>専門職の時間が「間接業務」に消えていく。</h3>
+      <p>毎朝の配車調整と当日キャンセルの反映、従業員のシフトと休み希望の取りまとめ、会議のたびの議事録……。人を増やせない以上、一人あたりの業務時間を削るしかありません。開発者自身が現場で抱えていた負担から生まれたアプリです。</p>
     </div>
     <div class="col">
       <div class="flow">
         <div class="step"><span class="n">01</span><div><b>毎朝の送迎調整</b><br><span style="color:var(--muted);font-size:14px">配車・座席（車椅子対応）・当日キャンセルの反映が紙とホワイトボードの手作業。変更の共有漏れは事故リスクにも。</span></div></div>
-        <div class="step"><span class="n">02</span><div><b>リハビリ計画書の作成</b><br><span style="color:var(--muted);font-size:14px">専門職の残業の主因。書く時間が利用者さんと向き合う時間を圧迫しています。</span></div></div>
-        <div class="step"><span class="n">03</span><div><b>会議の議事録</b><br><span style="color:var(--muted);font-size:14px">サービス担当者会議等のたびに、録音の聞き直しと清書に追われていませんか。</span></div></div>
+        <div class="step"><span class="n">02</span><div><b>シフトと休み希望の取りまとめ</b><br><span style="color:var(--muted);font-size:14px">従業員のシフト作成と休み希望の調整が、毎月Excelと付箋の手作業。組み直しに時間が消えていきます。</span></div></div>
+        <div class="step"><span class="n">03</span><div><b>会議の議事録</b><br><span style="color:var(--muted);font-size:14px">スタッフ会議・運営会議のたびに、録音の聞き直しと清書に追われていませんか。</span></div></div>
       </div>
     </div>
   </div>
@@ -189,35 +190,35 @@ footer a{color:var(--muted)}
     <div class="head-center">
       <span class="eyebrow">Features</span>
       <h2 class="h2">現場の「時間泥棒」を、<span class="g">まとめて解決する4つの機能。</span></h2>
-      <p class="lead">請求ソフト（カイポケ等）の置き換えではなく、併用して間接業務の時間を削る補完ツールです。</p>
+      <p class="lead">記録・請求・計画書を扱う基幹ソフト（ほのぼの・カイポケ等）の置き換えではなく、併用して間接業務の時間を削る補完ツールです。<b style="color:var(--text)">機微な医療情報は一切扱いません。</b></p>
     </div>
     <div class="cards four">
       <div class="card">
         <div class="ico">🚐</div>
-        <h3>送迎シミュレーション ＆ 当日ホワイトボード</h3>
-        <p>配車案の作成と車椅子対応・定員チェックを支援。当日の配車・キャンセル・変更は<b style="color:var(--text)">画面1つで全員に即時共有</b>。朝の口頭伝達と書き直しをなくします。</p>
+        <h3>送迎管理（シミュレーション＆当日ホワイトボード）</h3>
+        <p>配車案の作成と車椅子対応・定員チェックを支援。当日の配車・キャンセル・変更は<b style="color:var(--text)">画面1つで全員に即時共有</b>。送迎ルート表・月間送迎予定・車両管理簿まで標準搭載。扱うのは氏名・住所・送迎曜日/時間・車両・車椅子席の要否などの<b style="color:var(--text)">運行情報のみ</b>です。</p>
         <div class="shot-ph">送迎シミュレーション／ホワイトボード画面（後日差し込み）</div>
       </div>
       <div class="card">
-        <div class="ico">🗺️</div>
-        <h3>送迎ルート表</h3>
-        <p>便ごとの送迎ルート表を出力。<b style="color:var(--text)">印刷してそのまま車に積める</b>かたちで、ドライバーへの引き継ぎがスムーズになります。</p>
-        <div class="shot-ph">送迎ルート表のスクリーンショット（後日差し込み）</div>
-      </div>
-      <div class="card">
-        <div class="ico">📝</div>
-        <h3>リハ計画書 AI下書き</h3>
-        <p>利用者情報からAIが下書きを生成し、テンプレートへ自動転記、PDF出力まで一気通貫。<b style="color:var(--text)">最終確認・承認は貴施設の専門職が行う「下書き支援」</b>です。</p>
-        <div class="shot-ph">リハ計画書AIのスクリーンショット（後日差し込み）</div>
+        <div class="ico">🗓️</div>
+        <h3>シフト管理</h3>
+        <p>従業員のシフト作成と休み希望の管理をひとつの画面で。<b style="color:var(--text)">毎月のシフト組みと休み希望の取りまとめ</b>を、Excelと付箋の手作業から解放します。扱うのは従業員名と勤務/休みの情報のみです。</p>
+        <div class="shot-ph">シフト管理画面のスクリーンショット（後日差し込み）</div>
       </div>
       <div class="card">
         <div class="ico">🎙️</div>
-        <h3>議事録AI</h3>
-        <p>会議の録音をアップロードすると、<b style="color:var(--text)">様式に沿った議事録を自動生成</b>。録音の聞き直しと清書から解放されます。</p>
+        <h3>議事録AI（スタッフ会議・運営会議）</h3>
+        <p>スタッフ会議・運営会議の録音をアップロードすると、<b style="color:var(--text)">様式に沿った議事録を自動生成</b>。録音の聞き直しと清書から解放されます。<b style="color:var(--text)">利用者個人の健康情報を含まない運用</b>を前提とした、施設運営のための議事録ツールです。</p>
         <div class="shot-ph">議事録AIのスクリーンショット（後日差し込み）</div>
       </div>
+      <div class="card">
+        <div class="ico">🤖</div>
+        <h3>AIアシスタント</h3>
+        <p>「明日の○○便の空き席は？」「来週の△△さんの休み希望を反映して」など、<b style="color:var(--text)">送迎・シフトの操作を会話で補助</b>。マニュアルを開かなくても、聞けば動かせます。</p>
+        <div class="shot-ph">AIアシスタント画面のスクリーンショット（後日差し込み）</div>
+      </div>
     </div>
-    <p class="note">ほかに車両管理簿・職員休暇管理も標準搭載。</p>
+    <p class="note">ほかに送迎ルート表・月間送迎予定・車両管理簿も標準搭載。</p>
   </div>
 </section>
 
@@ -227,14 +228,15 @@ footer a{color:var(--muted)}
   <div class="container">
     <div class="head-center">
       <span class="eyebrow">Security &amp; Data</span>
-      <h2 class="h2">貴施設専用の環境。<span class="g">データは最初から貴施設のもの。</span></h2>
+      <h2 class="h2">機微な医療情報・要配慮個人情報は、<span class="g">一切お預かりしません。</span></h2>
+      <p class="lead">病歴・心身の障害・健康情報、介護度・食事制限・病名・原因疾患・担当医——これらの<b style="color:var(--text)">要配慮個人情報を扱わない設計</b>です。だから安全で、安く、AIも安心して使えます。これが他社にない最大の違いです。</p>
     </div>
     <div class="cards">
-      <div class="card"><div class="ico">🏠</div><h3>1施設＝1専用環境</h3><p>施設ごとに専用のシステム環境を構築。<b style="color:var(--text)">他施設とデータを共有・混在させません</b>。通信は暗号化（HTTPS）、施設別のアクセス制御を実施します。</p></div>
+      <div class="card"><div class="ico">🛡️</div><h3>要配慮個人情報は持たない設計</h3><p>本アプリが扱うのは、送迎の運行情報（氏名・住所・送迎曜日/時間・車両・車椅子席の要否）と、従業員のシフト、施設運営の議事録のみ。<b style="color:var(--text)">病歴・健康情報といった要配慮個人情報は最初から保有しません</b>。漏えいリスクの根を断つ設計です。</p></div>
       <div class="card"><div class="ico">📦</div><h3>データは貴施設のGoogle Drive内</h3><p>利用データは貴施設のクラウド領域に保存され、FRENVOXのサーバーに集約しません。<b style="color:var(--text)">解約時もデータはそのまま手元に残ります</b>——最初から貴施設の資産だからです。</p></div>
-      <div class="card"><div class="ico">🤖</div><h3>AIは「学習に未使用」の有料版のみ</h3><p>計画書・議事録のAI処理にはGoogle Gemini API（有料プラン）のみを使用。<b style="color:var(--text)">入力データがAIの学習に使われることはありません</b>（Google公式規約に基づく）。送る情報も生成に必要な最小限に絞っています。</p></div>
+      <div class="card"><div class="ico">🤖</div><h3>AIは「学習に未使用」の有料版のみ</h3><p>議事録・AIアシスタントの処理にはGoogle Gemini API（有料プラン）のみを使用。<b style="color:var(--text)">入力データがAIの学習に使われることはありません</b>（Google公式規約に基づく）。送る情報も生成に必要な最小限に絞っています。</p></div>
     </div>
-    <div class="privacy-note">🔒 <b>個人情報の取扱いは契約書（個人情報取扱契約）で明文化。</b> ガイドラインへの対応状況表のご提示、漏えい時の通知義務・契約終了時のデータ消去の規定、サイバー保険（情報漏えい賠償）への加入など、書類で確認いただける体制を整えています。</div>
+    <div class="privacy-note">🔒 <b>要配慮個人情報を扱わない設計のため、厚労省・経産省の「医療情報」を前提とする3省2ガイドラインの中心部分は対象外に近づきます。</b> 一方で、氏名・住所などの通常の個人情報は扱うため、個人情報保護法の安全管理措置と委託（データ処理）契約は引き続き適切に整備します。個人情報取扱契約の明文化、契約終了時のデータ消去の規定、サイバー保険（情報漏えい賠償）への加入など、書類で確認いただける体制を整えています。</div>
   </div>
 </section>
 </div>
@@ -253,10 +255,9 @@ footer a{color:var(--muted)}
         <div class="amt">¥9,800<small>／月（税別）</small></div>
         <div class="init">初期費用 ¥0</div>
         <ul>
-          <li>送迎シミュレーション・当日ホワイトボード</li>
-          <li>送迎ルート表・月間送迎予定</li>
-          <li>車両管理簿・職員休暇管理</li>
-          <li>「まず送迎から」の施設の入口に（AI機能なし）</li>
+          <li>送迎管理（シミュレーション・当日ホワイトボード・ルート表・月間予定・車両管理簿）</li>
+          <li>シフト管理（従業員シフト・休み希望管理）</li>
+          <li>「まず送迎とシフトから」の施設の入口に（AI機能なし）</li>
         </ul>
       </div>
       <div class="plan feature">
@@ -266,11 +267,12 @@ footer a{color:var(--muted)}
         <div class="init">初期費用 ¥0</div>
         <ul>
           <li>ライトプランの全機能</li>
-          <li>リハ計画書 AI下書き</li>
-          <li>議事録AI（公正利用の範囲・目安 月30本）</li>
+          <li>議事録AI（スタッフ会議・運営会議／公正利用の範囲・目安 月30本）</li>
+          <li>AIアシスタント（送迎・シフトの操作補助）</li>
         </ul>
       </div>
     </div>
+    <!-- オーナー判断事項: 計画書AIを製品から外したため、スタンダード¥19,800の価格妥当性は要再検討。勝手に値下げせず、桑島さんの判断を仰ぐこと。 -->
     <p class="note">※ 2ヶ月無料トライアルあり（自動課金なし）。解約は30日前通知のみ・違約金なし。年払いは2ヶ月分割引（10ヶ月分のお支払いで12ヶ月利用）。請求書払い（適格請求書対応）。</p>
   </div>
 </section>
@@ -285,7 +287,7 @@ footer a{color:var(--muted)}
       <p class="lead">貴施設にお願いするのは「ヒアリング回答・CSV提供・説明会参加」のみ。サーバー購入・ソフトのインストールは一切不要です。</p>
     </div>
     <div class="cards">
-      <div class="card"><div class="ico">📋</div><h3>① 事前ヒアリング（フォーム1枚）</h3><p>営業曜日・送迎便の構成・車両/職員一覧・計画書様式をご回答いただきます。利用者・車両・職員はCSVでご提供ください。</p></div>
+      <div class="card"><div class="ico">📋</div><h3>① 事前ヒアリング（フォーム1枚）</h3><p>営業曜日・送迎便の構成・車両/従業員一覧・シフトの組み方をご回答いただきます。利用者の運行情報・車両・従業員はCSVでご提供ください（健康情報は不要です）。</p></div>
       <div class="card"><div class="ico">⚙️</div><h3>② 環境構築（FRENVOX作業・約2時間）</h3><p>貴施設専用環境の構築・初期設定・マスターデータ投入は、すべてこちらで行います。</p></div>
       <div class="card"><div class="ico">🎓</div><h3>③ オンライン操作説明会（60分・1回）</h3><p>録画もお渡しするので、欠席スタッフや新人教育にもそのまま使えます。まずは送迎ホワイトボードを「毎朝開く」ことから始めるのがおすすめです。</p></div>
     </div>
@@ -306,8 +308,8 @@ footer a{color:var(--muted)}
         <p>重要なご質問なので、設計で答えています。①アプリは貴施設のGoogle環境内で動くため、当社のサーバーが止まってもアプリは止まりません。②データは最初から貴施設のものとして貴施設のDriveにあり、万一当社が事業を畳んでもデータはそのまま手元に残ります。③解約時もエクスポート作業は不要で、お使いのスプレッドシートがそのまま残ります。大手にはできないデータの持たせ方です。</p>
       </details>
       <details>
-        <summary>AIに利用者の個人情報を送るのは問題ないのですか？ 学習に使われませんか？</summary>
-        <p>使用するGoogle Gemini APIの有料サービスでは、送信したデータがAIの学習に使われないことがGoogleの規約で明記されています。無料版AIとはここが違います。また、AIに送る情報は議事録・計画書の生成に必要な最小限に絞っています。データが国外サーバーで処理され得る点も含めて契約書に明記し、利用者向けの掲示文例もこちらでご用意します。</p>
+        <summary>AIに病名や介護度などの健康情報を送って大丈夫なのですか？</summary>
+        <p>そもそも本アプリは、病歴・健康情報・介護度・食事制限・病名・原因疾患・担当医といった要配慮個人情報を一切扱いません。AIが処理するのは施設運営の議事録や、送迎・シフトの操作補助のための情報のみです。使用するGoogle Gemini APIの有料サービスでは、送信したデータがAIの学習に使われないことがGoogleの規約で明記されています（無料版AIとはここが違います）。データが国外サーバーで処理され得る点も含めて契約書に明記し、必要な掲示文例もこちらでご用意します。</p>
       </details>
       <details>
         <summary>解約したらデータはどうなりますか？ 違約金は？</summary>
@@ -318,8 +320,16 @@ footer a{color:var(--muted)}
         <p>毎朝見るのはホワイトボード画面1枚です。導入時に60分の説明会を行い、録画もお渡しします。実際に介護職員・看護師・理学療法士が毎日使っている現場（高松市内）の見学もご案内できます。</p>
       </details>
       <details>
-        <summary>請求ソフトと二重入力になりませんか？</summary>
-        <p>本サービスが扱うのは送迎・計画書・議事録など、請求ソフトの外側の業務です。重複するのは利用者の基本情報程度で、導入時にCSVで一括投入できます。請求ソフトの変更は不要で、そのまま併用いただけます。</p>
+        <summary>基幹ソフト（ほのぼの・カイポケ等）と二重入力になりませんか？</summary>
+        <p>本サービスが扱うのは送迎・シフト・議事録など、記録・請求・LIFE・計画書を担う基幹ソフトの外側の業務です。基幹ソフトは置き換えません。重複するのは利用者の氏名・住所など基本情報程度で、導入時にCSVで一括投入できます。基幹ソフトの変更は不要で、そのまま併用いただけます。</p>
+      </details>
+      <details>
+        <summary>リハビリ計画書や食事FAXの作成機能はありますか？</summary>
+        <p>本サービスには含みません。リハビリ計画書はリハマネジメント加算・LIFEと一体の重要書類のため、お使いの基幹ソフトにお任せいただく方針です。本サービスは、その手前の送迎・シフト・議事録といった間接業務の時間を削る補完ツールに徹し、要配慮個人情報を扱わないことで安全性と価格を両立しています。</p>
+      </details>
+      <details>
+        <summary>デイサービス（通所介護）でも使えますか？</summary>
+        <p>はい。計画書機能を持たず、送迎・シフト・議事録に特化したことで、通所リハ（デイケア）だけでなく通所介護（デイサービス）でもそのままご利用いただけます。送迎とシフトの負担はサービス種別を問わず共通の悩みです。</p>
       </details>
       <details>
         <summary>補助金は使えますか？</summary>
