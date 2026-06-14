@@ -47,6 +47,9 @@
   .btn-primary{background:var(--accent);color:var(--bg)}
   .btn-ghost{border:1px solid var(--border);color:var(--white)}
   .disc-inline{margin-top:18px;font-size:.8rem;color:var(--text-dim);border-left:2px solid var(--accent-dim);padding-left:12px;max-width:660px}
+  .hero-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:28px;align-items:center}
+  .hero-art{text-align:center}
+  .hero-art img{width:100%;max-width:300px;filter:drop-shadow(0 8px 30px rgba(200,162,78,.18))}
 
   section{padding:58px 0;border-bottom:1px solid var(--border)}
   .lead{font-size:.95rem;color:var(--text)}
@@ -109,6 +112,9 @@
   @media(max-width:680px){
     .cards,.checks{grid-template-columns:1fr}
     .hero{padding:54px 0 44px}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-art{order:-1;margin-bottom:6px}
+    .hero-art img{max-width:190px}
   }
 </style>
 </head>
@@ -123,16 +129,19 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="wrap">
-    <p class="eyebrow">理学療法士 × AI ／ 訪問・パーソナル</p>
-    <h1>その不調や伸び悩み、<br>ヒントは“動きのクセ”にあるかもしれません。</h1>
-    <p class="sub">国家資格を持つ理学療法士とAIが、つま先から頭まで全身を<span class="accent">計測・可視化</span>。今日から何を・どれだけ・どの頻度でやればいいかを、<b style="color:var(--white)">2枚のPDF</b>で具体的に提案します。高齢の方からスポーツを楽しむ方、将棋など趣味を長く続けたい方まで。</p>
-    <p class="meta">初回フル評価 60〜90分 ／ 香川県高松市拠点・県内対応（出張）</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:kaito@frenvox.jp?subject=身体評価の予約・相談">初回フル評価を予約する</a>
-      <a class="btn btn-ghost" href="#flow">サービスの流れを見る</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">理学療法士 × AI ／ 訪問・パーソナル</p>
+      <h1>その不調や伸び悩み、<br>ヒントは“動きのクセ”にあるかもしれません。</h1>
+      <p class="sub">国家資格を持つ理学療法士とAIが、つま先から頭まで全身を<span class="accent">計測・可視化</span>。今日から何を・どれだけ・どの頻度でやればいいかを、<b style="color:var(--white)">2枚のPDF</b>で具体的に提案します。高齢の方からスポーツを楽しむ方、将棋など趣味を長く続けたい方まで。</p>
+      <p class="meta">初回フル評価 60〜90分 ／ 香川県高松市拠点・県内対応（出張）</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:kaito@frenvox.jp?subject=身体評価の予約・相談">初回フル評価を予約する</a>
+        <a class="btn btn-ghost" href="#flow">サービスの流れを見る</a>
+      </div>
+      <p class="disc-inline">※ 本サービスは医療行為ではなく、健康増進・予防を目的としたコンディショニング／運動サポートです。診断・治療は行いません。</p>
     </div>
-    <p class="disc-inline">※ 本サービスは医療行為ではなく、健康増進・予防を目的としたコンディショニング／運動サポートです。診断・治療は行いません。</p>
+    <div class="hero-art"><img src="images/motion-analysis.svg" alt="動作解析（ポーズ推定）のイメージ" width="300" height="383" /></div>
   </div>
 </div>
 

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 460" fill="none" role="img" aria-label="動作解析（ポーズ推定）のイメージ">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#c8a24e" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#c8a24e" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .bone{stop-color:#c8a24e}
+      .edge{stroke:#c8a24e;stroke-width:3;stroke-linecap:round}
+      .edge-ghost{stroke:#c8a24e;stroke-width:3;stroke-linecap:round;opacity:.22}
+      .node{fill:#c8a24e}
+      .node-core{fill:#fff}
+      .grid{stroke:#c8a24e;stroke-width:1;opacity:.18}
+      .lbl{fill:#c8a24e;font-family:'Inter',sans-serif;font-size:13px;font-weight:700}
+      .arc{stroke:#c8a24e;stroke-width:2;fill:none;opacity:.85}
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="360" height="460" fill="url(#glow)"/>
+  <!-- subtle grid -->
+  <g class="grid">
+    <line x1="0" y1="115" x2="360" y2="115"/><line x1="0" y1="230" x2="360" y2="230"/><line x1="0" y1="345" x2="360" y2="345"/>
+    <line x1="120" y1="0" x2="120" y2="460"/><line x1="240" y1="0" x2="240" y2="460"/>
+  </g>
+
+  <!-- ghost (motion trail) -->
+  <g class="edge-ghost">
+    <path d="M168 60 L168 110 M168 110 L138 118 M138 118 L126 162 M168 110 L200 118 M200 118 L214 160 M168 110 L168 212 M168 212 L150 216 M168 212 L196 216 M150 216 L142 296 M142 296 L132 368 M196 216 L210 290 M210 290 L226 360"/>
+  </g>
+
+  <!-- skeleton edges -->
+  <g class="edge">
+    <line x1="180" y1="60" x2="180" y2="104"/>
+    <line x1="180" y1="104" x2="150" y2="110"/>
+    <line x1="150" y1="110" x2="136" y2="154"/>
+    <line x1="136" y1="154" x2="128" y2="198"/>
+    <line x1="180" y1="104" x2="210" y2="110"/>
+    <line x1="210" y1="110" x2="224" y2="152"/>
+    <line x1="224" y1="152" x2="236" y2="194"/>
+    <line x1="180" y1="104" x2="180" y2="210"/>
+    <line x1="180" y1="210" x2="160" y2="215"/>
+    <line x1="180" y1="210" x2="200" y2="215"/>
+    <line x1="160" y1="215" x2="150" y2="292"/>
+    <line x1="150" y1="292" x2="140" y2="366"/>
+    <line x1="140" y1="366" x2="156" y2="374"/>
+    <line x1="200" y1="215" x2="216" y2="286"/>
+    <line x1="216" y1="286" x2="232" y2="360"/>
+    <line x1="232" y1="360" x2="250" y2="352"/>
+  </g>
+
+  <!-- knee angle arc + label (right knee) -->
+  <path class="arc" d="M205 268 A24 24 0 0 1 232 304"/>
+  <text class="lbl" x="236" y="296">142°</text>
+  <!-- hip arc -->
+  <path class="arc" d="M196 232 A20 20 0 0 1 214 244"/>
+  <text class="lbl" x="206" y="262" font-size="11">L/R</text>
+
+  <!-- nodes -->
+  <g>
+    <circle class="node" cx="180" cy="60" r="11"/><circle class="node-core" cx="180" cy="60" r="4"/>
+    <g>
+      <circle class="node" cx="180" cy="104" r="6"/>
+      <circle class="node" cx="150" cy="110" r="6"/><circle class="node" cx="210" cy="110" r="6"/>
+      <circle class="node" cx="136" cy="154" r="6"/><circle class="node" cx="224" cy="152" r="6"/>
+      <circle class="node" cx="128" cy="198" r="6"/><circle class="node" cx="236" cy="194" r="6"/>
+      <circle class="node" cx="180" cy="210" r="6"/>
+      <circle class="node" cx="160" cy="215" r="6"/><circle class="node" cx="200" cy="215" r="6"/>
+      <circle class="node" cx="150" cy="292" r="6"/><circle class="node" cx="216" cy="286" r="6"/>
+      <circle class="node" cx="140" cy="366" r="6"/><circle class="node" cx="232" cy="360" r="6"/>
+    </g>
+    <circle class="node-core" cx="150" cy="292" r="2.4"/><circle class="node-core" cx="216" cy="286" r="2.4"/>
+    <circle class="node-core" cx="180" cy="210" r="2.4"/>
+  </g>
+</svg>

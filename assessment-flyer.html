@@ -27,7 +27,11 @@
   .eyebrow{margin-top:18px;font-size:.74rem;letter-spacing:.2em;color:var(--accent-d);font-weight:800}
   h1{font-size:25pt;font-weight:900;line-height:1.32;margin-top:6px;color:var(--ink)}
   h1 .u{background:linear-gradient(transparent 62%,rgba(200,162,78,.45) 62%)}
-  .sub{margin-top:14px;font-size:10.5pt;color:var(--ink2);max-width:165mm}
+  .sub{margin-top:14px;font-size:10.5pt;color:var(--ink2)}
+  .hero-row{display:flex;gap:16px;align-items:center;margin-top:6px}
+  .hero-row .copy{flex:1;min-width:0}
+  .flyer-art{flex:none;width:120px}
+  .flyer-art img{width:100%;display:block}
   /* bullets */
   .bullets{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:9px 18px}
   .b{display:flex;gap:9px;align-items:flex-start;font-size:10pt;font-weight:500}
@@ -69,9 +73,14 @@
     <span class="tag">理学療法士 × AI ／ 訪問・パーソナル身体評価</span>
   </div>
 
-  <p class="eyebrow">あなたの身体、ちゃんと“見える化”できていますか？</p>
-  <h1>理学療法士×AIが、つま先から頭まで<br><span class="u">全身を計測・可視化</span>します。</h1>
-  <p class="sub">“今日から何を・どれだけ・どの頻度でやればいいか”を、2枚のPDFで具体的にご提案。高松市拠点・県内対応（訪問）。<b>健康増進・コンディショニングサービス（医療行為ではありません）。</b></p>
+  <div class="hero-row">
+    <div class="copy">
+      <p class="eyebrow">あなたの身体、ちゃんと“見える化”できていますか？</p>
+      <h1>理学療法士×AIが、つま先から頭まで<br><span class="u">全身を計測・可視化</span>します。</h1>
+      <p class="sub">“今日から何を・どれだけ・どの頻度でやればいいか”を、2枚のPDFで具体的にご提案。高松市拠点・県内対応（訪問）。<b>健康増進・コンディショニングサービス（医療行為ではありません）。</b></p>
+    </div>
+    <div class="flyer-art"><img src="images/motion-analysis.svg" alt="動作解析（ポーズ推定）" /></div>
+  </div>
 
   <div class="bullets">
     <div class="b"><span class="ck">✓</span>国家資格を持つ理学療法士・桑島海斗が担当</div>
