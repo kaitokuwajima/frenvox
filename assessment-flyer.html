@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FRENVOX 身体評価 チラシ（A4・印刷用）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{--ink:#15201d;--ink2:#3a4742;--line:#e4e0d6;--accent:#c8a24e;--accent-d:#9c7b2e;--cream:#faf8f3;--paper:#fff}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#d8d8d8;font-family:"Inter","Noto Sans JP",system-ui,sans-serif;color:var(--ink);line-height:1.7}
+  .toolbar{max-width:210mm;margin:14px auto;text-align:right}
+  .toolbar button{background:var(--ink);color:#fff;border:none;border-radius:8px;padding:10px 18px;font-size:.9rem;font-weight:700;cursor:pointer}
+  .page{
+    width:210mm;min-height:297mm;margin:0 auto 20px;background:var(--paper);
+    padding:16mm 15mm;position:relative;overflow:hidden;
+    box-shadow:0 8px 40px rgba(0,0,0,.18);
+  }
+  .accent{color:var(--accent-d)}
+  /* header */
+  .head{display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:10px}
+  .head img{height:30px}
+  .head .tag{font-size:.72rem;letter-spacing:.16em;color:var(--ink2);font-weight:700}
+  /* hero */
+  .eyebrow{margin-top:18px;font-size:.74rem;letter-spacing:.2em;color:var(--accent-d);font-weight:800}
+  h1{font-size:25pt;font-weight:900;line-height:1.32;margin-top:6px;color:var(--ink)}
+  h1 .u{background:linear-gradient(transparent 62%,rgba(200,162,78,.45) 62%)}
+  .sub{margin-top:14px;font-size:10.5pt;color:var(--ink2);max-width:165mm}
+  /* bullets */
+  .bullets{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:9px 18px}
+  .b{display:flex;gap:9px;align-items:flex-start;font-size:10pt;font-weight:500}
+  .b .ck{flex:none;width:19px;height:19px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px;font-weight:900}
+  /* pricing */
+  .price{margin-top:20px;border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
+  .price .row{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);font-size:10pt}
+  .price .row:last-child{border-bottom:none}
+  .price .row .nm b{font-weight:800}
+  .price .row .nm span{color:var(--ink2);font-size:8.6pt;display:block}
+  .price .row .pr{font-weight:900;font-size:12pt;white-space:nowrap;color:var(--ink)}
+  .price .row.head{background:var(--cream)}
+  .price-note{margin-top:8px;font-size:8.4pt;color:var(--ink2)}
+  /* cta + qr */
+  .cta{margin-top:20px;display:flex;gap:18px;align-items:center;background:var(--ink);border-radius:14px;padding:18px 20px;color:#fff}
+  .cta .qr{flex:none;background:#fff;padding:7px;border-radius:8px;line-height:0}
+  .cta .qr img{width:118px;height:118px;display:block}
+  .cta .txt h3{font-size:13pt;font-weight:900;color:#fff;line-height:1.4}
+  .cta .txt .sm{margin-top:6px;font-size:9pt;color:#d9d2c2}
+  .cta .txt .contact{margin-top:9px;font-size:9.4pt;font-weight:700;color:var(--accent)}
+  /* footer */
+  .foot{position:absolute;left:15mm;right:15mm;bottom:12mm}
+  .foot .biz{font-size:8.6pt;font-weight:700;color:var(--ink);border-top:1px solid var(--line);padding-top:8px}
+  .foot .disc{margin-top:5px;font-size:7.6pt;color:var(--ink2);line-height:1.6}
+  @media print{
+    body{background:#fff}
+    .toolbar{display:none}
+    .page{margin:0;box-shadow:none;width:auto;min-height:auto}
+    @page{size:A4;margin:0}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">印刷 / PDF保存</button></div>
+
+<div class="page">
+  <div class="head">
+    <img src="images/brand/logo-full.png" alt="FRENVOX" />
+    <span class="tag">理学療法士 × AI ／ 訪問・パーソナル身体評価</span>
+  </div>
+
+  <p class="eyebrow">あなたの身体、ちゃんと“見える化”できていますか？</p>
+  <h1>理学療法士×AIが、つま先から頭まで<br><span class="u">全身を計測・可視化</span>します。</h1>
+  <p class="sub">“今日から何を・どれだけ・どの頻度でやればいいか”を、2枚のPDFで具体的にご提案。高松市拠点・県内対応（訪問）。<b>健康増進・コンディショニングサービス（医療行為ではありません）。</b></p>
+
+  <div class="bullets">
+    <div class="b"><span class="ck">✓</span>国家資格を持つ理学療法士・桑島海斗が担当</div>
+    <div class="b"><span class="ck">✓</span>OpenCap動作解析＋問診＋握力で全身を多角的に計測</div>
+    <div class="b"><span class="ck">✓</span>AIが可視化・運動提案を補助（非医療機器／最終提案は理学療法士）</div>
+    <div class="b"><span class="ck">✓</span>緩めたい・鍛えたい部位の目安が明確。迷わない2枚のPDF</div>
+    <div class="b"><span class="ck">✓</span>毎回データが残り、動きやすさの変化が見える</div>
+    <div class="b"><span class="ck">✓</span>高齢者・スポーツ・趣味の方まで、あらゆる人に</div>
+  </div>
+
+  <div class="price">
+    <div class="row head"><span class="nm" style="font-weight:800;font-size:8.6pt;color:var(--ink2)">メニュー（すべて税込・保険適用外）</span><span class="pr" style="font-size:8.6pt;color:var(--ink2);font-weight:700">料金</span></div>
+    <div class="row"><span class="nm"><b>初回フル評価</b><span>問診＋動作解析＋AIレポート＋運動プログラム＋2枚PDF（60〜90分）</span></span><span class="pr">¥9,800</span></div>
+    <div class="row"><span class="nm"><b>再評価セッション</b><span>前回比較＋プログラム更新（30〜45分）</span></span><span class="pr">¥5,500</span></div>
+    <div class="row"><span class="nm"><b>月額メンバー</b><span>月2回＋経過レポート＋データ蓄積</span></span><span class="pr">¥12,000/月</span></div>
+  </div>
+  <p class="price-note">出張は半径5km以内無料、以遠1kmあたり¥100（上限¥2,000程度）。市内一律¥1,000のご案内も可。法人・施設の出張計測会は¥50,000〜。</p>
+
+  <div class="cta">
+    <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=0&data=https%3A%2F%2Ffrenvox.jp%2Fassessment.html" alt="QR：詳細・予約" /></div>
+    <div class="txt">
+      <h3>まずは初回フル評価から。</h3>
+      <p class="sm">QRから詳細・ご予約へ。オンライン相談可・しつこい勧誘なし・キャンセル無料。</p>
+      <p class="contact">kaito@frenvox.jp ／ 080-4343-2366 ／ frenvox.jp</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p class="biz">FRENVOX（フレンボックス）／代表・理学療法士　桑島 海斗 ／ 香川県高松市 ／ frenvox.jp</p>
+    <p class="disc">本サービスは医療行為ではなく、健康増進・予防を目的としたコンディショニング／運動サポートです。診断・治療は行いません。AIは評価の可視化・運動提案の補助ツール（非医療機器）で、最終的な提案は理学療法士が行います。効果には個人差があり、変化を保証するものではありません。痛みが強い・医療機関での対応が必要な場合は、かかりつけの医療機関にご相談ください。</p>
+  </div>
+</div>
+
+</body>
+</html>
