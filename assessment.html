@@ -3,146 +3,138 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>FRENVOX 身体評価 ｜ 理学療法士×AIが、つま先から頭まで“見える化”</title>
-<meta name="description" content="理学療法士・桑島海斗とAIが、OpenCap動作解析・問診・握力で全身を計測・可視化。今日から何を・どれだけ・どの頻度でやるかを2枚のPDFで提案する、訪問型の健康増進・コンディショニングサービス。香川県高松市拠点・県内対応。" />
-<meta property="og:title" content="FRENVOX 身体評価 ｜ 理学療法士×AIが全身を“見える化”" />
-<meta property="og:description" content="つま先から頭まで計測・可視化。今日から何を・どれだけやるかを2枚のPDFで。訪問・健康増進/コンディショニング。" />
-<meta property="og:type" content="website" />
+<title>身体評価｜FRENVOX — 理学療法士×AIが、つま先から頭まで“見える化”</title>
+<meta name="description" content="理学療法士・桑島海斗とAIが、動作解析・問診・握力で全身を計測・可視化。今日から何を・どれだけやるかを2枚のレポートに。オンライン(Google Meet)/香川県内は訪問。健康増進・コンディショニングサービス。" />
+<meta property="og:title" content="身体評価｜FRENVOX — 理学療法士×AIが全身を“見える化”" />
+<meta property="og:description" content="つま先から頭まで計測・可視化。今日から何をどれだけやるかを2枚のレポートに。オンライン/訪問。" />
 <meta property="og:url" content="https://frenvox.jp/assessment.html" />
+<link rel="icon" href="images/brand/logo-mark-64.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg:#111; --bg-dark:#0a0a0a; --surface:#1a1a1a; --surface-2:#202020;
-    --border:#262626; --text:#cfcfcf; --text-dim:#8c8c8c; --white:#fff;
-    --accent:#c8a24e; --accent-dim:#a9863b;
+    --paper:#F5F8FB; --paper-2:#E9EEF5; --white:#fff;
+    --ink:#0B1A2C; --ink-2:#31435C; --muted:#5F7189; --faint:#90A0B5;
+    --line:rgba(11,26,44,.14); --line-2:rgba(11,26,44,.26);
+    --blue:#0B72C8; --blue-deep:#085391; --cyan:#2FA8E8; --blue-bg:rgba(11,114,200,.07);
+    --serif:'Shippori Mincho B1',serif; --en:'Space Grotesk',sans-serif; --jp:'Zen Kaku Gothic New',sans-serif;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
+  *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);color:var(--text);
-    font-family:"Inter","Noto Sans JP",system-ui,sans-serif;
-    line-height:1.8;-webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:920px;margin:0 auto;padding:0 22px}
-  a{color:inherit}
-  .accent{color:var(--accent)}
-  h1,h2,h3{font-weight:900;color:var(--white);line-height:1.4;letter-spacing:.01em}
-  .eyebrow{font-size:.72rem;letter-spacing:.22em;color:var(--accent);font-weight:600;text-transform:uppercase}
+  body{font-family:var(--jp);background:var(--paper);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .container{max-width:1000px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:var(--en);font-size:.72rem;letter-spacing:.3em;color:var(--blue);font-weight:600;text-transform:uppercase}
+  h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.5;letter-spacing:.01em}
+  .blue{color:var(--blue)}
 
-  /* header */
-  header.nav{position:sticky;top:0;z-index:20;background:rgba(17,17,17,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
-  .nav-in img{height:26px}
-  .nav-cta{font-size:.82rem;font-weight:700;color:var(--bg);background:var(--accent);padding:8px 16px;border-radius:999px;text-decoration:none}
+  header.nav{position:sticky;top:0;z-index:20;background:rgba(245,248,251,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--en);font-weight:700;letter-spacing:.04em}
+  .nav-logo img{width:30px;height:30px}
+  .nav-cta{background:var(--ink);color:#fff;padding:9px 18px;border-radius:999px;font-weight:700;font-size:.82rem}
 
-  /* hero */
-  .hero{padding:74px 0 56px;border-bottom:1px solid var(--border);background:radial-gradient(900px 420px at 70% -10%,rgba(200,162,78,.12),transparent)}
-  .hero h1{font-size:clamp(1.7rem,4.6vw,2.7rem)}
-  .hero .sub{margin-top:20px;font-size:1.02rem;color:var(--text);max-width:680px}
-  .hero .meta{margin-top:14px;font-size:.84rem;color:var(--text-dim)}
-  .cta-row{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
-  .btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;padding:13px 26px;font-size:.95rem}
-  .btn-primary{background:var(--accent);color:var(--bg)}
-  .btn-ghost{border:1px solid var(--border);color:var(--white)}
-  .disc-inline{margin-top:18px;font-size:.8rem;color:var(--text-dim);border-left:2px solid var(--accent-dim);padding-left:12px;max-width:660px}
-  .hero-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:28px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;border-radius:999px;padding:14px 28px;font-size:.95rem}
+  .btn-blue{background:var(--blue);color:#fff}
+  .btn-line{border:1px solid var(--line-2);color:var(--ink)}
+  .btn .ar{transition:transform .25s}
+  .btn:hover .ar{transform:translateX(4px)}
+
+  .hero{padding:72px 0 50px;border-bottom:1px solid var(--line);background:radial-gradient(900px 420px at 78% -10%,var(--blue-bg),transparent)}
+  .hero-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:30px;align-items:center}
+  .hero h1{font-size:clamp(1.7rem,4.2vw,2.6rem);font-weight:800}
+  .hero .sub{margin-top:20px;color:var(--ink-2);font-size:1.02rem;max-width:620px}
+  .hero .meta{margin-top:14px;font-size:.86rem;color:var(--muted)}
+  .hero .meta b{color:var(--ink)}
+  .cta-row{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+  .disc-inline{margin-top:18px;font-size:.8rem;color:var(--muted);border-left:3px solid var(--cyan);padding-left:12px;max-width:600px}
   .hero-art{text-align:center}
-  .hero-art img{width:100%;max-width:300px;filter:drop-shadow(0 8px 30px rgba(200,162,78,.18))}
+  .hero-art img{width:100%;max-width:300px;filter:drop-shadow(0 14px 36px rgba(11,114,200,.18))}
 
-  section{padding:58px 0;border-bottom:1px solid var(--border)}
-  .lead{font-size:.95rem;color:var(--text)}
-  h2{font-size:clamp(1.3rem,3.2vw,1.8rem);margin-bottom:8px}
-  .sec-sub{color:var(--text-dim);margin-bottom:26px;font-size:.9rem}
+  section.sec{padding:58px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(1.35rem,3.2vw,1.95rem)}
+  .sec-sub{color:var(--muted);margin-top:8px;margin-bottom:24px;font-size:.95rem}
+  .lead{color:var(--ink-2);font-size:.98rem}
 
-  /* problem list */
   .problem ul{list-style:none;display:grid;gap:10px;margin-top:18px}
-  .problem li{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:.95rem}
-  .problem li::before{content:"“";color:var(--accent);font-weight:900;margin-right:4px}
-  .problem li::after{content:"”";color:var(--accent);font-weight:900}
+  .problem li{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:14px 18px;font-size:.95rem}
+  .problem li::before{content:"“";color:var(--blue);font-weight:700}
+  .problem li::after{content:"”";color:var(--blue);font-weight:700}
 
-  /* features */
+  .shots{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+  .shots figure{margin:0}
+  .shots img{width:100%;border:1px solid var(--line);border-radius:14px;background:var(--white)}
+  .shots figcaption{margin-top:10px;font-size:.85rem;color:var(--muted);text-align:center}
+
   .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px}
-  .card .no{font-family:"Inter";font-weight:700;color:var(--accent);font-size:.8rem;letter-spacing:.1em}
-  .card h3{font-size:1.05rem;margin:8px 0 8px}
-  .card p{font-size:.9rem;color:var(--text)}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .card .no{font-family:var(--en);font-weight:600;color:var(--blue);font-size:.8rem;letter-spacing:.08em}
+  .card h3{font-size:1.08rem;margin:8px 0 8px}
+  .card p{font-size:.9rem;color:var(--muted)}
 
-  /* targets */
   .checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
   .check{display:flex;gap:10px;align-items:flex-start;font-size:.93rem}
-  .check svg{flex:none;margin-top:3px;color:var(--accent)}
-  .note-soft{margin-top:18px;font-size:.85rem;color:var(--text-dim);background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 16px}
+  .check svg{flex:none;margin-top:3px;color:var(--blue)}
+  .note-soft{margin-top:18px;font-size:.85rem;color:var(--muted);background:var(--white);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
 
-  /* flow */
   .steps{display:grid;gap:12px;margin-top:8px}
-  .step{display:flex;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
-  .step .si{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--bg);font-weight:900;display:flex;align-items:center;justify-content:center;font-family:"Inter"}
+  .step{display:flex;gap:16px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .step .si{flex:none;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--en);font-weight:700;display:flex;align-items:center;justify-content:center}
   .step h3{font-size:1rem;margin-bottom:2px}
-  .step p{font-size:.88rem;color:var(--text)}
+  .step p{font-size:.88rem;color:var(--muted)}
 
-  /* pricing */
-  .price-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.95rem;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden}
-  .price-table th,.price-table td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--border)}
-  .price-table th{color:var(--text-dim);font-weight:600;font-size:.8rem;letter-spacing:.05em}
-  .price-table td.price{color:var(--white);font-weight:700;white-space:nowrap;text-align:right}
+  .price-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.95rem;background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .price-table th,.price-table td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  .price-table th{color:var(--muted);font-weight:600;font-size:.78rem;letter-spacing:.05em;font-family:var(--en)}
+  .price-table td.price{font-family:var(--serif);font-weight:700;white-space:nowrap;text-align:right;color:var(--ink)}
   .price-table tr:last-child td{border-bottom:none}
-  .price-note{margin-top:14px;font-size:.83rem;color:var(--text-dim)}
+  .price-note{margin-top:14px;font-size:.83rem;color:var(--muted)}
 
-  /* faq */
-  .faq details{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px 18px;margin-bottom:10px}
-  .faq summary{cursor:pointer;font-weight:700;color:var(--white);padding:14px 0;font-size:.95rem;list-style:none}
+  .faq details{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:2px 18px;margin-bottom:10px}
+  .faq summary{cursor:pointer;font-weight:700;padding:14px 0;font-size:.95rem;list-style:none}
   .faq summary::-webkit-details-marker{display:none}
-  .faq summary::before{content:"＋";color:var(--accent);margin-right:10px;font-weight:900}
+  .faq summary::before{content:"＋";color:var(--blue);margin-right:10px;font-weight:700}
   .faq details[open] summary::before{content:"−"}
-  .faq p{padding:0 0 16px;font-size:.9rem;color:var(--text)}
+  .faq p{padding:0 0 16px;font-size:.9rem;color:var(--muted)}
 
-  /* final cta */
-  .final{text-align:center;background:radial-gradient(700px 320px at 50% 0,rgba(200,162,78,.14),transparent)}
-  .final h2{margin-bottom:18px}
-  .final .contact{margin-top:18px;font-size:.9rem;color:var(--text-dim)}
-  .final .contact a{color:var(--accent);text-decoration:none;font-weight:600}
+  .final{text-align:center;background:radial-gradient(700px 320px at 50% 0,var(--blue-bg),transparent)}
+  .final h2{margin-bottom:16px}
+  .final .contact{margin-top:18px;font-size:.9rem;color:var(--muted)}
+  .final .contact a{color:var(--blue);font-weight:600}
 
-  footer{padding:40px 0 60px;background:var(--bg-dark)}
-  footer .disc{font-size:.8rem;color:var(--text-dim);line-height:1.9;border:1px solid var(--border);border-radius:12px;padding:16px 18px;background:var(--surface)}
-  footer .biz{margin-top:18px;font-size:.82rem;color:var(--text-dim)}
-  footer .biz b{color:var(--text)}
-
-  .shots{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
-  .shots figure{margin:0}
-  .shots img{width:100%;border:1px solid var(--border);border-radius:14px;background:var(--surface);display:block}
-  .shots figcaption{margin-top:10px;font-size:.85rem;color:var(--text-dim);text-align:center}
+  footer{background:#08131f;color:#9fb2c8;padding:42px 0 56px;font-size:.85rem}
+  footer .fbrand{font-family:var(--en);font-weight:700;color:#fff;font-size:1.1rem;letter-spacing:.05em}
+  footer .disc{margin-top:12px;line-height:1.9;max-width:760px}
+  footer .biz{margin-top:14px}
+  footer a{color:#7fc4ff}
 
   @media(max-width:680px){
-    .cards,.checks,.shots{grid-template-columns:1fr}
-    .hero{padding:54px 0 44px}
-    .hero-grid{grid-template-columns:1fr}
-    .hero-art{order:-1;margin-bottom:6px}
-    .hero-art img{max-width:190px}
+    .hero-grid,.cards,.checks,.shots{grid-template-columns:1fr}
+    .hero-art{order:-1}.hero-art img{max-width:200px}
   }
 </style>
 </head>
 <body>
 
 <header class="nav">
-  <div class="wrap nav-in">
-    <a href="https://frenvox.jp/"><img src="images/brand/logo-full.png" alt="FRENVOX" /></a>
+  <div class="container nav-in">
+    <a class="nav-logo" href="index.html"><img src="images/brand/logo-mark-64.png" alt="" />FRENVOX</a>
     <a class="nav-cta" href="mailto:kaito@frenvox.jp?subject=身体評価の予約・相談">予約・相談</a>
   </div>
 </header>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">理学療法士 × AI ／ 訪問・パーソナル</p>
-      <h1>その不調や伸び悩み、<br>ヒントは“動きのクセ”にあるかもしれません。</h1>
-      <p class="sub">国家資格を持つ理学療法士とAIが、つま先から頭まで全身を<span class="accent">計測・可視化</span>。今日から何を・どれだけ・どの頻度でやればいいかを、<b style="color:var(--white)">2枚のPDF</b>で具体的に提案します。高齢の方からスポーツを楽しむ方、将棋など趣味を長く続けたい方まで。</p>
-      <p class="meta">初回フル評価 60〜90分 ／ <b style="color:var(--white)">オンライン（Google Meet）対応</b>・香川県内は出張も</p>
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Body × AI ／ 理学療法士監修</p>
+      <h1>その不調や伸び悩み、<br>ヒントは“動きのクセ”に<span class="blue">あるかもしれません。</span></h1>
+      <p class="sub">国家資格を持つ理学療法士とAIが、つま先から頭まで全身を<b style="color:var(--ink)">計測・可視化</b>。今日から何を・どれだけ・どの頻度でやればいいかを、<b style="color:var(--ink)">2枚のレポート</b>で具体的に提案します。高齢の方からスポーツを楽しむ方、将棋など趣味を長く続けたい方まで。</p>
+      <p class="meta">初回フル評価 60〜90分 ／ <b>オンライン（Google Meet）対応</b>・香川県内は出張も</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:kaito@frenvox.jp?subject=身体評価の予約・相談">初回フル評価を予約する</a>
-        <a class="btn btn-ghost" href="#flow">サービスの流れを見る</a>
+        <a class="btn btn-blue" href="mailto:kaito@frenvox.jp?subject=身体評価の予約・相談">初回フル評価を予約する <span class="ar">→</span></a>
+        <a class="btn btn-line" href="#flow">サービスの流れを見る</a>
       </div>
       <p class="disc-inline">※ 本サービスは医療行為ではなく、健康増進・予防を目的としたコンディショニング／運動サポートです。診断・治療は行いません。</p>
     </div>
@@ -150,9 +142,8 @@
   </div>
 </div>
 
-<!-- PROBLEM -->
-<section class="problem">
-  <div class="wrap">
+<section class="sec problem">
+  <div class="container">
     <span class="eyebrow">こんなお悩み</span>
     <h2>「何をすればいいか分からない」を、終わらせる。</h2>
     <p class="sec-sub">こうした悩みは、あなただけのものではありません。その多くは“身体の使い方・動きのクセ”に手がかりがあります。</p>
@@ -166,46 +157,42 @@
   </div>
 </section>
 
-<!-- SOLUTION -->
-<section>
-  <div class="wrap">
+<section class="sec">
+  <div class="container">
     <span class="eyebrow">FRENVOXの提供価値</span>
     <h2>身体を知る → 動作を可視化 → あなた専用の運動 → 続ける。</h2>
-    <p class="lead">国家資格を持つ理学療法士・桑島海斗の、5年・全年代の臨床の視点を学習させたAIが、OpenCap動作解析・問診・握力をもとに全身を多角的に可視化します。AIは<b style="color:var(--white)">評価の可視化と運動提案を“補助”</b>するツール（非医療機器）で、最終的な提案は理学療法士が行います。目指すのは“治す”ことではなく、<span class="accent">動きやすさとコンディションの変化</span>。緩めたい部位・鍛えたい部位の目安が分かり、一緒に体を知って、楽しみながら変えていけます。</p>
+    <p class="lead" style="margin-top:16px">国家資格を持つ理学療法士・桑島海斗の、5年・全年代の臨床の視点を学習させたAIが、動作解析・問診・握力をもとに全身を多角的に可視化します。AIは<b style="color:var(--ink)">評価の可視化と運動提案を“補助”</b>するツール（非医療機器）で、最終的な提案は理学療法士が行います。目指すのは“治す”ことではなく、<span class="blue">動きやすさとコンディションの変化</span>。緩めたい部位・鍛えたい部位の目安が分かり、一緒に体を知って、楽しみながら変えていけます。</p>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section>
-  <div class="wrap">
+<section class="sec">
+  <div class="container">
+    <span class="eyebrow">アウトプット例</span>
+    <h2>動作の計測から、運動提案レポートまで。</h2>
+    <p class="sec-sub">スマホ撮影の動作解析（OpenCap）で全身を可視化し、可動域・左右差・運動提案を読みやすいレポートにまとめます。</p>
+    <div class="shots">
+      <figure><img src="images/motion-analysis.svg" alt="動作解析（ポーズ推定）のイメージ" /><figcaption>① 全身の動きを点と線で計測・可視化</figcaption></figure>
+      <figure><img src="images/rom-report-app.png" alt="評価レポートアプリの画面" loading="lazy" /><figcaption>② 可動域・左右差・運動提案をレポートに自動生成</figcaption></figure>
+    </div>
+    <p style="margin-top:12px;font-size:.8rem;color:var(--faint)">※ 画面・図はイメージです。動作データはブラウザ内で処理し、外部送信は最小限・匿名で扱います。</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
     <span class="eyebrow">特徴</span>
     <h2>専門性 × 可視化 × あなた専用 × 続けられる</h2>
-    <div class="cards" style="margin-top:24px">
+    <div class="cards" style="margin-top:22px">
       <div class="card"><span class="no">01</span><h3>有資格の理学療法士が担当</h3><p>国家資格を持つ理学療法士・桑島海斗が、評価から運動提案まで一貫して担当。5年・全年代の臨床で培った視点で、あなたの身体を読み解きます。</p></div>
-      <div class="card"><span class="no">02</span><h3>AIが全身を計測・可視化</h3><p>OpenCap動作解析・問診・握力を組み合わせ、つま先から頭まで多角的に計測。AIは可視化と運動提案の補助ツール（非医療機器）です。</p></div>
-      <div class="card"><span class="no">03</span><h3>“今日から”動ける2枚のPDF</h3><p>何を・どれだけ・どの頻度でやればいいかを具体的に提示。緩めたい部位・鍛えたい部位の目安が分かるから、迷わず始められます。</p></div>
+      <div class="card"><span class="no">02</span><h3>AIが全身を計測・可視化</h3><p>動作解析・問診・握力を組み合わせ、つま先から頭まで多角的に計測。AIは可視化と運動提案の補助ツール（非医療機器）です。</p></div>
+      <div class="card"><span class="no">03</span><h3>“今日から”動ける2枚のレポート</h3><p>何を・どれだけ・どの頻度でやればいいかを具体的に提示。緩めたい部位・鍛えたい部位の目安が分かるから、迷わず始められます。</p></div>
       <div class="card"><span class="no">04</span><h3>毎回データが残り、変化が見える</h3><p>再評価のたびにデータが蓄積。動きやすさやコンディションの変化を一緒に確認しながら、楽しんで続けられる設計です。</p></div>
     </div>
   </div>
 </section>
 
-<!-- OUTPUT EXAMPLE -->
-<section>
-  <div class="wrap">
-    <span class="eyebrow">アウトプット例</span>
-    <h2>動作の計測から、運動提案レポートまで。</h2>
-    <p class="sec-sub">スマホ撮影の動作解析（OpenCap）で全身を可視化し、可動域・左右差・運動提案を読みやすいレポートにまとめます。</p>
-    <div class="shots">
-      <figure><img src="images/motion-analysis.svg" alt="動作解析（ポーズ推定）のイメージ：全身の関節を点と線で可視化" /><figcaption>① 全身の動きを点と線で計測・可視化（動作解析）</figcaption></figure>
-      <figure><img src="images/rom-report-app.png" alt="評価レポートアプリの画面：可動域・左右差・運動提案を1枚に自動生成" loading="lazy" /><figcaption>② 可動域・左右差・運動提案をレポートに自動生成</figcaption></figure>
-    </div>
-    <p style="margin-top:14px;font-size:.8rem;color:var(--text-dim)">※ 画面・図はイメージです。動作データはブラウザ内で処理し、外部送信は最小限・匿名で扱います。</p>
-  </div>
-</section>
-
-<!-- TARGETS -->
-<section>
-  <div class="wrap">
+<section class="sec">
+  <div class="container">
     <span class="eyebrow">こんな方へ</span>
     <h2>年齢も、運動経験も問いません。</h2>
     <div class="checks" style="margin-top:22px">
@@ -219,40 +206,37 @@
   </div>
 </section>
 
-<!-- FLOW -->
-<section id="flow">
-  <div class="wrap">
+<section class="sec" id="flow">
+  <div class="container">
     <span class="eyebrow">ご利用の流れ</span>
     <h2>予約から提案まで、迷わない5ステップ。</h2>
-    <div class="steps" style="margin-top:24px">
+    <div class="steps" style="margin-top:22px">
       <div class="step"><span class="si">1</span><div><h3>予約</h3><p>メール（kaito@frenvox.jp）から。<b>オンライン（Google Meet）または訪問</b>を選べます。所要60〜90分。動きやすい服装でご参加ください。</p></div></div>
       <div class="step"><span class="si">2</span><div><h3>ヒアリング・問診</h3><p>今の悩みや目標、生活習慣をお聞きし、何を変えたいかを一緒に整理します。</p></div></div>
-      <div class="step"><span class="si">3</span><div><h3>動作の計測・可視化</h3><p>OpenCap動作解析と握力測定で全身を多角的に計測。AIが結果を分かりやすく可視化します。</p></div></div>
-      <div class="step"><span class="si">4</span><div><h3>運動提案・フィードバック</h3><p>理学療法士が最終提案をまとめ、“今日から何を・どれだけ・どの頻度で”を2枚のPDFでお渡しします。</p></div></div>
+      <div class="step"><span class="si">3</span><div><h3>動作の計測・可視化</h3><p>動作解析と握力測定で全身を多角的に計測。AIが結果を分かりやすく可視化します。</p></div></div>
+      <div class="step"><span class="si">4</span><div><h3>運動提案・フィードバック</h3><p>理学療法士が最終提案をまとめ、“今日から何を・どれだけ・どの頻度で”を2枚のレポートでお渡しします。</p></div></div>
       <div class="step"><span class="si">5</span><div><h3>継続サポート</h3><p>再評価や月額メンバーで変化を確認しながら、楽しく続けられるよう伴走します。</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section>
-  <div class="wrap">
+<section class="sec">
+  <div class="container">
     <span class="eyebrow">料金</span>
-    <h2>店舗を持たない訪問だから、この内容でこの価格。</h2>
+    <h2>店舗を持たない訪問・オンラインだから、この内容でこの価格。</h2>
     <table class="price-table">
       <tr><th>メニュー</th><th>内容</th><th style="text-align:right">料金（税込）</th></tr>
-      <tr><td><b style="color:var(--white)">初回フル評価</b></td><td>問診＋動作解析＋AIレポート＋運動プログラム＋2枚PDF（60〜90分）</td><td class="price">¥9,800</td></tr>
+      <tr><td><b>初回フル評価</b></td><td>問診＋動作解析＋AIレポート＋運動プログラム＋2枚レポート（60〜90分）</td><td class="price">¥9,800</td></tr>
       <tr><td>再評価セッション</td><td>前回との比較＋プログラム更新（30〜45分）</td><td class="price">¥5,500</td></tr>
       <tr><td>月額メンバー</td><td>月2回＋経過レポート＋データ蓄積</td><td class="price">¥12,000/月</td></tr>
       <tr><td>法人・施設の計測会</td><td>出張1日パッケージ（人数で調整）</td><td class="price">¥50,000〜</td></tr>
     </table>
-    <p class="price-note">すべて自費サービス（保険適用外）。出張は半径5km以内無料、以遠は1kmあたり¥100（上限¥2,000程度）。市内一律¥1,000のご案内も可能です。キャンセルは事前のご連絡で無料。</p>
+    <p class="price-note">すべて自費サービス（保険適用外）。出張は半径5km以内無料、以遠は1kmあたり¥100（上限¥2,000程度）。キャンセルは事前のご連絡で無料。</p>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq">
-  <div class="wrap">
+<section class="sec faq">
+  <div class="container">
     <span class="eyebrow">よくあるご質問</span>
     <h2>不安は、先にすべて解消します。</h2>
     <div style="margin-top:22px">
@@ -261,26 +245,26 @@
       <details><summary>AIは何をするのですか？</summary><p>AIは評価の可視化と運動提案の“補助”を担うツール（非医療機器）です。AIが診断や判断をすることはなく、最終的な提案は理学療法士が行います。</p></details>
       <details><summary>どんな人に向いていますか？</summary><p>高齢の方、スポーツを楽しむ方、将棋など趣味の方、健康を伸ばしたい方など、あらゆる方が対象です。年齢や運動経験は問いません。</p></details>
       <details><summary>効果はありますか？</summary><p>効果には個人差があり、変化を保証するものではありません。動きやすさやコンディションの変化を、データで一緒に確認しながら進めます。</p></details>
-      <details><summary>オンラインでも対応できますか？</summary><p>高松市拠点で県内に対応し、内容に応じてオンラインでのフィードバックも可能です。詳しくはお問い合わせください。</p></details>
+      <details><summary>オンラインでも対応できますか？</summary><p>はい。Google Meetでのオンライン対応に加え、香川県内は訪問にも対応します。詳しくはお問い合わせください。</p></details>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final">
-  <div class="wrap">
+<section class="sec final">
+  <div class="container">
     <span class="eyebrow">まずは初回フル評価から</span>
     <h2>あなたの身体を、一緒に“見える化”しましょう。</h2>
-    <a class="btn btn-primary" href="mailto:kaito@frenvox.jp?subject=身体評価の予約・相談">メールで予約・相談する</a>
+    <a class="btn btn-blue" href="mailto:kaito@frenvox.jp?subject=身体評価の予約・相談">メールで予約・相談する <span class="ar">→</span></a>
     <p class="contact">オンライン相談可・しつこい勧誘なし・キャンセル無料<br>
-      <a href="mailto:kaito@frenvox.jp">kaito@frenvox.jp</a> ／ <a href="tel:08043432366">080-4343-2366</a> ／ <a href="https://frenvox.jp/">frenvox.jp</a></p>
+      <a href="mailto:kaito@frenvox.jp">kaito@frenvox.jp</a> ／ <a href="tel:08043432366">080-4343-2366</a> ／ <a href="index.html">frenvox.jp</a></p>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
+  <div class="container">
+    <p class="fbrand">FRENVOX</p>
     <p class="disc">本サービスは医療行為ではなく、健康増進・予防を目的としたコンディショニング／運動サポートです。診断・治療は行いません。AIは評価の可視化・運動提案の補助ツール（非医療機器）であり、最終的な提案は理学療法士が行います。効果には個人差があり、変化を保証するものではありません。痛みが強い・医療機関での対応が必要な場合は、かかりつけの医療機関にご相談ください。</p>
-    <p class="biz"><b>FRENVOX（フレンボックス）</b>／代表・理学療法士　桑島 海斗（KAITO KUWAJIMA）／香川県高松市／kaito@frenvox.jp ／ 080-4343-2366 ／ <a href="https://frenvox.jp/" style="color:var(--accent)">https://frenvox.jp/</a><br>事業者の詳細（特定商取引法に基づく表記）は<a href="https://frenvox.jp/legal.html" style="color:var(--accent)">公式サイト</a>をご覧ください。</p>
+    <p class="biz">理学療法士 桑島 海斗（KAITO KUWAJIMA）／香川県高松市／<a href="mailto:kaito@frenvox.jp">kaito@frenvox.jp</a> ／ 080-4343-2366 ／ <a href="index.html">トップ</a> ／ <a href="legal.html">特定商取引法に基づく表記</a></p>
   </div>
 </footer>
 
