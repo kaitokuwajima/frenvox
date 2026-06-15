@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>サービス｜FRENVOX — 知見を、すべての体へ。</title>
+<meta name="description" content="FRENVOXのサービス一覧。体×AIの身体評価・動作解析を主軸に、姿勢AI・業務改善・制作まで。すべては「体は、いちばんの資本」という理念の下に。" />
+<meta property="og:title" content="サービス｜FRENVOX — 知見を、すべての体へ。" />
+<meta property="og:url" content="https://frenvox.jp/services.html" />
+<link rel="icon" href="images/brand/logo-mark-64.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#F5F8FB; --paper-2:#E9EEF5; --white:#fff;
+    --ink:#0B1A2C; --ink-2:#31435C; --muted:#5F7189; --faint:#90A0B5;
+    --line:rgba(11,26,44,.14); --line-2:rgba(11,26,44,.26);
+    --blue:#0B72C8; --blue-deep:#085391; --cyan:#2FA8E8; --blue-bg:rgba(11,114,200,.07);
+    --serif:'Shippori Mincho B1',serif; --en:'Space Grotesk',sans-serif; --jp:'Zen Kaku Gothic New',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--jp);background:var(--paper);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .container{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:20;background:rgba(245,248,251,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--en);font-weight:700;letter-spacing:.04em}
+  .nav-logo img{width:30px;height:30px}
+  .nav-right{display:flex;align-items:center;gap:22px;font-size:.86rem}
+  .nav-right a.back{color:var(--muted)}
+  .nav-cta{background:var(--ink);color:#fff;padding:9px 18px;border-radius:999px;font-weight:700;font-size:.82rem}
+
+  /* hero */
+  .hero{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--en);font-size:.72rem;letter-spacing:.3em;color:var(--blue);font-weight:600;text-transform:uppercase}
+  .hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(1.9rem,5vw,3rem);line-height:1.4;margin-top:14px;letter-spacing:.01em}
+  .hero p{margin-top:16px;color:var(--muted);font-size:1rem;max-width:620px}
+  .hero .slogan{color:var(--blue);font-weight:700}
+
+  /* grid */
+  .grid{padding:54px 0 70px}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .card{position:relative;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:28px 26px;overflow:hidden;transition:transform .3s cubic-bezier(.16,.84,.28,1),box-shadow .3s,border-color .3s}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));opacity:.0;transition:opacity .3s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 50px -24px rgba(11,26,44,.32);border-color:var(--line-2)}
+  .card:hover::before{opacity:1}
+  .card .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .pill{font-family:var(--en);font-size:10.5px;font-weight:600;letter-spacing:.04em;padding:5px 12px;border-radius:999px;border:1px solid var(--line-2);color:var(--ink-2)}
+  .pill.blue{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .pill.cy{background:var(--blue-bg);color:var(--blue-deep);border-color:transparent}
+  .card .no{font-family:var(--en);font-size:.78rem;font-weight:600;color:var(--faint);letter-spacing:.1em}
+  .card h3{font-family:var(--serif);font-weight:700;font-size:1.28rem;margin:8px 0 10px;line-height:1.5}
+  .card p{color:var(--muted);font-size:.92rem;flex:1}
+  .card .go{margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem;color:var(--blue)}
+  .card .go .ar{transition:transform .25s}
+  .card:hover .go .ar{transform:translateX(4px)}
+  .card.lead-card{grid-column:1 / -1;background:linear-gradient(135deg,#0B1A2C,#13314f);color:#fff;border:none}
+  .card.lead-card h3{color:#fff}
+  .card.lead-card p{color:#c4d2e2}
+  .card.lead-card .no{color:#7e93ab}
+  .card.lead-card .go{color:#7fc4ff}
+  .card.lead-card .pill{border-color:rgba(255,255,255,.28);color:#dce6f1}
+  .card.lead-card .pill.blue{background:var(--cyan);color:#06223b;border-color:var(--cyan)}
+
+  /* closing */
+  .closing{border-top:1px solid var(--line);padding:54px 0;text-align:center}
+  .closing h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.3rem,3vw,1.7rem)}
+  .closing p{color:var(--muted);margin-top:10px;font-size:.95rem}
+  .btn{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--blue);color:#fff;font-weight:700;padding:14px 28px;border-radius:999px;font-size:.95rem}
+
+  footer{background:#08131f;color:#9fb2c8;padding:46px 0 56px;font-size:.85rem}
+  footer .fbrand{font-family:var(--en);font-weight:700;color:#fff;letter-spacing:.05em;font-size:1.1rem}
+  footer .ftag{margin-top:10px;line-height:1.9}
+  footer .flinks{margin-top:16px;display:flex;flex-wrap:wrap;gap:16px}
+  footer .flinks a{color:#7fc4ff}
+
+  @media(max-width:680px){
+    .cards{grid-template-columns:1fr}
+    .hero{padding:52px 0 32px}
+    .nav-right a.back{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-in">
+    <a class="nav-logo" href="index.html"><img src="images/brand/logo-mark-64.png" alt="" />FRENVOX</a>
+    <div class="nav-right">
+      <a class="back" href="index.html">← トップ</a>
+      <a class="nav-cta" href="index.html#contact">お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Services</p>
+    <h1>知見を、すべての体へ。<br>FRENVOXのサービス。</h1>
+    <p><span class="slogan">体は、いちばんの資本。</span> その理念の下に、体×AIを主軸とした複数のサービスが並びます。気になるものから、詳しくご覧ください。</p>
+  </div>
+</section>
+
+<section class="grid">
+  <div class="container">
+    <div class="cards">
+
+      <!-- 主力：身体評価 -->
+      <a class="card lead-card" href="assessment.html">
+        <div class="tags"><span class="pill blue">主力</span><span class="pill">個人・整形・自費</span><span class="pill">オンライン / 訪問</span></div>
+        <span class="no">01</span>
+        <h3>身体評価 × 動作解析</h3>
+        <p>理学療法士の臨床知を宿したAIが、動作解析（OpenCap）・問診・握力で全身を計測・可視化。「今日から何を・どれだけやるか」を2枚のレポートに。毎回データが残り、変化を一緒に確認します。</p>
+        <span class="go">詳しく見る <span class="ar">→</span></span>
+      </a>
+
+      <!-- 姿勢AI -->
+      <a class="card" href="https://posturerx.vercel.app" target="_blank" rel="noopener noreferrer">
+        <div class="tags"><span class="pill cy">NEW</span><span class="pill">企業・健康経営</span></div>
+        <span class="no">02</span>
+        <h3>姿勢AI × 運動提案</h3>
+        <p>スマホカメラで社員の姿勢・動作を評価し、一人ひとりに必要な運動を提案。「全員に同じ体操」ではない、評価にもとづく個別提案が強み。ベータ版「PostureRx」公開中。</p>
+        <span class="go">体験する <span class="ar">→</span></span>
+      </a>
+
+      <!-- 業務改善 -->
+      <a class="card" href="rehab-app.html">
+        <div class="tags"><span class="pill">介護・福祉</span></div>
+        <span class="no">03</span>
+        <h3>業務改善（送迎・シフト・議事録AI）</h3>
+        <p>送迎表・シフト・議事録など現場の手作業を、声と AI で「ボタンひとつ」に。働く人の体と時間を守るのも、FRENVOXの理念の一つです。通所リハ・デイサービス向け専用アプリ。</p>
+        <span class="go">詳しく見る <span class="ar">→</span></span>
+      </a>
+
+      <!-- おたより -->
+      <a class="card" href="otayori.html">
+        <div class="tags"><span class="pill">介護・ご家族連絡</span></div>
+        <span class="no">04</span>
+        <h3>家族連絡「おたより」</h3>
+        <p>利用者さんの様子を写真付きでご家族へ。月刊「おたより」も、写真を選ぶだけでAIがコメントを作成し、A4 1枚に自動レイアウト。要配慮個人情報は厳格に分離。</p>
+        <span class="go">詳しく見る <span class="ar">→</span></span>
+      </a>
+
+      <!-- 制作 -->
+      <a class="card" href="index.html#contact">
+        <div class="tags"><span class="pill">事業者全般</span></div>
+        <span class="no">05</span>
+        <h3>HP・アプリ制作</h3>
+        <p>検索に強いHPから、ログイン・課金・AIを組み込んだWebアプリまで。企画から公開まで一気通貫で。まさにこのサイトも、その一例です。</p>
+        <span class="go">相談する <span class="ar">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h2>あなたの体と、現場のために。</h2>
+    <p>サービスは理念に沿って、これからも増えていきます。まずはお気軽にご相談ください。</p>
+    <a class="btn" href="index.html#contact">お問い合わせ <span class="ar">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p class="fbrand">FRENVOX</p>
+    <p class="ftag">体は、いちばんの資本。／ 知見を、すべての体へ。<br>理学療法士・桑島海斗 ／ 香川県高松市 ／ kaito@frenvox.jp ／ 080-4343-2366</p>
+    <div class="flinks">
+      <a href="index.html">トップ</a>
+      <a href="index.html#philosophy">理念</a>
+      <a href="assessment.html">身体評価</a>
+      <a href="legal.html">特定商取引法</a>
+      <a href="privacy.html">プライバシー</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
