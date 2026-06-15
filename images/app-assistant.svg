@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 430" role="img" aria-label="AIアシスタントの画面イメージ。話しかけて送迎・シフトを操作">
+  <defs>
+    <style>
+      .win{fill:#eef1f7;stroke:#d7dce8;stroke-width:1.5}
+      .bar{fill:#e1e6f1}
+      .ttl{fill:#2a2f3a;font-family:'Noto Sans JP',sans-serif;font-size:15px;font-weight:700}
+      .panel{fill:#ffffff;stroke:#e0e4ee;stroke-width:1}
+      .ubub{fill:#2f6df6}
+      .abub{fill:#f4f0fc;stroke:#e3d8f7;stroke-width:1}
+      .ut{fill:#ffffff;font-family:'Noto Sans JP',sans-serif;font-size:13.5px}
+      .at{fill:#2a2f3a;font-family:'Noto Sans JP',sans-serif;font-size:13.5px}
+      .who{font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700}
+      .brand{fill:#c8a24e;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;opacity:.7;letter-spacing:.08em}
+    </style>
+  </defs>
+
+  <rect class="win" x="12" y="12" width="656" height="406" rx="14"/>
+  <path class="bar" d="M12 26 a14 14 0 0 1 14 -14 h628 a14 14 0 0 1 14 14 v26 h-656 z"/>
+  <circle cx="34" cy="33" r="5" fill="#ff5f57"/><circle cx="52" cy="33" r="5" fill="#febc2e"/><circle cx="70" cy="33" r="5" fill="#28c840"/>
+  <text class="ttl" x="92" y="38">🤖 AIアシスタント</text>
+
+  <rect class="panel" x="28" y="70" width="624" height="288" rx="10"/>
+
+  <!-- user 1 (right) -->
+  <text class="who" x="636" y="98" text-anchor="end" fill="#9aa0b4">職員</text>
+  <rect class="ubub" x="356" y="106" width="280" height="40" rx="14"/>
+  <text class="ut" x="376" y="131">明日の2号車、午前の空き席は？</text>
+
+  <!-- ai 1 (left) -->
+  <text class="who" x="44" y="170" fill="#7a4dd1">🤖 アシスタント</text>
+  <rect class="abub" x="44" y="178" width="360" height="44" rx="14"/>
+  <text class="at" x="62" y="204">2号車は午前2席空きです。1席は♿対応可です。</text>
+
+  <!-- user 2 (right) -->
+  <rect class="ubub" x="276" y="238" width="360" height="40" rx="14"/>
+  <text class="ut" x="296" y="263">来週、介護の花子さんの木曜を休み希望にして</text>
+
+  <!-- ai 2 (left) -->
+  <text class="who" x="44" y="302" fill="#7a4dd1">🤖 アシスタント</text>
+  <rect class="abub" x="44" y="310" width="420" height="40" rx="14"/>
+  <text class="at" x="62" y="335">6/18(木) を休み希望に登録しました。勤務表に反映済みです ✓</text>
+
+  <!-- input bar -->
+  <rect x="28" y="372" width="624" height="44" rx="22" fill="#ffffff" stroke="#cfd5e4"/>
+  <text x="52" y="399" fill="#9aa0b4" font-family="'Noto Sans JP',sans-serif" font-size="13.5">話しかけて操作・使い方も質問できます…</text>
+  <circle cx="600" cy="394" r="17" fill="#2f6df6"/>
+  <text x="600" y="400" text-anchor="middle" font-size="16">🎤</text>
+
+  <text class="brand" x="600" y="362" fill="#c8a24e">FRENVOX</text>
+</svg>

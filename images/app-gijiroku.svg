@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 430" role="img" aria-label="議事録AIの画面イメージ。会議の録音から議事録を自動生成">
+  <defs>
+    <style>
+      .win{fill:#eef1f7;stroke:#d7dce8;stroke-width:1.5}
+      .bar{fill:#e1e6f1}
+      .ttl{fill:#2a2f3a;font-family:'Noto Sans JP',sans-serif;font-size:15px;font-weight:700}
+      .panel{fill:#ffffff;stroke:#e0e4ee;stroke-width:1}
+      .lbl{fill:#6b7280;font-family:'Noto Sans JP',sans-serif;font-size:12.5px;font-weight:700}
+      .docttl{fill:#2a2f3a;font-family:'Noto Sans JP',sans-serif;font-size:15px;font-weight:700}
+      .docln{fill:#3a3f4a;font-family:'Noto Sans JP',sans-serif;font-size:12.5px}
+      .ai{fill:#7a4dd1;font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:700}
+      .brand{fill:#c8a24e;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;opacity:.7;letter-spacing:.08em}
+    </style>
+  </defs>
+
+  <rect class="win" x="12" y="12" width="656" height="406" rx="14"/>
+  <path class="bar" d="M12 26 a14 14 0 0 1 14 -14 h628 a14 14 0 0 1 14 14 v26 h-656 z"/>
+  <circle cx="34" cy="33" r="5" fill="#ff5f57"/><circle cx="52" cy="33" r="5" fill="#febc2e"/><circle cx="70" cy="33" r="5" fill="#28c840"/>
+  <text class="ttl" x="92" y="38">🎙️ 議事録AI（スタッフ会議・運営会議）</text>
+
+  <!-- left: recording -->
+  <rect class="panel" x="28" y="70" width="220" height="324" rx="10"/>
+  <text class="lbl" x="44" y="98">① 録音をアップロード</text>
+  <rect x="44" y="110" width="188" height="64" rx="8" fill="#f3f6fd" stroke="#cfe0fb"/>
+  <text x="62" y="138" font-size="20">🎧</text>
+  <text x="92" y="135" class="docln" font-weight="700">運営会議_0615.m4a</text>
+  <text x="92" y="154" class="docln" fill="#9aa0b4">32:14 ・ アップロード済</text>
+  <!-- waveform -->
+  <g fill="#2f6df6" opacity="0.7">
+    <rect x="50" y="200" width="4" height="22" rx="2"/><rect x="58" y="190" width="4" height="42" rx="2"/><rect x="66" y="208" width="4" height="26" rx="2"/>
+    <rect x="74" y="184" width="4" height="54" rx="2"/><rect x="82" y="198" width="4" height="26" rx="2"/><rect x="90" y="178" width="4" height="66" rx="2"/>
+    <rect x="98" y="200" width="4" height="22" rx="2"/><rect x="106" y="192" width="4" height="38" rx="2"/><rect x="114" y="206" width="4" height="26" rx="2"/>
+    <rect x="122" y="186" width="4" height="50" rx="2"/><rect x="130" y="200" width="4" height="22" rx="2"/><rect x="138" y="180" width="4" height="62" rx="2"/>
+    <rect x="146" y="202" width="4" height="20" rx="2"/><rect x="154" y="194" width="4" height="36" rx="2"/><rect x="162" y="206" width="4" height="26" rx="2"/>
+    <rect x="170" y="188" width="4" height="48" rx="2"/><rect x="178" y="200" width="4" height="22" rx="2"/><rect x="186" y="182" width="4" height="60" rx="2"/>
+    <rect x="194" y="202" width="4" height="20" rx="2"/><rect x="202" y="196" width="4" height="34" rx="2"/><rect x="210" y="206" width="4" height="24" rx="2"/>
+  </g>
+  <rect x="44" y="266" width="188" height="40" rx="20" fill="#7a4dd1"/>
+  <text x="138" y="291" text-anchor="middle" fill="#fff" font-family="'Noto Sans JP',sans-serif" font-size="13.5" font-weight="700">✨ AIで議事録を生成</text>
+  <text x="44" y="340" class="docln" fill="#9aa0b4" font-size="11.5">学習に使われない有料AIのみ使用。</text>
+  <text x="44" y="360" class="docln" fill="#9aa0b4" font-size="11.5">利用者個人の健康情報は含めない運用。</text>
+
+  <!-- arrow -->
+  <text x="262" y="240" font-size="26" fill="#c8a24e">→</text>
+
+  <!-- right: generated minutes -->
+  <rect class="panel" x="296" y="70" width="356" height="324" rx="10"/>
+  <rect x="296" y="70" width="356" height="40" rx="10" fill="#f6f2fc"/>
+  <text class="ai" x="314" y="95">✨ AI 生成結果</text>
+  <text class="docln" x="560" y="95" fill="#9aa0b4" font-size="11.5">編集して保存できます</text>
+  <text class="docttl" x="314" y="142">運営会議 議事録（2026/06/15）</text>
+  <text class="docln" x="314" y="166" font-weight="700">出席：管理者・看護・介護・リハ・相談員</text>
+  <line x1="314" y1="178" x2="634" y2="178" stroke="#eceef4"/>
+  <text class="docln" x="314" y="202" font-weight="700">1. 送迎体制の見直し</text>
+  <text class="docln" x="326" y="222">・2号車の午前便に空席。ルートを再調整する。</text>
+  <text class="docln" x="326" y="242">・キャンセル時の連絡フローを統一。</text>
+  <text class="docln" x="314" y="268" font-weight="700">2. シフト・人員</text>
+  <text class="docln" x="326" y="288">・来月の希望休を15日までに提出。</text>
+  <text class="docln" x="326" y="308">・土曜の遅番を1名増やす方向で調整。</text>
+  <text class="docln" x="314" y="334" font-weight="700">3. 決定事項 / ToDo</text>
+  <text class="docln" x="326" y="354">・送迎表の自動印刷を全便で運用開始（担当：送迎）</text>
+  <text class="docln" x="326" y="374">・次回会議：7/13（月）17:00〜</text>
+
+  <text class="brand" x="600" y="408">FRENVOX</text>
+</svg>

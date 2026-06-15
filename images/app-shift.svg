@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 430" role="img" aria-label="シフト管理の画面イメージ。職員ごとの勤務表と休み希望が一覧表示">
+  <defs>
+    <style>
+      .win{fill:#eef1f7;stroke:#d7dce8;stroke-width:1.5}
+      .bar{fill:#e1e6f1}
+      .ttl{fill:#2a2f3a;font-family:'Noto Sans JP',sans-serif;font-size:15px;font-weight:700}
+      .grid{fill:#ffffff;stroke:#e0e4ee;stroke-width:1}
+      .hd{fill:#f3f5fa}
+      .hdt{fill:#6b7280;font-family:'Noto Sans JP',sans-serif;font-size:12.5px;font-weight:700}
+      .nmt{fill:#2a2f3a;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:600}
+      .cell{font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:700;text-anchor:middle}
+      .pill{fill:#e8f5ec;stroke:#bfe3c8;stroke-width:1}
+      .pillt{fill:#268a4a;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700}
+      .brand{fill:#c8a24e;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;opacity:.7;letter-spacing:.08em}
+    </style>
+  </defs>
+
+  <rect class="win" x="12" y="12" width="656" height="406" rx="14"/>
+  <path class="bar" d="M12 26 a14 14 0 0 1 14 -14 h628 a14 14 0 0 1 14 14 v26 h-656 z"/>
+  <circle cx="34" cy="33" r="5" fill="#ff5f57"/><circle cx="52" cy="33" r="5" fill="#febc2e"/><circle cx="70" cy="33" r="5" fill="#28c840"/>
+  <text class="ttl" x="92" y="38">🗓️ 勤務表（6月）</text>
+  <rect class="pill" x="470" y="22" width="182" height="22" rx="11"/>
+  <text class="pillt" x="484" y="37">● 休み希望を自動で反映</text>
+
+  <!-- table -->
+  <g>
+    <!-- header row -->
+    <rect class="grid hd" x="28" y="70" width="120" height="34"/>
+    <text class="hdt" x="42" y="92">職員</text>
+    <!-- day columns -->
+    <g class="hdt" text-anchor="middle">
+      <rect class="grid hd" x="148" y="70" width="72" height="34"/><text x="184" y="92">月</text>
+      <rect class="grid hd" x="220" y="70" width="72" height="34"/><text x="256" y="92">火</text>
+      <rect class="grid hd" x="292" y="70" width="72" height="34"/><text x="328" y="92">水</text>
+      <rect class="grid hd" x="364" y="70" width="72" height="34"/><text x="400" y="92">木</text>
+      <rect class="grid hd" x="436" y="70" width="72" height="34"/><text x="472" y="92">金</text>
+      <rect class="grid hd" x="508" y="70" width="72" height="34" fill="#fbf3f3"/><text x="544" y="92" fill="#c0392b">土</text>
+      <rect class="grid hd" x="580" y="70" width="72" height="34" fill="#f3f6fd"/><text x="616" y="92" fill="#2f6df6">日</text>
+    </g>
+  </g>
+
+  <!-- rows -->
+  <g>
+    <!-- row template y positions: 104,150,196,242,288 (h46) -->
+    <!-- staff names -->
+    <g>
+      <rect class="grid" x="28" y="104" width="120" height="46"/><text class="nmt" x="42" y="132">介護 花子</text>
+      <rect class="grid" x="28" y="150" width="120" height="46"/><text class="nmt" x="42" y="178">看護 桜</text>
+      <rect class="grid" x="28" y="196" width="120" height="46"/><text class="nmt" x="42" y="224">理学 太郎</text>
+      <rect class="grid" x="28" y="242" width="120" height="46"/><text class="nmt" x="42" y="270">生活 みどり</text>
+      <rect class="grid" x="28" y="288" width="120" height="46"/><text class="nmt" x="42" y="316">送迎 大輔</text>
+    </g>
+    <!-- cells: draw grid -->
+    <g fill="none" stroke="#e0e4ee">
+      <rect x="148" y="104" width="504" height="46"/><rect x="148" y="150" width="504" height="46"/>
+      <rect x="148" y="196" width="504" height="46"/><rect x="148" y="242" width="504" height="46"/>
+      <rect x="148" y="288" width="504" height="46"/>
+      <line x1="220" y1="104" x2="220" y2="334"/><line x1="292" y1="104" x2="292" y2="334"/>
+      <line x1="364" y1="104" x2="364" y2="334"/><line x1="436" y1="104" x2="436" y2="334"/>
+      <line x1="508" y1="104" x2="508" y2="334"/><line x1="580" y1="104" x2="580" y2="334"/>
+    </g>
+    <!-- weekend shading -->
+    <rect x="508" y="104" width="72" height="230" fill="#c0392b" opacity="0.04"/>
+    <rect x="580" y="104" width="72" height="230" fill="#2f6df6" opacity="0.04"/>
+    <!-- shift codes -->
+    <g class="cell">
+      <!-- 花子 -->
+      <text x="184" y="132" fill="#2a7d46">早</text><text x="256" y="132" fill="#2a7d46">早</text><text x="328" y="132" fill="#b5651d">遅</text><text x="400" y="132" fill="#2a7d46">早</text><text x="472" y="132" fill="#2a7d46">早</text><text x="544" y="132" fill="#c0392b">休</text><text x="616" y="132" fill="#c0392b">休</text>
+      <!-- 桜 -->
+      <text x="184" y="178" fill="#b5651d">遅</text><text x="256" y="178" fill="#c0392b">希</text><text x="328" y="178" fill="#2a7d46">早</text><text x="400" y="178" fill="#b5651d">遅</text><text x="472" y="178" fill="#2a7d46">早</text><text x="544" y="178" fill="#b5651d">遅</text><text x="616" y="178" fill="#c0392b">休</text>
+      <!-- 太郎 -->
+      <text x="184" y="224" fill="#2a7d46">日</text><text x="256" y="224" fill="#2a7d46">日</text><text x="328" y="224" fill="#c0392b">休</text><text x="400" y="224" fill="#2a7d46">日</text><text x="472" y="224" fill="#2a7d46">日</text><text x="544" y="224" fill="#2a7d46">日</text><text x="616" y="224" fill="#c0392b">休</text>
+      <!-- みどり -->
+      <text x="184" y="270" fill="#2a7d46">早</text><text x="256" y="270" fill="#b5651d">遅</text><text x="328" y="270" fill="#2a7d46">早</text><text x="400" y="270" fill="#c0392b">希</text><text x="472" y="270" fill="#b5651d">遅</text><text x="544" y="270" fill="#c0392b">休</text><text x="616" y="270" fill="#2a7d46">早</text>
+      <!-- 大輔 -->
+      <text x="184" y="316" fill="#2a7d46">早</text><text x="256" y="316" fill="#2a7d46">早</text><text x="328" y="316" fill="#2a7d46">早</text><text x="400" y="316" fill="#2a7d46">早</text><text x="472" y="316" fill="#c0392b">休</text><text x="544" y="316" fill="#2a7d46">早</text><text x="616" y="316" fill="#b5651d">遅</text>
+    </g>
+  </g>
+
+  <!-- legend -->
+  <g font-family="'Noto Sans JP',sans-serif" font-size="12">
+    <text x="28" y="364" fill="#2a7d46" font-weight="700">早/日</text><text x="78" y="364" fill="#9aa0b4">=日勤</text>
+    <text x="138" y="364" fill="#b5651d" font-weight="700">遅</text><text x="158" y="364" fill="#9aa0b4">=遅番</text>
+    <text x="214" y="364" fill="#c0392b" font-weight="700">休</text><text x="234" y="364" fill="#9aa0b4">=休み</text>
+    <text x="294" y="364" fill="#c0392b" font-weight="700">希</text><text x="314" y="364" fill="#9aa0b4">=休み希望（職員が入力 → 自動反映）</text>
+  </g>
+  <text x="28" y="388" fill="#9aa0b4" font-family="'Noto Sans JP',sans-serif" font-size="12">扱うのは職員名と勤務/休みのみ。Excel と付箋の組み直しから解放。</text>
+  <text class="brand" x="600" y="408">FRENVOX</text>
+</svg>
