@@ -116,6 +116,16 @@
   .booking input,.booking select,.booking textarea{font:inherit;font-weight:400;color:var(--ink);background:var(--white);border:1px solid var(--line-2);border-radius:10px;padding:11px 12px;outline:none}
   .booking input:focus,.booking select:focus,.booking textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-bg)}
   .booking .bk-full{grid-column:1 / -1}
+  .bk-online{background:linear-gradient(135deg,#0B1A2C,#13314f);color:#fff;border-radius:18px;padding:26px 26px;margin:4px 0 30px}
+  .bk-online-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+  .bk-online-head h3{font-family:var(--serif,'Shippori Mincho B1',serif);font-size:1.22rem;font-weight:700;color:#fff;line-height:1.4}
+  .bk-online .pill{font-size:11px;font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:999px}
+  .bk-online .pill.blue{background:var(--cyan);color:#06223b}
+  .bk-online-sub{margin-top:12px;font-size:.92rem;color:#c4d2e2;line-height:1.85}
+  .bk-online-sub b{color:#fff}
+  .bk-online .btn-blue{margin-top:16px;background:var(--cyan);color:#06223b}
+  .bk-online-note{margin-top:10px;font-size:.8rem;color:#9fb6cf}
+  .bk-visit-h{font-family:var(--serif,'Shippori Mincho B1',serif);font-size:1.18rem;font-weight:700;color:var(--ink);padding-top:8px;border-top:1px solid var(--line)}
 
   @media(max-width:680px){
     .hero-grid,.cards,.checks,.shots,.bk-grid{grid-template-columns:1fr}
@@ -252,26 +262,35 @@
 <section class="sec" id="booking">
   <div class="container">
     <span class="eyebrow">予約・相談</span>
-    <h2>初回フル評価を予約する。</h2>
-    <p class="sec-sub">希望日と「オンライン／訪問」を選んで送信してください（<b>あさって以降</b>の日時から）。<b>オンラインは事前決済（カード）、訪問は当日決済（現金・カード）</b>。オンラインの方には確定時にGoogle Meetのリンクをお送りします。<br>※ まだ予約せず<b>質問だけ</b>したい方は、フォーム下の「無料で相談・質問」からどうぞ。</p>
+    <h2>初回評価を予約する。</h2>
+    <p class="sec-sub">ご希望の形式をお選びください。<b>オンライン（Google Meet）はその場でカレンダー予約＋カード事前決済</b>が完了し、Google Meetのリンクが自動で届きます。<b>香川県内への訪問</b>は当日決済のため、下のフォームからお申し込みください。<br>※ まだ予約せず<b>質問だけ</b>したい方は、最下部の「無料で相談・質問」からどうぞ。</p>
+
+    <!-- オンライン：Googleカレンダーで即予約＋事前決済 -->
+    <div class="bk-online">
+      <div class="bk-online-head">
+        <span class="pill blue">おすすめ・最短</span>
+        <h3>オンライン初回（Google Meet・60分）</h3>
+      </div>
+      <p class="bk-online-sub">理学療法士による身体評価＝問診＋スマホ／Webカメラ＋姿勢AI（PostureRx）で姿勢・動作を可視化し、運動・ストレッチ・徒手的セルフケアの提案と2枚のレポートをお渡しします。<b>初回 6,800円（税込）／予約時にカード事前決済</b>・前日18時まで無料（全額返金）。</p>
+      <a class="btn btn-blue" href="https://calendar.app.google/M6KFyp24qEprugKT7" target="_blank" rel="noopener noreferrer">カレンダーで予約する（事前決済） <span class="ar">→</span></a>
+      <p class="bk-online-note">空き枠の選択 → カード決済 → 自動でGoogle Meetリンクが届きます。</p>
+    </div>
+
+    <h3 class="bk-visit-h">香川県内への訪問を予約する（当日決済）</h3>
+    <p class="sec-sub" style="margin-top:6px">希望日と内容を送信してください（<b>あさって以降</b>の日時から）。訪問は<b>OpenCapの3D動作解析が使えるフル評価</b>です。確定のご連絡を返信します（<b>当日決済・現金／カード</b>）。</p>
     <form class="booking" onsubmit="return frx_book(event)">
       <div class="bk-grid">
-        <label>形式
-          <select name="mode" id="bk-mode">
-            <option value="オンライン（Google Meet）">オンライン（Google Meet）</option>
-            <option value="訪問（香川県内）">訪問（香川県内）</option>
-          </select>
-        </label>
+        <input type="hidden" name="mode" id="bk-mode" value="訪問（香川県内）">
         <label>希望日 <input type="date" name="date" required></label>
         <label>希望時間 <input type="time" name="time" required></label>
         <label>第2希望（任意） <input type="text" name="date2" placeholder="例）6/20 午後 など"></label>
         <label>お名前 <input type="text" name="name" required placeholder="氏名（ニックネーム可）"></label>
         <label>連絡先（メール / 電話） <input type="text" name="contact" required></label>
-        <label class="bk-full" id="bk-addr-wrap" style="display:none">訪問先の住所・エリア <input type="text" name="addr" placeholder="香川県高松市〜"></label>
+        <label class="bk-full" id="bk-addr-wrap">訪問先の住所・エリア <input type="text" name="addr" placeholder="香川県高松市〜"></label>
         <label class="bk-full">ご相談内容・気になること <textarea name="msg" rows="3" placeholder="主訴・目標・既往や外傷歴・スクリーンタイムなど"></textarea></label>
       </div>
-      <button type="submit" class="btn btn-blue" style="margin-top:18px">この内容で予約メールを送る <span class="ar">→</span></button>
-      <p style="margin-top:10px;font-size:.8rem;color:var(--muted)">送信でメールアプリが起動します。確定のご連絡を返信します（<b>オンラインはGoogle Meetリンク＋事前決済のご案内</b>、訪問は当日決済）。</p>
+      <button type="submit" class="btn btn-blue" style="margin-top:18px">この内容で訪問予約メールを送る <span class="ar">→</span></button>
+      <p style="margin-top:10px;font-size:.8rem;color:var(--muted)">送信でメールアプリが起動します。日程確定のご連絡を返信します（<b>訪問は当日決済・現金／カード</b>）。</p>
     </form>
     <p style="margin-top:16px;font-size:.9rem;color:var(--muted)">予約はまだ迷う…という方は、<a href="mailto:kaito@frenvox.jp?subject=【無料相談】身体評価について&body=ご質問・気になることをご記入ください（無料・予約不要）。%0A%0A" style="color:var(--blue);font-weight:700">無料で相談・質問する（メール）</a>。料金は発生しません。</p>
   </div>
