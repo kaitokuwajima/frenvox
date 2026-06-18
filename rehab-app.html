@@ -6,14 +6,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>送迎表・シフトをAIに頼むだけ｜通所リハ・デイサービス業務改善アプリ FRENVOX</title>
-<meta name="description" content="一番大変な送迎表とシフト作成を、AIアシスタントに話しかけるだけ。現役理学療法士が自施設で毎日使う、送迎×シフト×議事録AIの業務改善アプリ。通所リハ（デイケア）・デイサービス向け。無料デモを今すぐ体験。機微な医療情報・要配慮個人情報は一切お預かりしません。月額なしの買い切り・設置サポートあり。">
+<meta name="description" content="一番大変な送迎表とシフト作成を、AIアシスタントに話しかけるだけ。現役理学療法士が自施設で毎日使う、送迎×シフト×議事録AIの業務改善アプリ。通所リハ（デイケア）・デイサービス向け。無料デモを今すぐ体験。機微な医療情報・要配慮個人情報は一切お預かりしません。買い切り＋任意の月額サポート・設置サポートあり。">
 <meta property="og:title" content="通所リハ・デイサービス業務改善アプリ｜FRENVOX">
-<meta property="og:description" content="送迎・シフト・議事録を、現場PTが作ったアプリで。機微な医療情報は一切お預かりしません。だから安全で、安く、AIも使えます。月額なしの買い切り・設置サポートあり。">
+<meta property="og:description" content="送迎・シフト・議事録を、現場PTが作ったアプリで。機微な医療情報は一切お預かりしません。だから安全で、安く、AIも使えます。買い切り＋任意の月額サポート。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://frenvox.jp/rehab-app.html">
 <meta name="theme-color" content="#07080d">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -151,7 +152,7 @@ footer a{color:var(--muted)}
       <div>
         <div class="tagrow">
           <span class="pill hot">AIに話しかけるだけ</span>
-          <span class="pill hot">買い切り・月額なし</span>
+          <span class="pill hot">買い切り＋任意の月額サポート</span>
           <span class="pill">通所リハ・デイサービス向け</span>
           <span class="pill">現役理学療法士が開発・自施設で毎日実運用</span>
         </div>
@@ -180,8 +181,13 @@ footer a{color:var(--muted)}
       <p class="lead">実際の画面で、送迎調整・シフト作成・議事録AIの動きをご覧いただけます。</p>
     </div>
     <div style="max-width:880px;margin:0 auto">
-      <div style="position:relative;padding-top:56.25%;border-radius:16px;overflow:hidden;border:1px solid var(--glass-border);box-shadow:0 20px 50px rgba(0,0,0,.42)">
-        <iframe src="https://www.youtube.com/embed/WjUyVfwEUX4" title="FRENVOX デモ紹介動画" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <div id="ytFacade" onclick="loadYt()" style="position:relative;padding-top:56.25%;border-radius:16px;overflow:hidden;border:1px solid var(--glass-border);box-shadow:0 20px 50px rgba(0,0,0,.42);cursor:pointer;background:#000">
+        <img src="https://i.ytimg.com/vi/WjUyVfwEUX4/hqdefault.jpg" alt="FRENVOX デモ紹介動画のサムネイル" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.82">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+          <div style="width:84px;height:84px;border-radius:50%;background:rgba(220,40,40,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(0,0,0,.5)">
+            <div style="width:0;height:0;border-style:solid;border-width:15px 0 15px 25px;border-color:transparent transparent transparent #fff;margin-left:6px"></div>
+          </div>
+        </div>
       </div>
       <div style="display:flex;gap:22px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:22px">
         <a href="https://youtu.be/WjUyVfwEUX4" target="_blank" rel="noopener" class="btn btn-ghost">YouTubeで見る →</a>
@@ -278,33 +284,35 @@ footer a{color:var(--muted)}
   <div class="container">
     <div class="head-center">
       <span class="eyebrow">Pricing</span>
-      <h2 class="h2">月額なしの<span class="g">買い切り。</span></h2>
-      <p class="lead">サブスクではありません。一度ご導入いただくと、貴施設のGoogleアカウントにコピーして“自分専用アプリ”として使い続けられます。データはずっと貴施設の中。設置は当方が伴走します。</p>
+      <h2 class="h2">アプリは<span class="g">買い切り。</span>あとは必要な分だけ。</h2>
+      <p class="lead">アプリ本体は買い切りで、貴施設のGoogleの中で“自分専用アプリ”として使い続けられます。アップデートや追加開発を継続して受けたい方には、任意の月額サポートプランもご用意しています。</p>
     </div>
     <div class="price-grid three">
-      <div class="plan">
-        <div class="name">ライト版</div>
-        <div class="amt">¥4,980<small>／買い切り</small></div>
-        <div class="init">APIキー不要・誰でも導入</div>
+      <div class="plan feature">
+        <span class="badge">おすすめ</span>
+        <div class="name">アプリ本体</div>
+        <div class="amt">¥9,800<small>／買い切り</small></div>
+        <div class="init">送迎＋シフト＋議事録AI＋AIアシスタント</div>
         <ul>
           <li>送迎管理（シミュレーション・当日ホワイトボード・ルート表・月間予定・車両管理簿）</li>
           <li>シフト管理（従業員シフト・休み希望）</li>
-          <li>設置動画・マニュアル付き</li>
-        </ul>
-        <div class="buy-row"><a href="index.html#contact" class="btn btn-ghost">導入を相談する →</a></div>
-      </div>
-      <div class="plan feature">
-        <span class="badge">おすすめ</span>
-        <div class="name">フル版</div>
-        <div class="amt">¥9,800<small>／買い切り</small></div>
-        <div class="init">議事録AI・AIアシスタント込み</div>
-        <ul>
-          <li>ライト版の全機能</li>
           <li>議事録AI（会議の録音から自動生成）</li>
           <li>AIアシスタント（話しかけて操作）</li>
-          <li>無料のGemini APIキー設定手順付き</li>
+          <li>設置動画・マニュアル付き／無料のGemini APIキー設定手順付き</li>
         </ul>
         <div class="buy-row"><a href="index.html#contact" class="btn btn-fill">導入を相談する →</a></div>
+      </div>
+      <div class="plan">
+        <div class="name">保守・サポートプラン</div>
+        <div class="amt">¥4,980<small>／月（任意）</small></div>
+        <div class="init">使い続ける安心と、進化を継続</div>
+        <ul>
+          <li>アップデート・不具合修正を優先提供</li>
+          <li>追加機能のご要望・カスタマイズ開発に対応</li>
+          <li>メール優先サポート</li>
+          <li>いつでも解約OK・最低契約期間なし</li>
+        </ul>
+        <div class="buy-row"><a href="index.html#contact" class="btn btn-ghost">相談する →</a></div>
       </div>
       <div class="plan">
         <div class="name">設置サポート</div>
@@ -313,12 +321,12 @@ footer a{color:var(--muted)}
         <ul>
           <li>ビデオ通話で一緒に設置（60分）</li>
           <li>コピー・初期設定・データ投入を伴走</li>
-          <li>ライト版／フル版どちらでも</li>
+          <li>APIキー取得もサポート</li>
         </ul>
         <div class="buy-row"><a href="index.html#contact" class="btn btn-ghost">問い合わせる</a></div>
       </div>
     </div>
-    <p class="note">※ 表示は税込・買い切り（月額・初期費用なし）。設置が不安な方も、設置サポートで一緒に進めますのでご安心ください。「計画書も作りたい」等のご要望は <a href="index.html#contact" style="color:var(--gold)">お問い合わせ</a> から追加開発で承ります。</p>
+    <p class="note">※ 表示は税込。アプリ本体は買い切り（初期費用なし）。保守・サポートプランは任意で、いつでも解約できます。「計画書も作りたい」等のご要望は <a href="index.html#contact" style="color:var(--gold)">お問い合わせ</a> から承ります（保守プランなら継続的に対応）。</p>
   </div>
 </section>
 
@@ -329,10 +337,10 @@ footer a{color:var(--muted)}
     <div class="head-center">
       <span class="eyebrow">導入の流れ</span>
       <h2 class="h2">お申し込み → 自分のGoogleにコピー → <span class="g">施設名を設定して完了。</span></h2>
-      <p class="lead">サーバー購入もインストールも不要。付属の動画とマニュアル、必要なら設置サポートで進めれば、APIキーが要らないライト版なら30分ほどで“自分専用アプリ”になります。</p>
+      <p class="lead">サーバー購入もインストールも不要。付属の動画とマニュアル、必要なら設置サポートで進めれば、30分ほどで“自分専用アプリ”になります。</p>
     </div>
     <div class="cards">
-      <div class="card"><div class="ico">🛒</div><h3>① お申し込み</h3><p>まず無料デモで動きを確認。ライト版／フル版を選んでお申し込みいただくと、「コピーを作成」リンクと設置動画・マニュアルをお渡しします。</p></div>
+      <div class="card"><div class="ico">🛒</div><h3>① お申し込み</h3><p>まず無料デモで動きを確認。お申し込みいただくと、「コピーを作成」リンクと設置動画・マニュアルをお渡しします。</p></div>
       <div class="card"><div class="ico">📑</div><h3>② 自分のGoogleにコピー</h3><p>「コピーを作成」を押すと、貴施設のGoogleアカウントにアプリが複製されます。データは最初から貴施設の中だけ。当社は一切お預かりしません。</p></div>
       <div class="card"><div class="ico">⚙️</div><h3>③ 施設名・パスワードを設定</h3><p>初期設定を1回実行すると、施設名とパスワードが入った“自分専用の空アプリ”に。あとは送迎・職員データを入れるだけ。<b style="color:var(--text)">設置が不安な方は設置サポート（¥19,800）で一緒に進めます。</b></p></div>
     </div>
@@ -358,7 +366,7 @@ footer a{color:var(--muted)}
       </details>
       <details>
         <summary>サブスク（月額）ですか？ 解約や違約金はありますか？</summary>
-        <p>いいえ、月額のサブスクではなく<b style="color:var(--text)">買い切り</b>です。一度ご購入いただくと、追加の月額費用なく使い続けられます（「解約」という概念がありません）。アプリと全データは貴施設のGoogleアカウントの中にあるので、いつまでも手元に残ります。やめる場合もスプレッドシートを削除するだけです。</p>
+        <p>アプリ本体は<b style="color:var(--text)">買い切り</b>で、月額の縛りはありません。一度ご購入いただければ、追加費用なく使い続けられます（アプリと全データは貴施設のGoogleの中。やめる場合もスプレッドシートを削除するだけ）。継続的なアップデートや追加開発を希望される方には、<b style="color:var(--text)">任意の月額サポートプラン（¥4,980/月・いつでも解約OK・最低契約期間なし）</b>もご用意しています。</p>
       </details>
       <details>
         <summary>パソコンが苦手な職員が多いのですが大丈夫ですか？</summary>
@@ -378,7 +386,7 @@ footer a{color:var(--muted)}
       </details>
       <details>
         <summary>補助金は使えますか？</summary>
-        <p>買い切り¥4,980〜と、補助金がなくても気軽に導入できる価格です。施設側でお使いになれる持続化補助金や自治体のICT補助があれば、申請に必要な資料（見積書・機能説明）はすぐにお出しします。</p>
+        <p>買い切り¥9,800と、補助金がなくても気軽に導入できる価格です。施設側でお使いになれる持続化補助金や自治体のICT補助があれば、申請に必要な資料（見積書・機能説明）はすぐにお出しします。</p>
       </details>
     </div>
   </div>
@@ -409,5 +417,8 @@ footer a{color:var(--muted)}
   </div>
 </footer>
 
+<script>
+function loadYt(){var f=document.getElementById('ytFacade');if(!f)return;f.outerHTML='<div style="position:relative;padding-top:56.25%;border-radius:16px;overflow:hidden;border:1px solid var(--glass-border);box-shadow:0 20px 50px rgba(0,0,0,.42)"><iframe src="https://www.youtube.com/embed/WjUyVfwEUX4?autoplay=1" title="FRENVOX デモ紹介動画" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';}
+</script>
 </body>
 </html>
