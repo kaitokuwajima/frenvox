@@ -125,7 +125,18 @@
   .bk-online-sub b{color:#fff}
   .bk-online .btn-blue{margin-top:16px;background:var(--cyan);color:#06223b}
   .bk-online-note{margin-top:10px;font-size:.8rem;color:#9fb6cf}
-  .bk-visit-h{font-family:var(--serif,'Shippori Mincho B1',serif);font-size:1.18rem;font-weight:700;color:var(--ink);padding-top:8px;border-top:1px solid var(--line)}
+  .pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:999px}
+  .bk-visit{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:24px 26px;margin:0 0 26px}
+  .bk-visit .bk-online-head h3{color:var(--ink)}
+  .bk-visit .pill.ink{background:var(--ink);color:#fff}
+  .bk-visit p{font-size:.92rem;color:var(--muted);line-height:1.85;margin-top:12px}
+  .bk-visit p b{color:var(--ink)}
+  .bk-visit .btn-blue{margin-top:16px}
+  .bk-mailfb{margin-top:8px;border-top:1px solid var(--line);padding-top:18px}
+  .bk-mailfb>summary{cursor:pointer;font-weight:700;color:var(--blue);font-size:.92rem;list-style:none}
+  .bk-mailfb>summary::-webkit-details-marker{display:none}
+  .bk-mailfb>summary::before{content:"＋ ";color:var(--blue)}
+  .bk-mailfb[open]>summary::before{content:"− "}
 
   @media(max-width:680px){
     .hero-grid,.cards,.checks,.shots,.bk-grid{grid-template-columns:1fr}
@@ -230,7 +241,7 @@
     <div class="steps" style="margin-top:22px">
       <div class="step"><span class="si">1</span><div><h3>予約（オンライン or 訪問）</h3><p>下の予約フォームから希望日と<b>「Google Meet（オンライン）／訪問」</b>を選んで送信。オンラインの方には<b>当日のGoogle Meetリンク</b>をご案内します。所要60〜90分、動きやすい服装でご参加ください。</p></div></div>
       <div class="step"><span class="si">2</span><div><h3>ヒアリング・問診</h3><p>Google Meet（または訪問）で、今の悩み・目標・生活習慣・既往や外傷歴・スクリーンタイムまでお聞きし、何を変えたいかを一緒に整理します。</p></div></div>
-      <div class="step"><span class="si">3</span><div><h3>動作の計測・可視化</h3><p><b>訪問</b>はOpenCapの3D動作解析＋握力で全身を、<b>オンライン</b>はスマホ／Webカメラ＋姿勢AI（PostureRx）で姿勢・動作を計測。AIが分かりやすく可視化します。</p></div></div>
+      <div class="step"><span class="si">3</span><div><h3>動作の計測・可視化</h3><p><b>訪問</b>はOpenCapの3D動作解析＋握力で全身を、<b>オンライン</b>は<b>ブラウザで「PostureRx」（posturerx.vercel.app）を開き</b>、スマホ／Webカメラ＋姿勢AIで姿勢・動作を計測。AIが分かりやすく可視化します。</p></div></div>
       <div class="step"><span class="si">4</span><div><h3>運動提案・コンディショニング</h3><p>一緒に運動・ストレッチを行い、理学療法士の視点で<b>徒手的なケアや、自律神経を整えるセルフケア</b>もご提案。すべてを評価し、あなたに必要なものだけを選んで2枚のレポートでお渡しします。</p></div></div>
       <div class="step"><span class="si">5</span><div><h3>継続サポート</h3><p>スマートウォッチを活用した<b>運動習慣づくりのコツ</b>をご紹介。運動量・食事などのデータを蓄積して<b>「あなた専用AI」</b>を育て、変化を見ながら継続的に伴走します。</p></div></div>
     </div>
@@ -263,7 +274,7 @@
   <div class="container">
     <span class="eyebrow">予約・相談</span>
     <h2>初回評価を予約する。</h2>
-    <p class="sec-sub">ご希望の形式をお選びください。<b>オンライン（Google Meet）はその場でカレンダー予約＋カード事前決済</b>が完了し、Google Meetのリンクが自動で届きます。<b>香川県内への訪問</b>は当日決済のため、下のフォームからお申し込みください。<br>※ まだ予約せず<b>質問だけ</b>したい方は、最下部の「無料で相談・質問」からどうぞ。</p>
+    <p class="sec-sub">ご希望の形式を選び、カレンダーの空き枠から予約してください。<b>オンライン（Google Meet）はその場でカード事前決済</b>が完了しMeetリンクが自動で届きます。<b>香川県内への訪問は当日決済</b>です。<br>※ まだ予約せず<b>質問だけ</b>したい方は、最下部の「メールで相談」からどうぞ。</p>
 
     <!-- オンライン：Googleカレンダーで即予約＋事前決済 -->
     <div class="bk-online">
@@ -271,28 +282,45 @@
         <span class="pill blue">おすすめ・最短</span>
         <h3>オンライン初回（Google Meet・60分）</h3>
       </div>
-      <p class="bk-online-sub">理学療法士による身体評価＝問診＋スマホ／Webカメラ＋姿勢AI（PostureRx）で姿勢・動作を可視化し、運動・ストレッチ・徒手的セルフケアの提案と2枚のレポートをお渡しします。<b>初回 6,800円（税込）／予約時にカード事前決済</b>・前日18時まで無料（全額返金）。</p>
+      <p class="bk-online-sub">理学療法士による身体評価です。問診のあと、<b>当日はご自身のブラウザで「PostureRx」（posturerx.vercel.app）を開いて</b>いただき、スマホ／Webカメラ＋姿勢AIで姿勢・動作を可視化。運動・ストレッチ・徒手的セルフケアの提案と2枚のレポートをお渡しします。<b>初回 6,800円（税込）／予約時にカード事前決済</b>・前日18時まで無料（全額返金）。</p>
       <a class="btn btn-blue" href="https://calendar.app.google/M6KFyp24qEprugKT7" target="_blank" rel="noopener noreferrer">カレンダーで予約する（事前決済） <span class="ar">→</span></a>
-      <p class="bk-online-note">空き枠の選択 → カード決済 → 自動でGoogle Meetリンクが届きます。</p>
+      <p class="bk-online-note">空き枠の選択 → カード決済 → 自動でGoogle Meetリンクが届きます。当日はMeetに参加し、ブラウザで PostureRx（posturerx.vercel.app）を開いて評価を進めます。</p>
     </div>
 
-    <h3 class="bk-visit-h">香川県内への訪問を予約する（当日決済）</h3>
-    <p class="sec-sub" style="margin-top:6px">希望日と内容を送信してください（<b>あさって以降</b>の日時から）。訪問は<b>OpenCapの3D動作解析が使えるフル評価</b>です。確定のご連絡を返信します（<b>当日決済・現金／カード</b>）。</p>
-    <form class="booking" onsubmit="return frx_book(event)">
-      <div class="bk-grid">
-        <input type="hidden" name="mode" id="bk-mode" value="訪問（香川県内）">
-        <label>希望日 <input type="date" name="date" required></label>
-        <label>希望時間 <input type="time" name="time" required></label>
-        <label>第2希望（任意） <input type="text" name="date2" placeholder="例）6/20 午後 など"></label>
-        <label>お名前 <input type="text" name="name" required placeholder="氏名（ニックネーム可）"></label>
-        <label>連絡先（メール / 電話） <input type="text" name="contact" required></label>
-        <label class="bk-full" id="bk-addr-wrap">訪問先の住所・エリア <input type="text" name="addr" placeholder="香川県高松市〜"></label>
-        <label class="bk-full">ご相談内容・気になること <textarea name="msg" rows="3" placeholder="主訴・目標・既往や外傷歴・スクリーンタイムなど"></textarea></label>
+    <!-- 訪問：Googleカレンダーで予約（当日決済） -->
+    <div class="bk-visit">
+      <div class="bk-online-head">
+        <span class="pill ink">訪問・フル評価</span>
+        <h3>香川県内への訪問（OpenCap・90分）</h3>
       </div>
-      <button type="submit" class="btn btn-blue" style="margin-top:18px">この内容で訪問予約メールを送る <span class="ar">→</span></button>
-      <p style="margin-top:10px;font-size:.8rem;color:var(--muted)">送信でメールアプリが起動します。日程確定のご連絡を返信します（<b>訪問は当日決済・現金／カード</b>）。</p>
-    </form>
-    <p style="margin-top:16px;font-size:.9rem;color:var(--muted)">予約はまだ迷う…という方は、<a href="mailto:kaito@frenvox.jp?subject=【無料相談】身体評価について&body=ご質問・気になることをご記入ください（無料・予約不要）。%0A%0A" style="color:var(--blue);font-weight:700">無料で相談・質問する（メール）</a>。料金は発生しません。</p>
+      <p>ご自宅や職場など、ご指定の場所へ理学療法士がお伺いします。<b>OpenCapの3D動作解析＋握力で全身を計測</b>し、運動・ストレッチ・徒手的セルフケアの提案と2枚のレポートをお渡しします。<b>初回 9,800円（税込）／当日その場で決済（現金・カード）</b>。出張費：半径5km以内無料／以遠1kmあたり100円（上限2,000円）。前日18時まで無料。<br>※ ご予約時の「メモ」欄に、<b>訪問先のご住所・エリア</b>を必ずご記入ください。</p>
+      <a class="btn btn-blue" href="https://calendar.app.google/xH96ZmrMQRNnJbiR7" target="_blank" rel="noopener noreferrer">カレンダーで訪問を予約する <span class="ar">→</span></a>
+    </div>
+
+    <!-- 保険：メールでの予約・相談 -->
+    <details class="bk-mailfb">
+      <summary>カレンダーが使いにくい方・質問だけの方は、メールでも承ります</summary>
+      <form class="booking" style="margin-top:16px" onsubmit="return frx_book(event)">
+        <div class="bk-grid">
+          <label>形式
+            <select name="mode" id="bk-mode">
+              <option value="オンライン（Google Meet）">オンライン（Google Meet）</option>
+              <option value="訪問（香川県内）">訪問（香川県内）</option>
+            </select>
+          </label>
+          <label>希望日 <input type="date" name="date" required></label>
+          <label>希望時間 <input type="time" name="time" required></label>
+          <label>第2希望（任意） <input type="text" name="date2" placeholder="例）6/20 午後 など"></label>
+          <label>お名前 <input type="text" name="name" required placeholder="氏名（ニックネーム可）"></label>
+          <label>連絡先（メール / 電話） <input type="text" name="contact" required></label>
+          <label class="bk-full" id="bk-addr-wrap" style="display:none">訪問先の住所・エリア <input type="text" name="addr" placeholder="香川県高松市〜"></label>
+          <label class="bk-full">ご相談内容・気になること <textarea name="msg" rows="3" placeholder="主訴・目標・既往や外傷歴・スクリーンタイムなど"></textarea></label>
+        </div>
+        <button type="submit" class="btn btn-blue" style="margin-top:18px">この内容で予約メールを送る <span class="ar">→</span></button>
+        <p style="margin-top:10px;font-size:.8rem;color:var(--muted)">送信でメールアプリが起動します。確定のご連絡を返信します（<b>オンラインはMeetリンク＋事前決済の案内</b>、訪問は当日決済）。</p>
+      </form>
+      <p style="margin-top:14px;font-size:.9rem;color:var(--muted)">質問だけの方は、<a href="mailto:kaito@frenvox.jp?subject=【無料相談】身体評価について&body=ご質問・気になることをご記入ください（無料・予約不要）。%0A%0A" style="color:var(--blue);font-weight:700">無料で相談・質問する（メール）</a>。料金は発生しません。</p>
+    </details>
   </div>
 </section>
 
@@ -307,7 +335,8 @@
       <details><summary>どんな人に向いていますか？</summary><p>高齢の方、スポーツを楽しむ方、将棋など趣味の方、健康を伸ばしたい方など、あらゆる方が対象です。年齢や運動経験は問いません。</p></details>
       <details><summary>効果はありますか？</summary><p>効果には個人差があり、変化を保証するものではありません。動きやすさやコンディションの変化を、データで一緒に確認しながら進めます。</p></details>
       <details><summary>オンラインと訪問はどう違いますか？</summary><p>訪問はOpenCapの3D動作解析が使える“フル評価”です。オンライン（Google Meet）はスマホ／Webカメラ＋姿勢AI（PostureRx）での評価となり内容が一部変わるため、初回をお安く設定しています。問診・運動提案・徒手的セルフケアの提案はどちらも行います。</p></details>
-      <details><summary>支払い方法は？</summary><p>当日現金、またはクレジットカード（決済リンク）。月額メンバーはカード自動課金です。領収書を発行します。</p></details>
+      <details><summary>オンラインは何を準備すればいいですか？</summary><p>カメラ付きのスマホ／PCと、Google Meetに参加できる通信環境、動ける1.5畳ほどのスペースがあればOKです。当日は<b>ブラウザで「PostureRx」（posturerx.vercel.app）を開いて</b>姿勢・動作を撮影・評価します（アプリのインストールは不要）。動きやすい服装でご参加ください。</p></details>
+      <details><summary>支払い方法は？</summary><p><b>オンラインは予約時にクレジットカードで事前決済</b>（Google カレンダー予約）。<b>訪問は当日その場で決済</b>（現金・カード）。月額メンバーはカード自動課金です。領収書を発行します。</p></details>
     </div>
   </div>
 </section>
