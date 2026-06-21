@@ -15,52 +15,52 @@
   .toolbar button{background:var(--ink);color:#fff;border:none;border-radius:8px;padding:10px 18px;font-size:.9rem;font-weight:700;cursor:pointer}
   .page{
     width:210mm;min-height:297mm;margin:0 auto 20px;background:var(--paper);
-    padding:13mm 15mm;position:relative;overflow:hidden;
+    padding:10mm 15mm;position:relative;overflow:hidden;
     box-shadow:0 8px 40px rgba(0,0,0,.18);
   }
   .accent{color:var(--accent-d)}
   /* header */
-  .head{display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:10px}
+  .head{display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:8px}
   .head img{height:30px}
   .head .tag{font-size:.72rem;letter-spacing:.16em;color:var(--ink2);font-weight:700}
   /* hero */
   .eyebrow{margin-top:10px;font-size:.74rem;letter-spacing:.2em;color:var(--accent-d);font-weight:800}
-  h1{font-family:"Shippori Mincho B1",serif;font-size:21pt;font-weight:800;line-height:1.38;margin-top:6px;color:var(--ink)}
+  h1{font-family:"Shippori Mincho B1",serif;font-size:20pt;font-weight:800;line-height:1.32;margin-top:5px;color:var(--ink)}
   h1 .u{background:linear-gradient(transparent 62%,rgba(11,114,200,.26) 62%)}
-  .sub{margin-top:10px;font-size:10pt;color:var(--ink2)}
+  .sub{margin-top:8px;font-size:9.6pt;color:var(--ink2);line-height:1.6}
   .hero-row{display:flex;gap:16px;align-items:center;margin-top:6px}
   .hero-row .copy{flex:1;min-width:0}
   .flyer-art{flex:none;width:120px}
   .flyer-art img{width:100%;display:block}
   /* showcase（実際の解析画面） */
-  .showcase{margin:9px auto 0;max-width:50%;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#000}
+  .showcase{margin:7px auto 0;max-width:49%;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#000}
   .showcase img{width:100%;display:block}
-  .showcase figcaption{background:var(--cream);color:var(--ink2);font-size:8.2pt;padding:8px 14px;line-height:1.5;text-align:center}
+  .showcase figcaption{background:var(--cream);color:var(--ink2);font-size:7.8pt;padding:6px 14px;line-height:1.4;text-align:center}
   .showcase figcaption b{color:var(--accent-d)}
   /* bullets */
-  .bullets{margin-top:11px;display:grid;grid-template-columns:1fr 1fr;gap:7px 18px}
+  .bullets{margin-top:9px;display:grid;grid-template-columns:1fr 1fr;gap:5px 18px}
   .b{display:flex;gap:9px;align-items:flex-start;font-size:10pt;font-weight:500}
   .b .ck{flex:none;width:19px;height:19px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px;font-weight:900}
   /* pricing */
-  .price{margin-top:14px;border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
-  .price .row{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid var(--line);font-size:10pt}
+  .price{margin-top:10px;border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
+  .price .row{display:flex;justify-content:space-between;align-items:center;padding:5px 16px;border-bottom:1px solid var(--line);font-size:10pt}
   .price .row:last-child{border-bottom:none}
   .price .row .nm b{font-weight:800}
-  .price .row .nm span{color:var(--ink2);font-size:8.2pt;display:block;line-height:1.45}
+  .price .row .nm span{color:var(--ink2);font-size:8pt;display:block;line-height:1.35}
   .price .row .pr{font-weight:900;font-size:12pt;white-space:nowrap;color:var(--ink)}
   .price .row.head{background:var(--cream)}
-  .price-note{margin-top:7px;font-size:8.4pt;color:var(--ink2)}
+  .price-note{margin-top:6px;font-size:8pt;color:var(--ink2);line-height:1.45}
   /* cta + qr */
-  .cta{margin-top:12px;display:flex;gap:18px;align-items:center;background:var(--ink);border-radius:14px;padding:14px 18px;color:#fff}
+  .cta{margin-top:9px;display:flex;gap:18px;align-items:center;background:var(--ink);border-radius:14px;padding:15px 18px;color:#fff}
   .cta .qr{flex:none;background:#fff;padding:7px;border-radius:8px;line-height:0}
   .cta .qr img{width:104px;height:104px;display:block}
   .cta .txt h3{font-size:13pt;font-weight:900;color:#fff;line-height:1.4}
   .cta .txt .sm{margin-top:6px;font-size:9pt;color:#d9d2c2}
   .cta .txt .contact{margin-top:9px;font-size:9.4pt;font-weight:700;color:var(--accent)}
   /* footer */
-  .foot{position:absolute;left:15mm;right:15mm;bottom:12mm}
+  .foot{margin-top:14px}
   .foot .biz{font-size:8.6pt;font-weight:700;color:var(--ink);border-top:1px solid var(--line);padding-top:8px}
-  .foot .disc{margin-top:5px;font-size:7.6pt;color:var(--ink2);line-height:1.6}
+  .foot .disc{margin-top:5px;font-size:7pt;color:var(--ink2);line-height:1.55}
   @media print{
     body{background:#fff}
     .toolbar{display:none}
@@ -107,17 +107,17 @@
   <p class="price-note">出張は半径5km以内無料、以遠1kmあたり¥100（上限¥2,000程度）。市内一律¥1,000のご案内も可。法人・施設の出張計測会は¥50,000〜。</p>
 
   <div class="cta">
-    <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=0&data=https%3A%2F%2Ffrenvox.jp%2Fassessment.html" alt="QR：詳細・予約" /></div>
+    <div class="qr"><img src="images/qr-assessment.png" alt="QR：詳細・予約" /></div>
     <div class="txt">
       <h3>まずは初回フル評価から。</h3>
-      <p class="sm">QRから詳細・ご予約へ。オンライン相談可・しつこい勧誘なし・キャンセル無料。</p>
+      <p class="sm">QRコード → 予約ページ（frenvox.jp）で内容確認・ご予約。オンライン相談可・キャンセル無料。<br><b style="color:#fff">担当者の顔・経歴・実績は frenvox.jp に掲載しています。</b></p>
       <p class="contact">kaito@frenvox.jp ／ 080-4343-2366 ／ frenvox.jp</p>
     </div>
   </div>
 
   <div class="foot">
     <p class="biz">FRENVOX（フレンボックス）／代表・理学療法士　桑島 海斗 ／ 香川県高松市 ／ frenvox.jp</p>
-    <p class="disc">本サービスは医療行為ではなく、健康増進・予防を目的としたコンディショニング／運動サポートです。診断・治療は行いません。AIは評価の可視化・運動提案の補助ツール（非医療機器）で、最終的な提案は理学療法士が行います。効果には個人差があり、変化を保証するものではありません。痛みが強い・医療機関での対応が必要な場合は、かかりつけの医療機関にご相談ください。</p>
+    <p class="disc">本サービスは医療行為ではなく、健康増進・予防のためのコンディショニング／運動サポートです（診断・治療は行いません）。AIは評価の可視化・運動提案の補助（非医療機器）で、最終的な提案は理学療法士が行います。効果には個人差があります。痛みが強い等は医療機関にご相談ください。</p>
   </div>
 </div>
 
