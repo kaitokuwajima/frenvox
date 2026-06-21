@@ -81,6 +81,20 @@
   .check{display:flex;gap:10px;align-items:flex-start;font-size:.93rem}
   .check svg{flex:none;margin-top:3px;color:var(--blue)}
   .note-soft{margin-top:18px;font-size:.85rem;color:var(--muted);background:var(--white);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+  /* 2つの計測方法 */
+  .methods{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
+  .method{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column}
+  .m-tag{align-self:flex-start;font-size:.74rem;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--ink);padding:5px 14px;border-radius:999px}
+  .m-tag.cy{background:var(--blue)}
+  .m-fig{margin:14px 0 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#000}
+  .m-fig img{width:100%;display:block}
+  .m-fig.art{background:linear-gradient(135deg,#0B1A2C,#13314f);padding:18px;display:flex;justify-content:center}
+  .m-fig.art img{width:62%}
+  .m-fig figcaption{background:var(--paper-2,#E9EEF5);color:var(--muted);font-size:.74rem;text-align:center;padding:6px 10px}
+  .method h3{font-family:var(--serif,'Shippori Mincho B1',serif);font-size:1.16rem;font-weight:700;margin:14px 0 8px}
+  .method p{font-size:.9rem;color:var(--muted);line-height:1.8}
+  .method p b{color:var(--ink)}
+  @media(max-width:680px){.methods{grid-template-columns:1fr}.m-fig.art img{width:54%}}
 
   .steps{display:grid;gap:12px;margin-top:8px}
   .step{display:flex;gap:16px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
@@ -245,11 +259,41 @@
     <div class="steps" style="margin-top:22px">
       <div class="step"><span class="si">1</span><div><h3>予約（オンライン or 訪問）</h3><p>下の予約フォームから希望日と<b>「Google Meet（オンライン）／訪問」</b>を選んで送信。オンラインの方には<b>当日のGoogle Meetリンク</b>をご案内します。所要60〜90分、動きやすい服装でご参加ください。</p></div></div>
       <div class="step"><span class="si">2</span><div><h3>ヒアリング・問診</h3><p>Google Meet（または訪問）で、今の悩み・目標・生活習慣・既往や外傷歴・スクリーンタイムまでお聞きし、何を変えたいかを一緒に整理します。</p></div></div>
-      <div class="step"><span class="si">3</span><div><h3>動作の計測・可視化</h3><p><b>訪問</b>はOpenCapの3D動作解析＋握力で全身を、<b>オンライン</b>は<b>ブラウザで「PostureRx」（posturerx.vercel.app）を開き</b>、スマホ／Webカメラ＋姿勢AIで姿勢・動作を計測。AIが分かりやすく可視化します。</p></div></div>
+      <div class="step"><span class="si">3</span><div><h3>動作の計測・可視化</h3><p><b>訪問</b>はOpenCapの3D動作解析＋握力で全身を、<b>オンライン</b>は<b>FRENVOX独自開発のブラウザ動作解析「PostureRx」（posturerx.vercel.app）を開き</b>、スマホ／Webカメラで姿勢・動作を計測。AIが分かりやすく可視化します。</p></div></div>
       <div class="step"><span class="si">4</span><div><h3>運動提案・コンディショニング</h3><p>一緒に運動・ストレッチを行い、理学療法士の視点で<b>徒手的なケアや、自律神経を整えるセルフケア</b>もご提案。すべてを評価し、あなたに必要なものだけを選んで2枚のレポートでお渡しします。</p></div></div>
       <div class="step"><span class="si">5</span><div><h3>継続サポート</h3><p>スマートウォッチを活用した<b>運動習慣づくりのコツ</b>をご紹介。運動量・食事などのデータを蓄積して<b>「あなた専用AI」</b>を育て、変化を見ながら継続的に伴走します。</p></div></div>
     </div>
-    <div class="note-soft" style="margin-top:18px"><b>オンライン（Google Meet）と訪問の違い：</b>訪問はOpenCapの3D動作解析が使える“フル評価”です。オンラインはスマホ／Webカメラ＋姿勢AI（PostureRx）での評価となり内容が一部変わるため、初回をお安く設定しています（料金表をご覧ください）。</div>
+    <div class="note-soft" style="margin-top:18px"><b>オンライン（Google Meet）と訪問の違い：</b>訪問はOpenCapの3D動作解析が使える“フル評価”です。オンラインは<b>FRENVOXが独自開発したブラウザ動作解析「PostureRx」</b>での評価となり内容が一部変わるため、初回をお安く設定しています（料金表をご覧ください）。</div>
+  </div>
+</section>
+
+<section class="sec" id="methods">
+  <div class="container">
+    <span class="eyebrow">2つの計測方法</span>
+    <h2>訪問は3D動作解析、オンラインは独自開発のブラウザ解析。</h2>
+    <p class="sec-sub">どちらも全身の動きを“見える化”しますが、使う技術が異なります。ご都合に合わせてお選びください。</p>
+    <div class="methods">
+
+      <div class="method">
+        <span class="m-tag">訪問・フル評価</span>
+        <figure class="m-fig">
+          <img src="images/gait-demo.png" alt="OpenCap 3D動作解析の実際の画面">
+          <figcaption>↑ 実際のOpenCap解析画面（訪問時）</figcaption>
+        </figure>
+        <h3>OpenCapの3D動作解析</h3>
+        <p>カメラで全身を3Dに再構築し、<b>歩幅・歩行速度・左右の対称性・関節の動き</b>まで数値化。握力なども合わせて、全身を多角的に計測します。<b>この3D解析は訪問だけ</b>でできる“フル評価”です。</p>
+      </div>
+
+      <div class="method">
+        <span class="m-tag cy">オンライン</span>
+        <figure class="m-fig art">
+          <img src="images/motion-analysis.svg" alt="ブラウザ動作解析（PostureRx）のイメージ">
+        </figure>
+        <h3>FRENVOX独自開発のブラウザ動作解析</h3>
+        <p>FRENVOXが独自開発したブラウザツール<b>「PostureRx」</b>を使い、スマホ／Webカメラだけで姿勢・動作をAI解析。<b>アプリのインストール不要</b>、その場でブラウザを開くだけ。3D解析は使いませんが、姿勢評価・運動提案はしっかり行います。</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -266,7 +310,7 @@
     </table>
     <div class="price-note">
       <p>・すべて自費サービス（保険適用外・税込）。</p>
-      <p>・<b>オンライン（Google Meet）</b>は、OpenCapの3D動作解析の代わりにスマホ／Webカメラ＋姿勢AI（PostureRx）で評価するため、初回をお安く設定しています。</p>
+      <p>・<b>オンライン（Google Meet）</b>は、OpenCapの3D動作解析の代わりに<b>FRENVOX独自開発のブラウザ動作解析「PostureRx」</b>で評価するため、初回をお安く設定しています。</p>
       <p>・<b>出張費</b>：半径5km以内は無料／以遠は1kmあたり¥100（上限¥2,000）。県外・遠方への出張は別途お見積りとなります。</p>
       <p>・<b>お支払い</b>：<b>オンラインは事前決済（クレジットカード）</b>／<b>訪問は当日決済（現金・カード）</b>。月額メンバーはカード自動課金。領収書を発行します。</p>
       <p>・<b>キャンセル</b>：前日18時までのご連絡で無料（オンラインの事前決済は<b>全額返金</b>）。それ以降・当日・無断キャンセルは返金いたしかねます。キャンセルはご予約確認メールへの返信、またはお電話で承ります。</p>
@@ -286,7 +330,7 @@
         <span class="pill blue">おすすめ・最短</span>
         <h3>オンライン初回（Google Meet・60分）</h3>
       </div>
-      <p class="bk-online-sub">理学療法士による身体評価です。問診のあと、<b>当日はご自身のブラウザで「PostureRx」（posturerx.vercel.app）を開いて</b>いただき、スマホ／Webカメラ＋姿勢AIで姿勢・動作を可視化。運動・ストレッチ・徒手的セルフケアの提案と2枚のレポートをお渡しします。<b>初回 6,800円（税込）／予約時にカード事前決済</b>・前日18時まで無料（全額返金）。</p>
+      <p class="bk-online-sub">理学療法士による身体評価です。問診のあと、<b>当日はご自身のブラウザでFRENVOX独自開発の動作解析「PostureRx」（posturerx.vercel.app）を開いて</b>いただき、スマホ／Webカメラで姿勢・動作を可視化。運動・ストレッチ・徒手的セルフケアの提案と2枚のレポートをお渡しします。<b>初回 6,800円（税込）／予約時にカード事前決済</b>・前日18時まで無料（全額返金）。</p>
       <a class="btn btn-blue" href="https://calendar.app.google/M6KFyp24qEprugKT7" target="_blank" rel="noopener noreferrer">カレンダーで予約する（事前決済） <span class="ar">→</span></a>
       <p class="bk-online-note">空き枠の選択 → カード決済 → 自動でGoogle Meetリンクが届きます。当日はMeetに参加し、ブラウザで PostureRx（posturerx.vercel.app）を開いて評価を進めます。</p>
     </div>
@@ -338,7 +382,7 @@
       <details><summary>AIは何をするのですか？</summary><p>AIは評価の可視化と運動提案の“補助”を担うツール（非医療機器）です。AIが診断や判断をすることはなく、最終的な提案は理学療法士が行います。</p></details>
       <details><summary>どんな人に向いていますか？</summary><p>高齢の方、スポーツを楽しむ方、将棋など趣味の方、健康を伸ばしたい方など、あらゆる方が対象です。年齢や運動経験は問いません。</p></details>
       <details><summary>効果はありますか？</summary><p>効果には個人差があり、変化を保証するものではありません。動きやすさやコンディションの変化を、データで一緒に確認しながら進めます。</p></details>
-      <details><summary>オンラインと訪問はどう違いますか？</summary><p>訪問はOpenCapの3D動作解析が使える“フル評価”です。オンライン（Google Meet）はスマホ／Webカメラ＋姿勢AI（PostureRx）での評価となり内容が一部変わるため、初回をお安く設定しています。問診・運動提案・徒手的セルフケアの提案はどちらも行います。</p></details>
+      <details><summary>オンラインと訪問はどう違いますか？</summary><p>訪問はOpenCapの3D動作解析が使える“フル評価”です。オンライン（Google Meet）は<b>FRENVOXが独自開発したブラウザ動作解析「PostureRx」</b>での評価となり内容が一部変わるため、初回をお安く設定しています。問診・運動提案・徒手的セルフケアの提案はどちらも行います。</p></details>
       <details><summary>オンラインは何を準備すればいいですか？</summary><p>カメラ付きのスマホ／PCと、Google Meetに参加できる通信環境、動ける1.5畳ほどのスペースがあればOKです。当日は<b>ブラウザで「PostureRx」（posturerx.vercel.app）を開いて</b>姿勢・動作を撮影・評価します（アプリのインストールは不要）。動きやすい服装でご参加ください。</p></details>
       <details><summary>支払い方法は？</summary><p><b>オンラインは予約時にクレジットカードで事前決済</b>（Google カレンダー予約）。<b>訪問は当日その場で決済</b>（現金・カード）。月額メンバーはカード自動課金です。領収書を発行します。</p></details>
     </div>
