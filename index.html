@@ -650,6 +650,14 @@ html.js .ph-photo.rv.on img{clip-path:inset(0 0 0 0)}
 @media(max-width:900px){
   .hero-wave::before,.hero-wave::after{width:8vw}
 }
+/* phones: 縦に動く演出を止めてフェードのみに（スクロール時のカクつき対策） */
+@media(max-width:900px){
+  html{scroll-behavior:auto}
+  html.js .rv{transform:none!important;transition:opacity .55s var(--ease)!important}
+  html.js .rv.on{transform:none!important}
+  html.js .hero-fade{transform:none!important;transition:opacity .7s var(--ease)!important}
+  html.js .hero h1 .hl i{transform:none!important}
+}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .rv,.hero-fade{opacity:1!important;transform:none!important}
